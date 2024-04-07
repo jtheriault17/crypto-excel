@@ -1,13 +1,13 @@
 from openpyxl import load_workbook
-from datetime import datetime
+from datetime import datetime, timedelta
 from openpyxl.styles import PatternFill, Font
 import json
 import os.path
 
 def load_portfolio_value():
     portfolio_value = {}
-    if os.path.exists('portfolio-value.json'):
-        with open('portfolio-value.json', 'r') as f:
+    if os.path.exists('../crypto-excel/data/portfolio-value.json'):
+        with open('../crypto-excel/data/portfolio-value.json', 'r') as f:
             try:
                 portfolio_value = json.load(f)
             except json.JSONDecodeError:
@@ -16,8 +16,8 @@ def load_portfolio_value():
 
 def load_portfolio():
     portfolio = {}
-    if os.path.exists('portfolio.json'):
-        with open('portfolio.json', 'r') as f:
+    if os.path.exists('../crypto-excel/data/portfolio.json'):
+        with open('../crypto-excel/data/portfolio.json', 'r') as f:
             try:
                 portfolio = json.load(f)
             except json.JSONDecodeError:
@@ -26,8 +26,8 @@ def load_portfolio():
 
 def load_cost_basis():
     cost_basis = {}
-    if os.path.exists('cost_basis.json'):
-        with open('cost_basis.json', 'r') as f:
+    if os.path.exists('../crypto-excel/data/cost_basis.json'):
+        with open('../crypto-excel/data/cost_basis.json', 'r') as f:
             try:
                 cost_basis = json.load(f)
             except json.JSONDecodeError:
@@ -36,8 +36,8 @@ def load_cost_basis():
 
 def load_coin_id_dict():
     coin_id_dict = {}
-    if os.path.exists('coin-id-dictionary.json'):
-        with open('coin-id-dictionary.json', 'r') as f:
+    if os.path.exists('../crypto-excel/data/coin-id-dictionary.json'):
+        with open('../crypto-excel/data/coin-id-dictionary.json', 'r') as f:
             try:
                 coin_id_dict = json.load(f)
             except json.JSONDecodeError:
@@ -50,7 +50,7 @@ def get_coin_id(symbol):
 
 # Load historical data from Excel workbook
 def load_historical_data(symbol):
-    wb = load_workbook('historical-data.xlsx', read_only=True, data_only=True)
+    wb = load_workbook('../crypto-excel/workbooks/historical-data.xlsx', read_only=True, data_only=True)
     ws = wb[get_coin_id(symbol.lower())]
     historical_data = {}
     for row in ws.iter_rows(min_row=2, values_only=True):
@@ -60,7 +60,8 @@ def load_historical_data(symbol):
 
 # Load transactions data from Excel workbook
 def load_transaction():
-    wb = load_workbook(filename='Transactions.xlsm', read_only=True, data_only=True)
+    workbook_path = '../crypto-excel/workbooks/Transactions.xlsm'
+    wb = load_workbook(filename=workbook_path, read_only=True, data_only=True)
     ws = wb['Transactions']
     transactions = []
     for row in ws.iter_rows(min_row=2, values_only=True):
@@ -69,14 +70,28 @@ def load_transaction():
     return transactions
 
 # Load total data from Excel workbook
-def load_total_data_dates():
-    wb = load_workbook(filename='Transactions.xlsm', read_only=True, data_only=True)
+def get_total_data_dates():
+    wb = load_workbook(filename='../crypto-excel/workbooks/total-data.xlsx', read_only=False, data_only=True)
     ws = wb['Total Data']
-    total_data = []
-    for row in ws.iter_rows(min_row=6, values_only=True):
-        if row[0]:
-            total_data.append(row[0])
-    return total_data
+    dates = []
+
+    start_date = datetime.today()
+    end_date = start_date - timedelta(days=365)
+
+    row_number = 6
+
+    while start_date >= end_date:
+        # Write the date to the cell in column A
+        ws.cell(row=row_number, column=1, value=start_date)
+        # Append the date to the list
+        dates.append(start_date)
+        # Move to the next row
+        row_number += 1
+        # Subtract one day from the start date
+        start_date -= timedelta(days=1)
+
+    wb.save(filename='../crypto-excel/workbooks/total-data.xlsx')
+    return dates
 
 def get_cost_basis(transactions, dates):
     cost_basis = load_cost_basis()
@@ -114,7 +129,7 @@ def get_portfolio(transactions, dates):
                     symbol_values[symbol] = {"quantity": quantity, "value": value}
             if symbol_values != None:
                 portfolio[date_str] = symbol_values
-    with open('portfolio.json', 'w') as f:
+    with open('../crypto-excel/data/portfolio.json', 'w') as f:
                 json.dump(portfolio, f, indent=4)
     return portfolio
 
@@ -139,44 +154,38 @@ def get_portfolio_values(dates, portfolio):
         if date_str not in portfolio_values:
             portfolio_values[date_str] = calculate_portfolio_value(date_str, portfolio)
     
-    with open('portfolio-value.json', 'w') as f:
+    with open('../crypto-excel/data/portfolio-value.json', 'w') as f:
                 json.dump(portfolio_values, f, indent=4)
 
     return portfolio_values
 
 # Main function to populate 'Total Data' sheet
 def write_portfolio_values(portfolio_values):
-    wb_read = load_workbook(filename='Transactions.xlsm', data_only=True, keep_vba=True)
-    wb_write = load_workbook(filename='Transactions.xlsm', keep_vba=True)
+    wb = load_workbook(filename='../crypto-excel/workbooks/total-data.xlsx', data_only=True)
 
-    ws_read = wb_read['Total Data']
-    ws_write = wb_write['Total Data']
+    ws = wb['Total Data']
 
     white_fill = PatternFill(start_color='FFFFFFFF', end_color='FFFFFFFF', fill_type='solid')
 
     row_number = 6
     while True:
-        date_cell = ws_read.cell(row=row_number, column=1)
+        date_cell = ws.cell(row=row_number, column=1)
         date = date_cell.value
         if not date:
             break
         date_str = date.strftime('%m/%d/%y')
         portfolio_value = portfolio_values[date_str]
         if portfolio_value is not None:
-            ws_write.cell(row=row_number, column=3, value=portfolio_value)
-            ws_write.cell(row=row_number, column=3).fill = white_fill
+            ws.cell(row=row_number, column=3, value=portfolio_value)
+            ws.cell(row=row_number, column=3).fill = white_fill
         row_number += 1
         
-    wb_read.close()
-    wb_write.save(filename='Transactions.xlsm')
+    wb.save(filename='../crypto-excel/workbooks/total-data.xlsx')
 
 def write_portfolio(portfolio):
-    wb_read = load_workbook(filename='Transactions.xlsm', data_only=True, keep_vba=True)
-    wb_write = load_workbook(filename='Transactions.xlsm', keep_vba=True)
+    wb = load_workbook(filename='../crypto-excel/workbooks/total-data.xlsx', data_only=True)
 
-    ws_read = wb_read['Total Data']
-    ws_write = wb_write['Total Data']
-
+    ws = wb['Total Data']
 
     white_fill = PatternFill(start_color='FFFFFFFF', end_color='FFFFFFFF', fill_type='solid')
     bold = Font(bold=True)
@@ -186,10 +195,8 @@ def write_portfolio(portfolio):
     date_row_number = 6
 
     while True:
-        date_cell = ws_read.cell(row=date_row_number, column=1)
+        date_cell = ws.cell(row=date_row_number, column=1)
         date = date_cell.value
-        print(date)
-        print(row_number)
         if not date:
             break
         date_str = date.strftime('%m/%d/%y')
@@ -199,15 +206,15 @@ def write_portfolio(portfolio):
             symbol_values = portfolio[date_str]
             
             # Write the date at the top of the group of symbols
-            date_cell = ws_write.cell(row=row_number, column=5)
+            date_cell = ws.cell(row=row_number, column=5)
             date_cell.value = date_str
             date_cell.fill = white_fill
             date_cell.font = bold
 
-            ws_write.cell(row=row_number, column=6).value = None
-            ws_write.cell(row=row_number, column=7).value = None
-            ws_write.cell(row=row_number, column=6).fill = white_fill
-            ws_write.cell(row=row_number, column=7).fill = white_fill
+            ws.cell(row=row_number, column=6).value = None
+            ws.cell(row=row_number, column=7).value = None
+            ws.cell(row=row_number, column=6).fill = white_fill
+            ws.cell(row=row_number, column=7).fill = white_fill
             
             # Increment row_number to move to the next row for symbols
             row_number += 1
@@ -218,9 +225,9 @@ def write_portfolio(portfolio):
                 value = data.get('value', 0)
 
                 if value > 1:
-                    symbol_cell = ws_write.cell(row=row_number, column=5)
-                    quantity_cell = ws_write.cell(row=row_number, column=6)
-                    value_cell = ws_write.cell(row=row_number, column=7)
+                    symbol_cell = ws.cell(row=row_number, column=5)
+                    quantity_cell = ws.cell(row=row_number, column=6)
+                    value_cell = ws.cell(row=row_number, column=7)
 
                     symbol_cell.value = symbol
                     quantity_cell.value = quantity
@@ -237,23 +244,22 @@ def write_portfolio(portfolio):
 
                     row_number += 1
         
-        ws_write.cell(row=row_number, column=5).value = None
-        ws_write.cell(row=row_number, column=6).value = None
-        ws_write.cell(row=row_number, column=7).value = None
-        ws_write.cell(row=row_number, column=5).fill = white_fill
-        ws_write.cell(row=row_number, column=6).fill = white_fill
-        ws_write.cell(row=row_number, column=7).fill = white_fill
+        ws.cell(row=row_number, column=5).value = None
+        ws.cell(row=row_number, column=6).value = None
+        ws.cell(row=row_number, column=7).value = None
+        ws.cell(row=row_number, column=5).fill = white_fill
+        ws.cell(row=row_number, column=6).fill = white_fill
+        ws.cell(row=row_number, column=7).fill = white_fill
 
         date_row_number += 1
         row_number += 1
         
-    wb_read.close()
-    wb_write.save(filename='Transactions.xlsm')
+    wb.save(filename='../crypto-excel/workbooks/total-data.xlsx')
 
 # Main function
 def main():
     transactions = load_transaction()
-    dates = load_total_data_dates()
+    dates = get_total_data_dates()
 
     portfolio = get_portfolio(transactions, dates)
     portfolio_values = get_portfolio_values(dates, portfolio)
