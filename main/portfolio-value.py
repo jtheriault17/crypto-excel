@@ -58,8 +58,8 @@ def load_historical_data(symbol):
     if coin_id is None:
         return {}
     historical_data = pd.read_excel(historical_data_path, sheet_name=coin_id, index_col=0)
-    historical_data.index = pd.to_datetime(historical_data.index)
-    historical_data = historical_data.squeeze().to_dict()
+    historical_data.index = pd.to_datetime(historical_data.index).date
+    historical_data = historical_data.iloc[:, 0].to_dict()
     return historical_data
 
 # Load transactions data from Excel workbook
@@ -70,33 +70,36 @@ def load_transaction():
 
 # Load total data from Excel workbook
 def get_total_data_dates():
-    end_date = datetime.today() - timedelta(days=365)
-    dates = pd.date_range(end=end_date, periods=365)
+    dates = pd.date_range(end=datetime.today(), periods=365, freq = 'D')
     return dates
-
-def get_cost_basis(transactions, dates):
-    cost_basis = load_cost_basis()
-    for date in dates:
-        date_str = date.strftime('%m/%d/%y')
 
 def get_portfolio(transactions, dates):
     portfolio = load_portfolio()
+
+    portfolio_dates = [datetime.strptime(date_str, '%m/%d/%y') for date_str in portfolio.keys()]
+
+    if portfolio:
+        latest_date = max(portfolio_dates)
+        latest_date_str = latest_date.strftime('%m/%d/%y')
+        del portfolio[latest_date_str]
+
     for date in dates:
         date_str = date.strftime('%m/%d/%y')
+        print(date_str)
         if date_str not in portfolio:
             symbol_data = {}
             for index, row in transactions.iterrows():
                 transaction_date = row[0]
                 if pd.to_datetime(transaction_date).date() < date.date():
-                    received_quantity = row[2].fillna(0)
-                    received_currency = row[3].fillna(0)
-                    received_cost_basis = row[4].fillna(0)
-                    sent_quantity = row[5].fillna(0)
-                    sent_currency = row[6].fillna(0)
-                    sent_cost_basis = row[7].fillna(0)
-                    fee_amount = row[8].fillna(0)
-                    fee_currency = row[9].fillna(0)
-                    fee_cost_basis = row[10].fillna(0)
+                    received_quantity = row[2] if pd.notna(row[2]) else 0
+                    received_currency = row[3] if pd.notna(row[3]) else 0
+                    received_cost_basis = row[4] if pd.notna(row[4]) else 0
+                    sent_quantity = row[5] if pd.notna(row[5]) else 0
+                    sent_currency = row[6] if pd.notna(row[6]) else 0
+                    sent_cost_basis = row[7] if pd.notna(row[7]) else 0
+                    fee_amount = row[8] if pd.notna(row[8]) else 0
+                    fee_currency = row[9] if pd.notna(row[9]) else 0
+                    fee_cost_basis = row[10] if pd.notna(row[10]) else 0
 
                     if received_currency:
                         symbol_data[received_currency] = symbol_data.get(received_currency, {})
@@ -110,8 +113,8 @@ def get_portfolio(transactions, dates):
                         symbol_data[fee_currency] = symbol_data.get(fee_currency, {})
                         symbol_data[fee_currency]['quantity'] = symbol_data[fee_currency].get('quantity', 0) - fee_amount
                         symbol_data[fee_currency]['cost_basis'] = symbol_data[fee_currency].get('cost_basis', 0) + fee_cost_basis
-            # Remove symbols with quantity <= 0
-            symbol_data = {symbol: data for symbol, data in symbol_data.items() if data['quantity'] > 0}
+            # Remove symbols with quantity <= 0 or cost basis <= 1
+            symbol_data = {symbol: data for symbol, data in symbol_data.items() if data['quantity'] > 0 and data['cost_basis'] > 1}
             # Calculate value for each symbol using calculate_symbol_value() function
             symbol_values = {}
             for symbol, data in symbol_data.items():
@@ -123,6 +126,7 @@ def get_portfolio(transactions, dates):
 
     with open('../crypto-excel/data/portfolio.json', 'w') as f:
         json.dump(portfolio, f, indent=4)
+
     return portfolio
 
 # Calculate portfolio value for a given date
@@ -141,31 +145,78 @@ def calculate_symbol_value(symbol, quantity, date):
 
 def get_portfolio_values(dates, portfolio):
     portfolio_values = load_portfolio_value()
+
+    portfolio_value_dates = [datetime.strptime(date_str, '%m/%d/%y') for date_str in portfolio_values.keys()]
+
+    if portfolio_values:
+        latest_date = max(portfolio_value_dates)
+        latest_date_str = latest_date.strftime('%m/%d/%y')
+        del portfolio_values[latest_date_str]
+
     for date in dates:
         date_str = date.strftime('%m/%d/%y')
-        if date_str not in portfolio_values:
+        if date_str not in portfolio_values and date_str in portfolio:
             portfolio_values[date_str] = calculate_portfolio_value(date_str, portfolio)
     with open('../crypto-excel/data/portfolio-value.json', 'w') as f:
                 json.dump(portfolio_values, f, indent=4)
 
     return portfolio_values
 
-def write_portfolio_values(portfolio_values):
+def calculate_cost_basis(date, portfolio):
+    cost_basis = 0
+    for symbol, data in portfolio[date].items():
+        cost_basis += data.get('cost_basis', 0)
+    return cost_basis
+
+def get_cost_basis(dates, portfolio):
+    cost_basis = load_cost_basis()
+    
+    # Convert date strings to datetime objects for comparison
+    cost_basis_dates = [datetime.strptime(date_str, '%m/%d/%y') for date_str in cost_basis.keys()]
+
+    # Delete the latest date entry from cost_basis
+    if cost_basis:
+        latest_date = max(cost_basis_dates)
+        latest_date_str = latest_date.strftime('%m/%d/%y')
+        del cost_basis[latest_date_str]
+    
+    for date in dates:
+        date_str = date.strftime('%m/%d/%y')
+        if date_str not in cost_basis and date_str in portfolio:
+            cost_basis[date_str] = calculate_cost_basis(date_str, portfolio)
+    
+    with open('../crypto-excel/data/cost-basis.json', 'w') as f:
+        json.dump(cost_basis, f, indent=4)
+
+    return cost_basis
+
+
+def write_values(portfolio_values, cost_basis):
     dates = pd.date_range(end=datetime.today(), periods=len(portfolio_values))
-    portfolio_df = pd.DataFrame({'Date': dates, 'Portfolio Value': list(portfolio_values.values())})
-    portfolio_df.to_excel('../crypto-excel/workbooks/total-data.xlsx', index=False)
+    dates_strs = [date.strftime('%m/%d/%y') for date in dates[::-1]]
+    portfolio_df = pd.DataFrame({'Date': dates_strs, 'Portfolio Value': list(portfolio_values.values())[::-1], 'Cost Basis': list(cost_basis.values())[::-1]})
+    with pd.ExcelWriter('../crypto-excel/workbooks/total-data.xlsx', mode='a', engine='openpyxl', if_sheet_exists='replace') as writer:
+        portfolio_df.to_excel(writer, sheet_name='Value & Cost Basis', index=False)
+
 
 def write_portfolio(portfolio):
     portfolio_list = []
-    for date_str, symbol_values in portfolio.items():
+    prev_date = None
+    for date_str, symbol_values in reversed(list(portfolio.items())):
         for symbol, data in symbol_values.items():
-            portfolio_list.append({'Date': date_str, 'Symbol': symbol, 'Quantity': data['quantity'], 'Value': data['value']})
+            # Add the date only if it has changed from the previous row
+            if date_str != prev_date:
+                portfolio_list.append({'Date': date_str, 'Symbol': symbol, 'Quantity': data['quantity'], 'Value': data['value']})
+            else:
+                portfolio_list.append({'Date': None, 'Symbol': symbol, 'Quantity': data['quantity'], 'Value': data['value']})
+            prev_date = date_str
 
     portfolio_df = pd.DataFrame(portfolio_list)
     
     # Write portfolio data to the 'Total Data' sheet
-    with pd.ExcelWriter('../crypto-excel/workbooks/total-data.xlsx', mode='a', engine='openpyxl') as writer:
-        portfolio_df.to_excel(writer, sheet_name='Total Data', index=False)
+    with pd.ExcelWriter('../crypto-excel/workbooks/total-data.xlsx', mode='a', engine='openpyxl', if_sheet_exists='replace') as writer:
+        portfolio_df.to_excel(writer, sheet_name='Portfolio', index=False)
+
 
 
 # Main function
@@ -175,11 +226,10 @@ def main():
 
     portfolio = get_portfolio(transactions, dates)
     portfolio_values = get_portfolio_values(dates, portfolio)
+    cost_basis = get_cost_basis(dates, portfolio)
 
-    write_portfolio_values(portfolio_values)
+    write_values(portfolio_values, cost_basis)
     write_portfolio(portfolio)
-
-    # print(os.listdir('../crypto-excel/crypto-excel/workbooks'))
 
 
 if __name__ == "__main__":

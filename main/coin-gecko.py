@@ -7,13 +7,13 @@ import json
 import os.path
 
 # Load coin list from JSON file
-with open('coin-list.json', 'r') as f:
+with open('../crypto-excel/data/coin-list.json', 'r') as f:
     coin_list = json.load(f)
 
 def load_coin_id_dict():
     coin_id_dict = {}
-    if os.path.exists('../data/coin-id-dictionary.json'):
-        with open('../data/coin-id-dictionary.json', 'r') as f:
+    if os.path.exists('../crypto-excel/data/coin-id-dictionary.json'):
+        with open('../crypto-excel/data/coin-id-dictionary.json', 'r') as f:
             try:
                 coin_id_dict = json.load(f)
             except json.JSONDecodeError:
@@ -32,7 +32,7 @@ def get_coin_id(symbol):
         elif len(matching_coins) == 1:
             coin_id = matching_coins[0]['id']
             coin_id_dict[symbol.lower()] = coin_id
-            with open('../data/coin-id-dictionary.json', 'w') as f:
+            with open('../crypto-excel/data/coin-id-dictionary.json', 'w') as f:
                 json.dump(coin_id_dict, f, indent=4)
             return coin_id
         else:
@@ -44,7 +44,7 @@ def get_coin_id(symbol):
                 choice = input("Invalid input. Please enter a valid number: ")
             coin_id = matching_coins[int(choice) - 1]['id']
             coin_id_dict[symbol.lower()] = coin_id
-            with open('../data/coin-id-dictionary.json', 'w') as f:
+            with open('../crypto-excel/data/coin-id-dictionary.json', 'w') as f:
                 json.dump(coin_id_dict, f, indent=4)
             return coin_id
 
@@ -95,7 +95,7 @@ def fetch_and_write_to_excel(coin_id, excel_filename):
 
 def main():
     # Load symbols from Excel file
-    excel_filename = "../workbooks/Transactions.xlsm"
+    excel_filename = "../crypto-excel/workbooks/Transactions.xlsm"
     sheet_name = "Currency Data"
 
     wb = load_workbook(filename=excel_filename, read_only=True, data_only=True)
@@ -116,7 +116,7 @@ def main():
             print(f"No matching coin found for symbol '{symbol}'")
 
     # Excel filename
-    excel_filename = "../workbooks/historical-data.xlsx"
+    excel_filename = "../crypto-excel/workbooks/historical-data.xlsx"
 
 
     # Loop through each coin and fetch data
