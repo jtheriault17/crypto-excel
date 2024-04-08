@@ -48,8 +48,55 @@ def get_coin_id(symbol):
                 json.dump(coin_id_dict, f, indent=4)
             return coin_id
 
+def get_symbols():
+    excel_filename = "../crypto-excel/workbooks/Transactions.xlsm"
+    sheet_name = "Currency Data"
+
+    wb = load_workbook(filename=excel_filename, read_only=True, data_only=True)
+    ws = wb[sheet_name]
+
+    symbols = []
+    for row in ws.iter_rows(min_row=2, max_row=ws.max_row, min_col=1, max_col=7, values_only=True):
+        if row[6] and row[6] > 5:
+            symbols.append(row[0].lower())
+    return symbols
+
+def create_coin_id_dict(symbols):
+    coin_ids = {}
+    for symbol in symbols:
+        coin_id = get_coin_id(symbol)
+        if coin_id:
+            coin_ids[symbol] = coin_id
+        else:
+            print(f"No matching coin found for symbol '{symbol}'")
+    return coin_ids
+
+def get_all_symbols():
+    excel_filename = "../crypto-excel/workbooks/Transactions.xlsm"
+    sheet_name = "Currency Data"
+
+    wb = load_workbook(filename=excel_filename, read_only=True, data_only=True)
+    ws = wb[sheet_name]
+
+    symbols = []
+    for row in ws.iter_rows(min_row=2, max_row=ws.max_row, min_col=1, max_col=1, values_only=True):
+        if row[0]:
+            symbols.append(row[0].lower())
+    return symbols
+
+def create_coin_id_dict(symbols):
+    coin_ids = {}
+    for symbol in symbols:
+        coin_id = get_coin_id(symbol)
+        if coin_id:
+            coin_ids[symbol] = coin_id
+        else:
+            print(f"No matching coin found for symbol '{symbol}'")
+    return coin_ids
+
+
 # Function to fetch data for a given coin and write it to Excel
-def fetch_and_write_to_excel(coin_id, excel_filename):
+def fetch_and_write(coin_id, excel_filename):
     url = f"https://api.coingecko.com/api/v3/coins/{coin_id}/market_chart?vs_currency=usd&days=365&interval=daily&precision=8"
     headers = {"x-cg-demo-api-key": "CG-U3VbGJ3KKNE5dVgvttoKb1dv"}
     response = requests.get(url, headers=headers)
@@ -93,39 +140,15 @@ def fetch_and_write_to_excel(coin_id, excel_filename):
     # Save the workbook
     wb.save(filename=excel_filename)
 
-def main():
-    # Load symbols from Excel file
-    excel_filename = "../crypto-excel/workbooks/Transactions.xlsm"
-    sheet_name = "Currency Data"
-
-    wb = load_workbook(filename=excel_filename, read_only=True, data_only=True)
-    ws = wb[sheet_name]
-
-    symbols = []
-    for row in ws.iter_rows(min_row=2, max_row=ws.max_row, min_col=1, max_col=1, values_only=True):
-        if row[0]:
-            symbols.append(row[0].lower())
-
-    # Create dictionary of coin IDs using symbols from Excel file
-    coin_ids = {}
-    for symbol in symbols:
-        coin_id = get_coin_id(symbol)
-        if coin_id:
-            coin_ids[symbol] = coin_id
-        else:
-            print(f"No matching coin found for symbol '{symbol}'")
-
-    # Excel filename
+def write_historical_data(coin_ids):
     excel_filename = "../crypto-excel/workbooks/historical-data.xlsx"
-
-
     # Loop through each coin and fetch data
     for coin, coin_id in coin_ids.items():
         print(f"Fetching data for {coin}...")
         retry_count = 0
         while retry_count < 2:  # Retry only once
             try:
-                fetch_and_write_to_excel(coin_id, excel_filename)
+                fetch_and_write(coin_id, excel_filename)
                 print(f"Data for {coin} fetched and written to Excel.")
                 break  # Exit loop if successful
             except Exception as e:
@@ -134,6 +157,11 @@ def main():
                 time.sleep(30)  # Sleep for 30 seconds before retrying
         else:
             print(f"Failed to fetch data for {coin} after 1 retry.")
+
+def main():
+    symbols = get_symbols()
+    coin_ids = create_coin_id_dict(symbols)
+    write_historical_data(coin_ids)
 
 if __name__ == "__main__":
     main()

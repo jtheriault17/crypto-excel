@@ -1,5 +1,5 @@
-import coin_gecko
-import portfolio_value
+from . import coin_gecko
+from . import portfolio_value
 
 def main():
     # Run coin-gecko.py
