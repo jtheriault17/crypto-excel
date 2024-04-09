@@ -20,6 +20,16 @@ def load_coin_id_dict():
                 print("Error loading coin ID dictionary. Initializing empty dictionary.")
     return coin_id_dict
 
+def load_market_data():
+    market_data = {}
+    if os.path.exists('../crypto-excel/data/market-data.json', 'r'):
+        with open ('../crypto-excel/data/market-data.json', 'r') as f:
+            try:
+                market_data = json.load(f)
+            except json.JSONDecodeError:
+                print("Error loading market data. Initializing empty market data.")
+    return market_data
+
 # Function to get coin ID for a given symbol
 def get_coin_id(symbol):
     coin_id_dict = load_coin_id_dict()
@@ -158,10 +168,24 @@ def write_historical_data(coin_ids):
         else:
             print(f"Failed to fetch data for {coin} after 1 retry.")
 
+def fetch_market_data(coin_ids):
+    coin_ids_str = '%2C'.join(coin_ids.values())
+    url = f"https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids={coin_ids_str}&per_page=100&page=1&sparkline=false&price_change_percentage=1h%2C24h%2C7d%2C14d%2C30d%2C200d%2C1y&locale=en&precision=8"
+    headers = {"x-cg-demo-api-key": "CG-U3VbGJ3KKNE5dVgvttoKb1dv"}
+    response = requests.get(url, headers=headers)
+    json_data = response.json()
+
+    with open('../crypto-excel/data/market-data.json', 'w') as f:
+                json.dump(json_data, f, indent=4)
+
+
+
 def main():
+    
     symbols = get_symbols()
     coin_ids = create_coin_id_dict(symbols)
-    write_historical_data(coin_ids)
+    # write_historical_data(coin_ids)
+    fetch_market_data(coin_ids)
 
 if __name__ == "__main__":
     main()
