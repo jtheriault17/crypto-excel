@@ -62,6 +62,16 @@ def load_historical_data(symbol):
     historical_data = historical_data.iloc[:, 0].to_dict()
     return historical_data
 
+def load_market_data():
+    market_data = {}
+    if os.path.exists('../crypto-excel/data/market-data.json'):
+        with open ('../crypto-excel/data/market-data.json', 'r') as f:
+            try:
+                market_data = json.load(f)
+            except json.JSONDecodeError:
+                print("Error loading market data. Initializing empty market data.")
+    return market_data
+
 # Load transactions data from Excel workbook
 def load_transaction():
     workbook_path = '../crypto-excel/workbooks/Transactions.xlsm'
@@ -192,25 +202,18 @@ def get_cost_basis(dates, portfolio):
 
     return cost_basis
 
-def get_price(date, historical_data):
-    return historical_data[date]
+def write_prices():
+    market_data = load_market_data()
+    current_prices = {}
+    for coin_data in market_data:
+        symbol = coin_data['symbol'].upper()
+        current_price = coin_data['current_price']
+        current_prices[symbol] = current_price
 
+    date_str = datetime.today().strftime('%m/%d/%y')
 
-def write_prices(transactions):
-    # Get unique symbols from transactions
-    symbols = transactions['Received Currency'].unique()
-    symbols = [symbol for symbol in symbols if symbol not in ['USD', 0]and not pd.isna(symbol)]
+    prices_df = pd.DataFrame({'Symbol': list(current_prices.keys()), 'Price': list(current_prices.values())})
 
-    # Load historical data for each symbol and get the latest price
-    prices = []
-    for symbol in symbols:
-        historical_data = load_historical_data(symbol)
-        latest_price_date = max(historical_data.keys())
-        price = get_price(latest_price_date, historical_data)
-        date_str = latest_price_date.strftime('%m/%d/%y')
-        prices.append({date_str: symbol, 'Price': price})
-
-    prices_df = pd.DataFrame(prices)
     
     # Write portfolio data to the 'Total Data' sheet
     with pd.ExcelWriter('../crypto-excel/workbooks/total-data.xlsx', mode='a', engine='openpyxl', if_sheet_exists='replace') as writer:
@@ -222,11 +225,6 @@ def write_values(portfolio_values, cost_basis):
 
     portfolio_values_list = list(portfolio_values.values())
     cost_basis_list = list(cost_basis.values())
-    
-    max_len = max(len(dates_strs), len(portfolio_values_list), len(cost_basis_list))
-    dates_strs += [None] * (max_len - len(dates_strs))
-    portfolio_values_list += [None] * (max_len - len(portfolio_values_list))
-    cost_basis_list += [None] * (max_len - len(cost_basis_list))
 
     portfolio_df = pd.DataFrame({'Date': dates_strs, 'Portfolio Value': portfolio_values_list[::-1], 'Cost Basis': cost_basis_list[::-1]})
     with pd.ExcelWriter('../crypto-excel/workbooks/total-data.xlsx', mode='a', engine='openpyxl', if_sheet_exists='replace') as writer:
@@ -264,7 +262,7 @@ def main():
 
     write_values(portfolio_values, cost_basis)
     write_portfolio(portfolio)
-    write_prices(transactions)
+    write_prices()
 
 if __name__ == "__main__":
     main()

@@ -22,7 +22,7 @@ def load_coin_id_dict():
 
 def load_market_data():
     market_data = {}
-    if os.path.exists('../crypto-excel/data/market-data.json', 'r'):
+    if os.path.exists('../crypto-excel/data/market-data.json'):
         with open ('../crypto-excel/data/market-data.json', 'r') as f:
             try:
                 market_data = json.load(f)
@@ -141,7 +141,7 @@ def fetch_and_write(coin_id, excel_filename):
         timestamp = datetime.fromtimestamp(total_volume[0] / 1000)
         if timestamp in combined_data:
             combined_data[timestamp]["Total Volumes"] = total_volume[1]
-
+    
     # Writing data to sheet
     ws.append(["Date", "Price", "Market Caps", "Total Volumes"])
     for data in combined_data.values():
@@ -177,15 +177,17 @@ def fetch_market_data(coin_ids):
 
     with open('../crypto-excel/data/market-data.json', 'w') as f:
                 json.dump(json_data, f, indent=4)
-
+    return json_data
 
 
 def main():
+    current_symbols = get_symbols()
+    all_symbols = get_all_symbols()
+    current_coin_ids = create_coin_id_dict(current_symbols)
+    all_coin_ids = create_coin_id_dict(all_symbols)
+    fetch_market_data(all_coin_ids)
+    write_historical_data(current_coin_ids)
     
-    symbols = get_symbols()
-    coin_ids = create_coin_id_dict(symbols)
-    # write_historical_data(coin_ids)
-    fetch_market_data(coin_ids)
 
 if __name__ == "__main__":
     main()
