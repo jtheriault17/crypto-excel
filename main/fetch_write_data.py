@@ -66,8 +66,8 @@ def get_symbols():
     ws = wb[sheet_name]
 
     symbols = []
-    for row in ws.iter_rows(min_row=2, max_row=ws.max_row, min_col=1, max_col=7, values_only=True):
-        if row[6] and row[6] > 5:
+    for row in ws.iter_rows(min_row=2, max_row=ws.max_row, min_col=1, max_col=8, values_only=True):
+        if row[7] and row[7] > 5:
             symbols.append(row[0].lower())
     return symbols
 
