@@ -34,7 +34,7 @@ def parse_8949_text(text):
         'Date Acquired': date_acquired,
         'Date Sold': date_sold,
         'Proceeds': proceeds,
-        'Cost Basis': cost_basis
+        'Cost Basis': cost_basis,
     }
 
     cut = len(data['Currency']) - len(data['Proceeds'])
@@ -42,6 +42,7 @@ def parse_8949_text(text):
     data['Cost Basis'] = data['Cost Basis'][:cut]
 
     df = pd.DataFrame(data)
+    df['Return'] = df['Proceeds'] - df['Cost Basis']
     return df
 
 # Write function to write to 8949 Form eventually
@@ -57,6 +58,11 @@ def main():
         df = parse_8949_text(pdf_text)
         dfs.append(df)
     df = pd.concat(dfs, ignore_index=True)
+
+    workbook_path = '../crypto-excel/workbooks/Transactions.xlsm'
+    sheet_name = '8949'
+    with pd.ExcelWriter(workbook_path, engine='openpyxl', mode='a') as writer:
+        df.to_excel(writer, sheet_name=sheet_name, index=False)
 
 if __name__ == "__main__":
     main()
