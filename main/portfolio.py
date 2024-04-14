@@ -225,8 +225,9 @@ def write_values(portfolio_values, cost_basis):
 
     portfolio_values_list = list(portfolio_values.values())
     cost_basis_list = list(cost_basis.values())
+    returns_list = [portfolio_value - cost_basis for portfolio_value, cost_basis in zip(portfolio_values_list, cost_basis_list)]
 
-    portfolio_df = pd.DataFrame({'Date': dates_strs, 'Portfolio Value': portfolio_values_list[::-1], 'Cost Basis': cost_basis_list[::-1]})
+    portfolio_df = pd.DataFrame({'Date': dates_strs, 'Portfolio Value': portfolio_values_list[::-1], 'Cost Basis': cost_basis_list[::-1], 'Unrealized Return': returns_list[::-1]})
     with pd.ExcelWriter('../crypto-excel/workbooks/total-data.xlsx', mode='a', engine='openpyxl', if_sheet_exists='replace') as writer:
         portfolio_df.to_excel(writer, sheet_name='Value & Cost Basis', index=False)
 
