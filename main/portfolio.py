@@ -88,6 +88,52 @@ def get_latest_date():
     last_date = max([datetime.strptime(date_str, '%m/%d/%y') for date_str in values.keys()])
     return last_date
 
+def get_portfolio_on_date(transactions, date_str):
+    portfolio = load_portfolio()
+
+    date = datetime.strptime(date_str, '%m/%d/%y')
+
+    if date_str in portfolio.keys():
+        return portfolio[date_str]
+    else: 
+        symbol_data = {}
+        for index, row in transactions.iterrows():
+            transaction_date = row[0]
+            if pd.to_datetime(transaction_date).date() < date.date():
+                received_quantity = row[2] if pd.notna(row[2]) else 0
+                received_currency = row[3] if pd.notna(row[3]) else 0
+                received_cost_basis = row[4] if pd.notna(row[4]) else 0
+                sent_quantity = row[5] if pd.notna(row[5]) else 0
+                sent_currency = row[6] if pd.notna(row[6]) else 0
+                sent_cost_basis = row[7] if pd.notna(row[7]) else 0
+                fee_amount = row[8] if pd.notna(row[8]) else 0
+                fee_currency = row[9] if pd.notna(row[9]) else 0
+                fee_cost_basis = row[10] if pd.notna(row[10]) else 0
+
+                if received_currency:
+                    symbol_data[received_currency] = symbol_data.get(received_currency, {})
+                    symbol_data[received_currency]['quantity'] = symbol_data[received_currency].get('quantity', 0) + received_quantity
+                    symbol_data[received_currency]['cost_basis'] = symbol_data[received_currency].get('cost_basis', 0) + received_cost_basis
+                if sent_currency:
+                    symbol_data[sent_currency] = symbol_data.get(sent_currency, {})
+                    symbol_data[sent_currency]['quantity'] = symbol_data[sent_currency].get('quantity', 0) - sent_quantity
+                    symbol_data[sent_currency]['cost_basis'] = symbol_data[sent_currency].get('cost_basis', 0) - sent_cost_basis
+                if fee_currency:
+                    symbol_data[fee_currency] = symbol_data.get(fee_currency, {})
+                    symbol_data[fee_currency]['quantity'] = symbol_data[fee_currency].get('quantity', 0) - fee_amount
+                    symbol_data[fee_currency]['cost_basis'] = symbol_data[fee_currency].get('cost_basis', 0) + fee_cost_basis
+        # Remove symbols with quantity <= 0 or cost basis <= 1
+        symbol_data = {symbol: data for symbol, data in symbol_data.items() if data['quantity'] > 0 and data['cost_basis'] > 1}
+        # Calculate value for each symbol using calculate_symbol_value() function
+        symbol_values = {}
+        for symbol, data in symbol_data.items():
+            value = calculate_symbol_value(symbol, data['quantity'], date)
+            if value > 0:
+                symbol_values[symbol] = {"quantity": data['quantity'], "value": value, "cost_basis": data['cost_basis']}
+        if symbol_values:
+            portfolio[date_str] = symbol_values
+    return portfolio[date_str]
+
 def get_portfolio(transactions, dates):
     portfolio = load_portfolio()
 
@@ -170,6 +216,25 @@ def get_portfolio_values(dates, portfolio):
         date_str = date.strftime('%m/%d/%y')
         if date_str not in portfolio_values and date_str in portfolio:
             portfolio_values[date_str] = calculate_portfolio_value(date_str, portfolio)
+    
+    value_today = 0
+    today = datetime.now().strftime('%m/%d/%y')
+    market_data = load_market_data()
+    for coin_data in market_data:
+        symbol = coin_data['symbol'].upper()
+        current_price = coin_data['current_price']
+        if today in portfolio and symbol in portfolio[today]:
+            portfolio[today][symbol]['value'] = current_price * portfolio[today][symbol]['quantity']
+            value_today +=  portfolio[today][symbol]['value'] 
+        else:   
+            transactions = load_transaction()
+            portfolio_on_date = get_portfolio_on_date(transactions, today)
+            if symbol in portfolio_on_date:
+                portfolio_on_date[symbol]['value'] = current_price * portfolio_on_date[symbol]['quantity']
+                value_today +=  portfolio_on_date[symbol]['value'] 
+        
+    portfolio_values[today] =  value_today
+
     with open('../crypto-excel/data/portfolio-value.json', 'w') as f:
                 json.dump(portfolio_values, f, indent=4)
 
@@ -261,9 +326,9 @@ def main():
     portfolio_values = get_portfolio_values(dates, portfolio)
     cost_basis = get_cost_basis(dates, portfolio)
 
+    write_prices()
     write_values(portfolio_values, cost_basis)
     write_portfolio(portfolio)
-    write_prices()
 
 if __name__ == "__main__":
     main()

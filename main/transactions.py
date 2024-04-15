@@ -89,7 +89,5 @@ def main():
 
     write_to_after_sales(updated_transactions_df)
 
-    print("Data has been written to 'after-sales.xlsx'.")
-
 if __name__ == "__main__":
     main()
