@@ -62,24 +62,17 @@ def get_symbols():
     excel_filename = "../crypto-excel/workbooks/Transactions.xlsm"
     sheet_name = "Currency Data"
 
-    wb = load_workbook(filename=excel_filename, read_only=True, data_only=True)
-    ws = wb[sheet_name]
+    wb_transactions = load_workbook(filename=excel_filename, read_only=True, data_only=True)
+    ws_transactions = wb_transactions[sheet_name]
+
+    excel_filename = "../crypto-excel/workbooks/historical-data.xlsx"
+    wb_data = load_workbook(filename=excel_filename, read_only=True, data_only=True)
 
     symbols = []
-    for row in ws.iter_rows(min_row=2, max_row=ws.max_row, min_col=1, max_col=8, values_only=True):
-        if row[7] and row[7] > 5:
+    for row in ws_transactions.iter_rows(min_row=2, max_row=ws_transactions.max_row, min_col=1, max_col=8, values_only=True):
+        if row[7] and row[7] > 5 or (row[0] and get_coin_id(row[0].lower()) not in wb_data.sheetnames):
             symbols.append(row[0].lower())
     return symbols
-
-def create_coin_id_dict(symbols):
-    coin_ids = {}
-    for symbol in symbols:
-        coin_id = get_coin_id(symbol)
-        if coin_id:
-            coin_ids[symbol] = coin_id
-        else:
-            print(f"No matching coin found for symbol '{symbol}'")
-    return coin_ids
 
 def get_all_symbols():
     excel_filename = "../crypto-excel/workbooks/Transactions.xlsm"
