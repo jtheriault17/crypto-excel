@@ -14,10 +14,20 @@ def load_8949_data():
     data_8949 = pd.read_excel(workbook_path, sheet_name='8949 Data')
     return data_8949
 
-def update_transactions(transactions, data):
+def load_transactions_after_sales():
+    transactions = {}
+    if os.path.exists('../crypto-excel/data/transactions-after-sales.json'):
+        with open('../crypto-excel/data/transactions-after-sales.json', 'r') as f:
+            try:
+                transactions = json.load(f)
+            except json.JSONDecodeError:
+                print("Error loading transactions after sales. Initializing transactions after sales.")
+    return transactions
+
+def update_transactions(transactions, data, method):
     sub_cost_basis = {}
     sub_quantity = {}
-    updated_transactions = {}
+    updated_transactions = load_transactions_after_sales()
 
     for index, row in data.iterrows():
         currency = row[0]
@@ -35,59 +45,54 @@ def update_transactions(transactions, data):
 
     for index, row in transactions.iterrows():
         if row[1] == 'BUY' or row[1] == 'TRADE':
-            transaction_date = row[0].strftime('%m/%d/%y')
+
+            transaction_date = row[0].strftime('%m/%d/%y %H:%M')
+            sub_date = row[0].strftime('%m/%d/%y')
             received_quantity = row[2] if pd.notna(row[2]) else 0
             received_currency = row[3] if pd.notna(row[3]) else 0
-            received_cost_basis = row[4] if pd.notna(row[4]) else 0
+            received_cost_basis = row[5] if pd.notna(row[4]) else 0
 
-            if f'{received_currency} {transaction_date}' not in updated_transactions:
+            if received_quantity > sub_quantity.get(f"{received_currency} {sub_date}", 0) and received_cost_basis > sub_cost_basis.get(f"{received_currency} {sub_date}", 0):
                 updated_transactions[f'{received_currency} {transaction_date}'] = {}
-                updated_transactions[f'{received_currency} {transaction_date}']['Quantity'] = 0
-                updated_transactions[f'{received_currency} {transaction_date}']['Cost Basis'] = 0
-
-            if received_quantity > sub_quantity.get(f'{received_currency} {transaction_date}', 0) and received_cost_basis > sub_cost_basis.get(f'{received_currency} {transaction_date}', 0):
-                updated_transactions[f'{received_currency} {transaction_date}']['Quantity'] += received_quantity - sub_quantity.get(f'{received_currency} {transaction_date}', 0)
-                updated_transactions[f'{received_currency} {transaction_date}']['Cost Basis'] += received_cost_basis - sub_cost_basis.get(f'{received_currency} {transaction_date}', 0)
+                updated_transactions[f'{received_currency} {transaction_date}']['Date'] = transaction_date
+                updated_transactions[f'{received_currency} {transaction_date}']['Currency'] = received_currency
+                updated_transactions[f'{received_currency} {transaction_date}']['Quantity'] = received_quantity - sub_quantity.get(f'{received_currency} {transaction_date}', 0)
+                updated_transactions[f'{received_currency} {transaction_date}']['Cost Basis'] = received_cost_basis - sub_cost_basis.get(f'{received_currency} {transaction_date}', 0)
                 
                 sub_quantity[f'{received_currency} {transaction_date}'] = 0
                 sub_cost_basis[f'{received_currency} {transaction_date}'] = 0
             else:
-                sub_quantity[f'{received_currency} {transaction_date}'] -= received_quantity
-                sub_cost_basis[f'{received_currency} {transaction_date}'] -= received_cost_basis
+                sub_quantity[f"{received_currency} {sub_date}"] -= received_quantity
+                sub_cost_basis[f"{received_currency} {sub_date}"] -= received_cost_basis
 
-     # Convert the updated_transactions dictionary to a DataFrame
-    df = pd.DataFrame.from_dict(updated_transactions, orient='index')
+    with open('../crypto-excel/data/transactions-after-sales.json', 'w') as f:
+        json.dump({}, f, indent=4)
+    with open('../crypto-excel/data/transactions-after-sales.json', 'w') as f:
+        json.dump(updated_transactions, f, indent=4)
 
-    # Reset index to split the index into separate columns
-    df.reset_index(inplace=True)
+    return updated_transactions
 
-    # Split the index into Currency and Date columns
-    df[['Currency', 'Date']] = df['index'].str.split(expand=True)
-
-     # Rearrange the columns
-    df = df[['Date', 'Currency', 'Quantity', 'Cost Basis']]
-
-    # Remove rows with Quantity or Cost Basis of 0
-    df = df[(df['Quantity'] != 0) & (df['Cost Basis'] != 0)]
-
-    return df
-
-def write_to_after_sales(updated_transactions_df):
+def write_to_after_sales(updated_transactions):
     # Define the output path
     output_path = '../crypto-excel/workbooks/after-sales.xlsx'
-
+    df = pd.DataFrame(updated_transactions).T
     # Check if the file already exists
     with pd.ExcelWriter(output_path, mode='a', engine='openpyxl', if_sheet_exists='replace') as writer:
-        updated_transactions_df.to_excel(writer, sheet_name='After Sales', index=False)
+        df.to_excel(writer, sheet_name='After Sales', index=False)
 
 # Call the function inside main after updating transactions
 def main():
-    transactions = load_transaction()
-    data = load_8949_data()
+    # transactions = load_transaction()
+    # data = load_8949_data()
+    methods = {}
+    methods['2023'] = 'FIFO'
+    methods['2022'] = 'FIFO'
+    methods['2021'] = 'FIFO'
 
-    updated_transactions_df = update_transactions(transactions, data)
 
-    write_to_after_sales(updated_transactions_df)
+    # updated_transactions = update_transactions(transactions, data, method)
+
+    # write_to_after_sales(updated_transactions)
 
 if __name__ == "__main__":
     main()
