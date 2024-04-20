@@ -45,26 +45,31 @@ def update_transactions(transactions, data, method):
 
     for index, row in transactions.iterrows():
         if row[1] == 'BUY' or row[1] == 'TRADE':
-
-            transaction_date = row[0].strftime('%m/%d/%y %H:%M')
+            seconds = row[0].second
+            seconds_rounded = round(seconds, 2)
+            seconds_str = str(seconds_rounded).zfill(2)
+            transaction_date = row[0].strftime('%m/%d/%y %H:%M:') + seconds_str
             sub_date = row[0].strftime('%m/%d/%y')
             received_quantity = row[2] if pd.notna(row[2]) else 0
             received_currency = row[3] if pd.notna(row[3]) else 0
             received_cost_basis = row[5] if pd.notna(row[4]) else 0
 
-            if received_quantity > sub_quantity.get(f"{received_currency} {sub_date}", 0) and received_cost_basis > sub_cost_basis.get(f"{received_currency} {sub_date}", 0):
+            if received_quantity >= sub_quantity.get(f"{received_currency} {sub_date}", 0) and received_cost_basis >= sub_cost_basis.get(f"{received_currency} {sub_date}", 0):
                 updated_transactions[f'{received_currency} {transaction_date}'] = {}
-                updated_transactions[f'{received_currency} {transaction_date}']['Date'] = transaction_date
+                updated_transactions[f'{received_currency} {transaction_date}']['Date'] = sub_date
                 updated_transactions[f'{received_currency} {transaction_date}']['Currency'] = received_currency
-                updated_transactions[f'{received_currency} {transaction_date}']['Quantity'] = received_quantity - sub_quantity.get(f'{received_currency} {transaction_date}', 0)
-                updated_transactions[f'{received_currency} {transaction_date}']['Cost Basis'] = received_cost_basis - sub_cost_basis.get(f'{received_currency} {transaction_date}', 0)
-                
-                sub_quantity[f'{received_currency} {transaction_date}'] = 0
-                sub_cost_basis[f'{received_currency} {transaction_date}'] = 0
+                updated_transactions[f'{received_currency} {transaction_date}']['Quantity'] = received_quantity - sub_quantity.get(f'{received_currency} {sub_date}', 0)
+                updated_transactions[f'{received_currency} {transaction_date}']['Cost Basis'] = received_cost_basis - sub_cost_basis.get(f'{received_currency} {sub_date}', 0)
+    
+                sub_quantity[f'{received_currency} {sub_date}'] = 0
+                sub_cost_basis[f'{received_currency} {sub_date}'] = 0
+
+                if updated_transactions[f'{received_currency} {transaction_date}']['Quantity'] == 0 or updated_transactions[f'{received_currency} {transaction_date}']['Cost Basis'] == 0:
+                    del updated_transactions[f'{received_currency} {transaction_date}']
             else:
                 sub_quantity[f"{received_currency} {sub_date}"] -= received_quantity
                 sub_cost_basis[f"{received_currency} {sub_date}"] -= received_cost_basis
-
+        
     with open('../crypto-excel/data/transactions-after-sales.json', 'w') as f:
         json.dump({}, f, indent=4)
     with open('../crypto-excel/data/transactions-after-sales.json', 'w') as f:
@@ -76,23 +81,23 @@ def write_to_after_sales(updated_transactions):
     # Define the output path
     output_path = '../crypto-excel/workbooks/after-sales.xlsx'
     df = pd.DataFrame(updated_transactions).T
+    df['Date'] = pd.to_datetime(df['Date'], format='%m/%d/%y')
     # Check if the file already exists
     with pd.ExcelWriter(output_path, mode='a', engine='openpyxl', if_sheet_exists='replace') as writer:
         df.to_excel(writer, sheet_name='After Sales', index=False)
 
 # Call the function inside main after updating transactions
 def main():
-    # transactions = load_transaction()
-    # data = load_8949_data()
+    transactions = load_transaction()
+    data = load_8949_data()
     methods = {}
-    methods['2023'] = 'FIFO'
-    methods['2022'] = 'FIFO'
-    methods['2021'] = 'FIFO'
+    methods['2023'] = 'HIFO'
+    methods['2022'] = 'HIFO'
+    methods['2021'] = 'HIFO'
 
+    updated_transactions = update_transactions(transactions, data, methods)
 
-    # updated_transactions = update_transactions(transactions, data, method)
-
-    # write_to_after_sales(updated_transactions)
+    write_to_after_sales(updated_transactions)
 
 if __name__ == "__main__":
     main()
