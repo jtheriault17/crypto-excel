@@ -2,29 +2,9 @@ import pandas as pd
 from datetime import datetime, timedelta
 import json
 import os.path
-import openpyxl
+import load
 
-def load_transactions():
-    workbook_path = '../crypto-excel/workbooks/Transactions.xlsm'
-    transactions = pd.read_excel(workbook_path, sheet_name='Transactions')
-    return transactions
-
-def load_8949_data():
-    workbook_path = '../crypto-excel/workbooks/Transactions.xlsm'
-    data_8949 = pd.read_excel(workbook_path, sheet_name='8949 Data')
-    return data_8949
-
-def load_transactions_after_sales():
-    transactions = {}
-    if os.path.exists('../crypto-excel/data/transactions-after-sales.json'):
-        with open('../crypto-excel/data/transactions-after-sales.json', 'r') as f:
-            try:
-                transactions = json.load(f)
-            except json.JSONDecodeError:
-                print("Error loading transactions after sales. Initializing transactions after sales.")
-    return transactions
-
-def LIFO(transactions, updated_transactions, sub_quantity, sub_cost_basis):
+def LIFO(transactions, sub_quantity, sub_cost_basis):
     updated_transactions = {}
     for index, row in transactions.iterrows():
         if row[1] == 'BUY' or row[1] == 'TRADE':
@@ -35,12 +15,14 @@ def LIFO(transactions, updated_transactions, sub_quantity, sub_cost_basis):
             sub_date = row[0].strftime('%m/%d/%y')
             received_quantity = row[2] if pd.notna(row[2]) else 0
             received_currency = row[3] if pd.notna(row[3]) else 0
-            received_cost_basis = row[5] if pd.notna(row[4]) else 0
+            price = row[4] if pd.notna(row[4]) else 0
+            received_cost_basis = row[5] if pd.notna(row[5]) else 0
 
             if received_quantity >= sub_quantity.get(f"{received_currency} {sub_date}", 0) and received_cost_basis >= sub_cost_basis.get(f"{received_currency} {sub_date}", 0):
                 updated_transactions[f'{received_currency} {transaction_date}'] = {}
                 updated_transactions[f'{received_currency} {transaction_date}']['Date'] = transaction_date
                 updated_transactions[f'{received_currency} {transaction_date}']['Currency'] = received_currency
+                updated_transactions[f'{received_currency} {transaction_date}']['Price'] = price
                 updated_transactions[f'{received_currency} {transaction_date}']['Quantity'] = received_quantity - sub_quantity.get(f'{received_currency} {sub_date}', 0)
                 updated_transactions[f'{received_currency} {transaction_date}']['Cost Basis'] = received_cost_basis - sub_cost_basis.get(f'{received_currency} {sub_date}', 0)
 
@@ -55,7 +37,7 @@ def LIFO(transactions, updated_transactions, sub_quantity, sub_cost_basis):
 
     return updated_transactions
 
-def FIFO(transactions, updated_transactions, sub_quantity, sub_cost_basis):
+def FIFO(transactions, sub_quantity, sub_cost_basis):
     updated_transactions = {}
     for index, row in transactions[::-1].iterrows():
         if row[1] == 'BUY' or row[1] == 'TRADE':
@@ -66,12 +48,14 @@ def FIFO(transactions, updated_transactions, sub_quantity, sub_cost_basis):
             sub_date = row[0].strftime('%m/%d/%y')
             received_quantity = row[2] if pd.notna(row[2]) else 0
             received_currency = row[3] if pd.notna(row[3]) else 0
-            received_cost_basis = row[5] if pd.notna(row[4]) else 0
+            price = row[4] if pd.notna(row[4]) else 0
+            received_cost_basis = row[5] if pd.notna(row[5]) else 0
 
             if received_quantity >= sub_quantity.get(f"{received_currency} {sub_date}", 0) and received_cost_basis >= sub_cost_basis.get(f"{received_currency} {sub_date}", 0):
                 updated_transactions[f'{received_currency} {transaction_date}'] = {}
                 updated_transactions[f'{received_currency} {transaction_date}']['Date'] = transaction_date
                 updated_transactions[f'{received_currency} {transaction_date}']['Currency'] = received_currency
+                updated_transactions[f'{received_currency} {transaction_date}']['Price'] = price
                 updated_transactions[f'{received_currency} {transaction_date}']['Quantity'] = received_quantity - sub_quantity.get(f'{received_currency} {sub_date}', 0)
                 updated_transactions[f'{received_currency} {transaction_date}']['Cost Basis'] = received_cost_basis - sub_cost_basis.get(f'{received_currency} {sub_date}', 0)
 
@@ -88,7 +72,7 @@ def FIFO(transactions, updated_transactions, sub_quantity, sub_cost_basis):
     
     return updated_transactions
 
-def HIFO(transactions, updated_transactions, sub_quantity, sub_cost_basis):
+def HIFO(transactions, sub_quantity, sub_cost_basis):
     updated_transactions = {}
 
     transactions = transactions.sort_values(by=transactions.columns[4], ascending=False)
@@ -102,12 +86,14 @@ def HIFO(transactions, updated_transactions, sub_quantity, sub_cost_basis):
             sub_date = row[0].strftime('%m/%d/%y')
             received_quantity = row[2] if pd.notna(row[2]) else 0
             received_currency = row[3] if pd.notna(row[3]) else 0
-            received_cost_basis = row[5] if pd.notna(row[4]) else 0
+            price = row[4] if pd.notna(row[4]) else 0
+            received_cost_basis = row[5] if pd.notna(row[5]) else 0
 
             if received_quantity >= sub_quantity.get(f"{received_currency} {sub_date}", 0) and received_cost_basis >= sub_cost_basis.get(f"{received_currency} {sub_date}", 0):
                 updated_transactions[f'{received_currency} {transaction_date}'] = {}
                 updated_transactions[f'{received_currency} {transaction_date}']['Date'] = transaction_date
                 updated_transactions[f'{received_currency} {transaction_date}']['Currency'] = received_currency
+                updated_transactions[f'{received_currency} {transaction_date}']['Price'] = price
                 updated_transactions[f'{received_currency} {transaction_date}']['Quantity'] = received_quantity - sub_quantity.get(f'{received_currency} {sub_date}', 0)
                 updated_transactions[f'{received_currency} {transaction_date}']['Cost Basis'] = received_cost_basis - sub_cost_basis.get(f'{received_currency} {sub_date}', 0)
 
@@ -129,7 +115,6 @@ def get_sub(data, year):
     sub_quantity = {}
     
     filtered_data = data[pd.to_datetime(data.iloc[:, 3]).dt.year == year]
-    print(filtered_data)
 
     for index, row in data.iterrows():
         currency = row[0]
@@ -153,11 +138,11 @@ def update_transactions(transactions, data, methods):
     for method in methods:
         sub_quantity, sub_cost_basis = get_sub(data, method)
         if methods[method] == 'HIFO':
-            updated_transactions.update(HIFO(transactions, updated_transactions, sub_quantity, sub_cost_basis))
+            updated_transactions.update(HIFO(transactions, sub_quantity, sub_cost_basis))
         elif methods[method] == 'LIFO':
-            updated_transactions.update(LIFO(transactions, updated_transactions, sub_quantity, sub_cost_basis))
+            updated_transactions.update(LIFO(transactions, sub_quantity, sub_cost_basis))
         elif methods[method] == 'FIFO':
-            updated_transactions.update(HIFO(transactions, updated_transactions, sub_quantity, sub_cost_basis))
+            updated_transactions.update(HIFO(transactions, sub_quantity, sub_cost_basis))
         
     with open('../crypto-excel/data/transactions-after-sales.json', 'w') as f:
         json.dump({}, f, indent=4)
@@ -177,8 +162,8 @@ def write_to_after_sales(updated_transactions):
 
 # Call the function inside main after updating transactions
 def main():
-    transactions = load_transactions()
-    data = load_8949_data()
+    transactions = load.load_transactions()
+    data = load.load_8949_data()
     methods = {}
     methods[2021] = 'HIFO'
     methods[2022] = 'HIFO'

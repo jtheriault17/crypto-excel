@@ -1,47 +1,47 @@
 {
-    "1": {
-        "Quantity Sold": 3616.65739,
-        "Currency": "XRP",
-        "Date Acquired": "02/23/24",
-        "Date Sold": "04/18/24",
-        "Proceeds": 1785.3092855444063,
-        "Cost Basis": 1970.64,
-        "Loss": -185.3307144555938
-    },
-    "2": {
-        "Quantity Sold": 34.12963782,
-        "Currency": "HBAR",
-        "Date Acquired": "12/21/23",
-        "Date Sold": "04/18/24",
-        "Proceeds": 2.7063662861356814,
-        "Cost Basis": 2.97,
-        "Loss": -0.2636337138643188
-    },
-    "3": {
+    "USDC 10/31/23 11:20:09": {
         "Quantity Sold": 0.159954,
         "Currency": "USDC",
         "Date Acquired": "10/31/23",
-        "Date Sold": "04/18/24",
-        "Proceeds": 0.1598350502079,
+        "Date Sold": "04/22/24",
+        "Proceeds": 0.15996977786256003,
         "Cost Basis": 0.16,
-        "Loss": -0.00016494979209999427
+        "Loss": -3.0222137439972485e-05
     },
-    "4": {
+    "XRP 07/24/23 10:35:54": {
         "Quantity Sold": 1418.744626,
         "Currency": "XRP",
         "Date Acquired": "07/24/23",
-        "Date Sold": "04/18/24",
-        "Proceeds": 700.3422446420964,
+        "Date Sold": "04/22/24",
+        "Proceeds": 792.9392798978834,
         "Cost Basis": 1000.0,
-        "Loss": -299.6577553579036
+        "Loss": -207.06072010211665
     },
-    "5": {
-        "Quantity Sold": 2835.667637,
+    "XRP 07/17/23 19:22:07": {
+        "Quantity Sold": 922.768313,
         "Currency": "XRP",
         "Date Acquired": "07/17/23",
-        "Date Sold": "04/18/24",
-        "Proceeds": 1399.7852760539934,
-        "Cost Basis": 2082.26,
-        "Loss": -682.4747239460069
+        "Date Sold": "04/22/24",
+        "Proceeds": 515.7371018107417,
+        "Cost Basis": 674.82,
+        "Loss": -159.08289818925834
+    },
+    "XRP 07/17/23 18:36:34": {
+        "Quantity Sold": 941.043309,
+        "Currency": "XRP",
+        "Date Acquired": "07/17/23",
+        "Date Sold": "04/22/24",
+        "Proceeds": 525.9510345388835,
+        "Cost Basis": 681.5,
+        "Loss": -155.5489654611165
+    },
+    "XRP 07/17/23 18:09:30": {
+        "Quantity Sold": 971.856015,
+        "Currency": "XRP",
+        "Date Acquired": "07/17/23",
+        "Date Sold": "04/22/24",
+        "Proceeds": 543.1723190883307,
+        "Cost Basis": 725.94,
+        "Loss": -182.76768091166934
     }
 }

@@ -2,94 +2,19 @@ import pandas as pd
 from datetime import datetime, timedelta
 import json
 import os.path
+import load
 
-def load_portfolio_value():
-    portfolio_value = {}
-    portfolio_value_path = '../crypto-excel/data/portfolio-value.json'
-    if os.path.exists(portfolio_value_path):
-        with open(portfolio_value_path, 'r') as f:
-            try:
-                portfolio_value = json.load(f)
-            except json.JSONDecodeError:
-                print("Error loading portfolio values. Initializing empty portfolio values.")
-    return portfolio_value
-
-def load_portfolio():
-    portfolio = {}
-    portfolio_path = '../crypto-excel/data/portfolio.json'
-    if os.path.exists(portfolio_path):
-        with open(portfolio_path, 'r') as f:
-            try:
-                portfolio = json.load(f)
-            except json.JSONDecodeError:
-                print("Error loading portfolio. Initializing empty portfolio.")
-    return portfolio
-
-def load_cost_basis():
-    cost_basis = {}
-    cost_basis_path = '../crypto-excel/data/cost-basis.json'
-    if os.path.exists(cost_basis_path):
-        with open(cost_basis_path, 'r') as f:
-            try:
-                cost_basis = json.load(f)
-            except json.JSONDecodeError:
-                print("Error loading cost basis. Initializing empty cost basis.")
-    return cost_basis
-
-def load_coin_id_dict():
-    coin_id_dict = {}
-    coin_id_dict_path = '../crypto-excel/data/coin-id-dictionary.json'
-    if os.path.exists(coin_id_dict_path):
-        with open(coin_id_dict_path, 'r') as f:
-            try:
-                coin_id_dict = json.load(f)
-            except json.JSONDecodeError:
-                print("Error loading coin ID dictionary. Initializing empty dictionary.")
-    return coin_id_dict
-
-def get_coin_id(symbol):
-    coin_id_dict = load_coin_id_dict()
-    return coin_id_dict.get(symbol, None)
-
-# Load historical data from Excel workbook
-def load_historical_data(symbol):
-    historical_data_path = '../crypto-excel/workbooks/historical-data.xlsx'
-    coin_id = get_coin_id(symbol.lower())
-    if coin_id is None:
-        return {}
-    historical_data = pd.read_excel(historical_data_path, sheet_name=coin_id, index_col=0)
-    historical_data.index = pd.to_datetime(historical_data.index).date
-    historical_data = historical_data.iloc[:, 0].to_dict()
-    return historical_data
-
-def load_market_data():
-    market_data = {}
-    if os.path.exists('../crypto-excel/data/market-data.json'):
-        with open ('../crypto-excel/data/market-data.json', 'r') as f:
-            try:
-                market_data = json.load(f)
-            except json.JSONDecodeError:
-                print("Error loading market data. Initializing empty market data.")
-    return market_data
-
-# Load transactions data from Excel workbook
-def load_transaction():
-    workbook_path = '../crypto-excel/workbooks/Transactions.xlsm'
-    transactions = pd.read_excel(workbook_path, sheet_name='Transactions')
-    return transactions
-
-# Load total data from Excel workbook
 def get_total_data_dates(date):
     dates = pd.date_range(end=date, periods=365, freq = 'D')
     return dates
 
 def get_latest_date():
-    values = load_portfolio_value()
+    values = load.load_portfolio_value()
     last_date = max([datetime.strptime(date_str, '%m/%d/%y') for date_str in values.keys()])
     return last_date
 
 def get_portfolio_on_date(transactions, date_str):
-    portfolio = load_portfolio()
+    portfolio = load.load_portfolio()
 
     date = datetime.strptime(date_str, '%m/%d/%y')
 
@@ -137,7 +62,7 @@ def get_portfolio_on_date(transactions, date_str):
             return portfolio[date_str]
 
 def get_portfolio(transactions, dates):
-    portfolio = load_portfolio()
+    portfolio = load.load_portfolio()
 
     portfolio_dates = [datetime.strptime(date_str, '%m/%d/%y') for date_str in portfolio.keys()]
 
@@ -199,20 +124,20 @@ def calculate_portfolio_value(date, portfolio):
     return portfolio_value
 
 def calculate_symbol_value(symbol, quantity, date):
-    historical_data = load_historical_data(symbol)
+    historical_data = load.load_historical_data(symbol)
 
     if date.date() in historical_data:
         value = quantity * historical_data[date.date()]
         return value
     elif date.date() == datetime.now().date():
-        market_data = load_market_data()
+        market_data = load.load_market_data()
         for coin_data in market_data:
             if coin_data['symbol'].upper() == symbol:
                 return coin_data['current_price'] * quantity
     return 0
 
 def get_portfolio_values(dates, portfolio):
-    portfolio_values = load_portfolio_value()
+    portfolio_values = load.load_portfolio_value()
     portfolio_value_dates = [datetime.strptime(date_str, '%m/%d/%y') for date_str in portfolio_values.keys()]
 
     if portfolio_values:
@@ -237,7 +162,7 @@ def calculate_cost_basis(date, portfolio):
     return cost_basis
 
 def get_cost_basis(dates, portfolio):
-    cost_basis = load_cost_basis()
+    cost_basis = load.load_cost_basis()
     
     # Convert date strings to datetime objects for comparison
     cost_basis_dates = [datetime.strptime(date_str, '%m/%d/%y') for date_str in cost_basis.keys()]
@@ -258,7 +183,7 @@ def get_cost_basis(dates, portfolio):
     return cost_basis
 
 def write_prices():
-    market_data = load_market_data()
+    market_data = load.load_market_data()
     current_prices = {}
     for coin_data in market_data:
         symbol = coin_data['symbol'].upper()
@@ -286,7 +211,6 @@ def write_values(portfolio_values, cost_basis):
     with pd.ExcelWriter('../crypto-excel/workbooks/total-data.xlsx', mode='a', engine='openpyxl', if_sheet_exists='replace') as writer:
         portfolio_df.to_excel(writer, sheet_name='Value & Cost Basis', index=False)
 
-
 def write_portfolio(portfolio):
     portfolio_list = []
     prev_date = None
@@ -301,15 +225,13 @@ def write_portfolio(portfolio):
 
     portfolio_df = pd.DataFrame(portfolio_list)
     
-    # Write portfolio data to the 'Total Data' sheet
+    # Write portfolio data to the 'Portfolio' sheet
     with pd.ExcelWriter('../crypto-excel/workbooks/total-data.xlsx', mode='a', engine='openpyxl', if_sheet_exists='replace') as writer:
         portfolio_df.to_excel(writer, sheet_name='Portfolio', index=False)
 
-
-
-# Main function
+# ---------------- Main function --------------------
 def main():
-    transactions = load_transaction()
+    transactions = load.load_transactions()
     dates = get_total_data_dates(datetime.today())
 
     portfolio = get_portfolio(transactions, dates)

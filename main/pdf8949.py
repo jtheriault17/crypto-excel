@@ -11,8 +11,6 @@ def extract_text_from_pdf(pdf_path):
             text += page.extract_text()
     return text
 
-import re
-
 # might have to change 8 to 4 since CoinTracker reduced decimals
 
 def parse_8949_text(text):

@@ -4,35 +4,12 @@ from openpyxl import Workbook
 from datetime import datetime
 import time
 import json
-import os.path
-
-# Load coin list from JSON file
-with open('../crypto-excel/data/coin-list.json', 'r') as f:
-    coin_list = json.load(f)
-
-def load_coin_id_dict():
-    coin_id_dict = {}
-    if os.path.exists('../crypto-excel/data/coin-id-dictionary.json'):
-        with open('../crypto-excel/data/coin-id-dictionary.json', 'r') as f:
-            try:
-                coin_id_dict = json.load(f)
-            except json.JSONDecodeError:
-                print("Error loading coin ID dictionary. Initializing empty dictionary.")
-    return coin_id_dict
-
-def load_market_data():
-    market_data = {}
-    if os.path.exists('../crypto-excel/data/market-data.json'):
-        with open ('../crypto-excel/data/market-data.json', 'r') as f:
-            try:
-                market_data = json.load(f)
-            except json.JSONDecodeError:
-                print("Error loading market data. Initializing empty market data.")
-    return market_data
+import load
 
 # Function to get coin ID for a given symbol
 def get_coin_id(symbol):
-    coin_id_dict = load_coin_id_dict()
+    coin_list = load.load_coin_list
+    coin_id_dict = load.load_coin_id_dict()
     if symbol in coin_id_dict:
         return coin_id_dict[symbol]
     else:
