@@ -5,15 +5,43 @@ import os.path
 import load
 
 def get_total_data_dates(date):
+    """
+    Description:
+    Generates a range of dates ending at a specified date.
+
+    Parameters:
+    - date (datetime): The end date of the date range.
+
+    Returns:
+    pd.DatetimeIndex: A pandas DatetimeIndex object containing the generated dates.
+    """
     dates = pd.date_range(end=date, periods=365, freq = 'D')
     return dates
 
 def get_latest_date():
+    """
+    Description:
+    Retrieves the latest date from the portfolio values.
+
+    Returns:
+    datetime: The latest date in the portfolio values.
+    """
     values = load.load_portfolio_value()
     last_date = max([datetime.strptime(date_str, '%m/%d/%y') for date_str in values.keys()])
     return last_date
 
 def get_portfolio_on_date(transactions, date_str):
+    """
+    Description:
+    Retrieves portfolio data for a specific date.
+
+    Parameters:
+    - transactions (pd.DataFrame): DataFrame containing transaction data.
+    - date_str (str): Date in string format ('MM/DD/YY').
+
+    Returns:
+    dict or None: Portfolio data for the specified date, or None if no data is available.
+    """
     portfolio = load.load_portfolio()
 
     date = datetime.strptime(date_str, '%m/%d/%y')
@@ -62,6 +90,17 @@ def get_portfolio_on_date(transactions, date_str):
             return portfolio[date_str]
 
 def get_portfolio(transactions, dates):
+    """
+    Description:
+    Retrieves portfolio data for multiple dates.
+
+    Parameters:
+    - transactions (pd.DataFrame): DataFrame containing transaction data.
+    - dates (pd.DatetimeIndex): Pandas DatetimeIndex object containing dates.
+
+    Returns:
+    dict: Portfolio data for the specified dates.
+    """
     portfolio = load.load_portfolio()
 
     portfolio_dates = [datetime.strptime(date_str, '%m/%d/%y') for date_str in portfolio.keys()]
@@ -116,27 +155,60 @@ def get_portfolio(transactions, dates):
 
     return portfolio
 
-# Calculate portfolio value for a given date
 def calculate_portfolio_value(date, portfolio):
+    """
+    Description:
+    Calculates the total value of the portfolio on a specific date.
+
+    Parameters:
+    - date (str): Date in string format ('MM/DD/YY').
+    - portfolio (dict): Portfolio data for the specified date.
+
+    Returns:
+    float: Total value of the portfolio.
+    """
     portfolio_value = 0
     for symbol, data in portfolio[date].items():
         portfolio_value += data.get('value', 0)
     return portfolio_value
 
 def calculate_symbol_value(symbol, quantity, date):
-    historical_data = load.load_historical_data(symbol)
+    """
+    Description:
+    Calculates the value of a symbol in the portfolio on a specific date.
 
-    if date.date() in historical_data:
-        value = quantity * historical_data[date.date()]
-        return value
-    elif date.date() == datetime.now().date():
+    Parameters:
+    - symbol (str): Symbol of the cryptocurrency.
+    - quantity (float): Quantity of the cryptocurrency.
+    - date (datetime): Date of calculation.
+
+    Returns:
+    float: Value of the symbol.
+    """
+    historical_data = load.load_historical_data(symbol)
+    
+    if date.date() == datetime.now().date():
         market_data = load.load_market_data()
         for coin_data in market_data:
             if coin_data['symbol'].upper() == symbol:
                 return coin_data['current_price'] * quantity
+    elif date.date() in historical_data:
+        value = quantity * historical_data[date.date()]
+        return value
     return 0
 
 def get_portfolio_values(dates, portfolio):
+    """
+    Description:
+    Retrieves portfolio values for multiple dates.
+
+    Parameters:
+    - dates (pd.DatetimeIndex): Pandas DatetimeIndex object containing dates.
+    - portfolio (dict): Portfolio data for the specified dates.
+
+    Returns:
+    dict: Portfolio values for the specified dates.
+    """
     portfolio_values = load.load_portfolio_value()
     portfolio_value_dates = [datetime.strptime(date_str, '%m/%d/%y') for date_str in portfolio_values.keys()]
 
@@ -156,12 +228,34 @@ def get_portfolio_values(dates, portfolio):
     return portfolio_values
 
 def calculate_cost_basis(date, portfolio):
+    """
+    Description:
+    Calculates the total cost basis of the portfolio on a specific date.
+
+    Parameters:
+    - date (str): Date in string format ('MM/DD/YY').
+    - portfolio (dict): Portfolio data for the specified date.
+
+    Returns:
+    float: Total cost basis of the portfolio.
+    """
     cost_basis = 0
     for symbol, data in portfolio[date].items():
         cost_basis += data.get('cost_basis', 0)
     return cost_basis
 
 def get_cost_basis(dates, portfolio):
+    """
+    Description:
+    Retrieves cost basis for multiple dates.
+
+    Parameters:
+    - dates (pd.DatetimeIndex): Pandas DatetimeIndex object containing dates.
+    - portfolio (dict): Portfolio data for the specified dates.
+
+    Returns:
+    dict: Cost basis for the specified dates.
+    """
     cost_basis = load.load_cost_basis()
     
     # Convert date strings to datetime objects for comparison
@@ -183,6 +277,10 @@ def get_cost_basis(dates, portfolio):
     return cost_basis
 
 def write_prices():
+    """
+    Description:
+    Writes current cryptocurrency prices to an Excel file.
+    """
     market_data = load.load_market_data()
     current_prices = {}
     for coin_data in market_data:
@@ -200,6 +298,14 @@ def write_prices():
         prices_df.to_excel(writer, sheet_name='Current Prices', index=False)
 
 def write_values(portfolio_values, cost_basis):
+    """
+    Description:
+    Writes portfolio values and cost basis to an Excel file.
+
+    Parameters:
+    - portfolio_values (dict): Portfolio values for the specified dates.
+    - cost_basis (dict): Cost basis for the specified dates.
+    """
     dates = pd.date_range(end=get_latest_date(), periods=len(portfolio_values))
     dates_strs = [date.strftime('%m/%d/%y') for date in dates[::-1]]
 
@@ -212,6 +318,13 @@ def write_values(portfolio_values, cost_basis):
         portfolio_df.to_excel(writer, sheet_name='Value & Cost Basis', index=False)
 
 def write_portfolio(portfolio):
+    """
+    Description:
+    Writes portfolio data to an Excel file.
+
+    Parameters:
+    - portfolio (dict): Portfolio data for the specified dates.
+    """
     portfolio_list = []
     prev_date = None
     for date_str, symbol_values in reversed(list(portfolio.items())):
@@ -231,6 +344,10 @@ def write_portfolio(portfolio):
 
 # ---------------- Main function --------------------
 def main():
+    """
+    Description:
+    Main function to execute the portfolio management process.
+    """
     transactions = load.load_transactions()
     dates = get_total_data_dates(datetime.today())
 

@@ -5,6 +5,18 @@ import os.path
 import load
 
 def LIFO(transactions, sub_quantity, sub_cost_basis):
+    """
+    Description:
+    Implements the Last-In First-Out (LIFO) method for updating transactions after sales.
+
+    Parameters:
+    - transactions (DataFrame): DataFrame containing transaction data.
+    - sub_quantity (dict): Dictionary containing sub-quantity data.
+    - sub_cost_basis (dict): Dictionary containing sub-cost basis data.
+
+    Returns:
+    dict: Updated transactions after applying the LIFO method.
+    """
     updated_transactions = {}
     for index, row in transactions.iterrows():
         if row[1] == 'BUY' or row[1] == 'TRADE':
@@ -38,6 +50,18 @@ def LIFO(transactions, sub_quantity, sub_cost_basis):
     return updated_transactions
 
 def FIFO(transactions, sub_quantity, sub_cost_basis):
+    """
+    Description:
+    Implements the First-In First-Out (FIFO) method for updating transactions after sales.
+
+    Parameters:
+    - transactions (DataFrame): DataFrame containing transaction data.
+    - sub_quantity (dict): Dictionary containing sub-quantity data.
+    - sub_cost_basis (dict): Dictionary containing sub-cost basis data.
+
+    Returns:
+    dict: Updated transactions after applying the FIFO method.
+    """
     updated_transactions = {}
     for index, row in transactions[::-1].iterrows():
         if row[1] == 'BUY' or row[1] == 'TRADE':
@@ -73,6 +97,18 @@ def FIFO(transactions, sub_quantity, sub_cost_basis):
     return updated_transactions
 
 def HIFO(transactions, sub_quantity, sub_cost_basis):
+    """
+    Description:
+    Implements the Highest-In First-Out (HIFO) method for updating transactions after sales.
+
+    Parameters:
+    - transactions (DataFrame): DataFrame containing transaction data.
+    - sub_quantity (dict): Dictionary containing sub-quantity data.
+    - sub_cost_basis (dict): Dictionary containing sub-cost basis data.
+
+    Returns:
+    dict: Updated transactions after applying the HIFO method.
+    """
     updated_transactions = {}
 
     transactions = transactions.sort_values(by=transactions.columns[4], ascending=False)
@@ -111,6 +147,17 @@ def HIFO(transactions, sub_quantity, sub_cost_basis):
     return updated_transactions
 
 def get_sub(data, year):
+    """
+    Description:
+    Retrieves sub-quantity and sub-cost basis data for a specific year.
+
+    Parameters:
+    - data (DataFrame): DataFrame containing transaction data.
+    - year (int): The year for which data is to be retrieved.
+
+    Returns:
+    tuple: A tuple containing sub-quantity and sub-cost basis data (both dictionaries).
+    """
     sub_cost_basis = {}
     sub_quantity = {}
     
@@ -133,6 +180,18 @@ def get_sub(data, year):
     return sub_quantity, sub_cost_basis
 
 def update_transactions(transactions, data, methods):
+    """
+    Description:
+    Updates transactions after sales using specified methods for different years.
+
+    Parameters:
+    - transactions (DataFrame): DataFrame containing transaction data.
+    - data (DataFrame): DataFrame containing additional data.
+    - methods (dict): Dictionary specifying methods for different years.
+
+    Returns:
+    dict: Updated transactions after sales.
+    """
     updated_transactions = {}
     
     for method in methods:
@@ -152,6 +211,13 @@ def update_transactions(transactions, data, methods):
     return updated_transactions
 
 def write_to_after_sales(updated_transactions):
+    """
+    Description:
+    Writes updated transactions to an Excel file for after-sales data.
+
+    Parameters:
+    - updated_transactions (dict): Updated transactions after sales.
+    """
     # Define the output path
     output_path = '../crypto-excel/workbooks/after-sales.xlsx'
     df = pd.DataFrame(updated_transactions).T
@@ -160,8 +226,11 @@ def write_to_after_sales(updated_transactions):
     with pd.ExcelWriter(output_path, mode='a', engine='openpyxl', if_sheet_exists='replace') as writer:
         df.to_excel(writer, sheet_name='After Sales', index=False)
 
-# Call the function inside main after updating transactions
 def main():
+    """
+    Description:
+    Main function to update transactions after sales and write them to an Excel file.
+    """
     transactions = load.load_transactions()
     data = load.load_8949_data()
     methods = {}

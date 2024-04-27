@@ -3,6 +3,16 @@ import pandas as pd
 import PyPDF2
 
 def extract_text_from_pdf(pdf_path):
+    """
+    Description:
+    Extracts text from a PDF file.
+
+    Parameters:
+    - pdf_path (str): The path to the PDF file.
+
+    Returns:
+    str: The extracted text from the PDF.
+    """
     text = ""
     with open(pdf_path, 'rb') as file:
         pdf_reader = PyPDF2.PdfReader(file)
@@ -11,9 +21,17 @@ def extract_text_from_pdf(pdf_path):
             text += page.extract_text()
     return text
 
-# might have to change 8 to 4 since CoinTracker reduced decimals
-
 def parse_8949_text(text):
+    """
+    Description:
+    Parses text extracted from a 8949 form PDF.
+
+    Parameters:
+    - text (str): The text extracted from the PDF.
+
+    Returns:
+    pandas.DataFrame: A DataFrame containing parsed data from the 8949 form.
+    """
     text = re.sub(r'(\d+,\d+)', lambda x: x.group(0).replace(',', ''), text)
 
     currency = re.findall(r'\d+\.\d{8} (\w+)\n', text)
@@ -53,6 +71,12 @@ def parse_8949_text(text):
 
 
 def main():
+    """
+    Description:
+    Main function to execute the parsing of 8949 form PDFs.
+
+    This function currently extracts text from a PDF, parses it, and prints the parsed data.
+    """
     pdf_paths = ['/Users/jimmytheriault/Library/CloudStorage/OneDrive-Personal/Documents/Finance/Taxes/2023/Form8949.pdf',
                 '/Users/jimmytheriault/Library/CloudStorage/OneDrive-Personal/Documents/Finance/Taxes/2023/Capital Loss Carryover/2022/Form8949.pdf', 
                 '/Users/jimmytheriault/Library/CloudStorage/OneDrive-Personal/Documents/Finance/Taxes/2023/Capital Loss Carryover/2021/Form8949.pdf']

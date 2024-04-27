@@ -5,6 +5,16 @@ import os.path
 import load
 
 def tax_loss_harvesting(transactions):
+    """
+    Description:
+    Performs tax loss harvesting based on transaction data.
+
+    Parameters:
+    - transactions (dict): Dictionary containing transaction data.
+
+    Returns:
+    tuple: A tuple containing tax loss harvesting data (dict) and the total loss (float).
+    """
     currency_data = load.load_currency_data()
     tax_loss_harvesting = {}
     total_loss = 0
@@ -43,6 +53,13 @@ def tax_loss_harvesting(transactions):
     return tax_loss_harvesting, total_loss
 
 def sell():
+    """
+    Description:
+    Facilitates the selling process for cryptocurrencies.
+
+    Returns:
+    dict: Dictionary containing sales data.
+    """
     currency_data = load.load_currency_data()
     transactions = load.load_transactions_after_sales()
     portfolio = {}
@@ -104,6 +121,19 @@ def sell():
     return data
 
 def HIFO(transactions, currency, sell_quantity, data):
+    """
+    Description:
+    Implements Highest-In First-Out method for selling cryptocurrencies.
+
+    Parameters:
+    - transactions (dict): Dictionary containing transaction data.
+    - currency (dict): Dictionary containing currency data.
+    - sell_quantity (float): Quantity of currency to be sold.
+    - data (dict or None): Dictionary to store selling data.
+
+    Returns:
+    float: Total gains from selling.
+    """
     date_sold = datetime.now().strftime("%m/%d/%y")
     gains = 0
 
@@ -148,6 +178,19 @@ def HIFO(transactions, currency, sell_quantity, data):
     return gains
     
 def LIFO(transactions, currency, sell_quantity, data):
+    """
+    Description:
+    Implements Last-In First-Out method for selling cryptocurrencies.
+
+    Parameters:
+    - transactions (dict): Dictionary containing transaction data.
+    - currency (dict): Dictionary containing currency data.
+    - sell_quantity (float): Quantity of currency to be sold.
+    - data (dict or None): Dictionary to store selling data.
+
+    Returns:
+    float: Total gains from selling.
+    """
     date_sold = datetime.now().strftime("%m/%d/%y")
     gains = 0
 
@@ -190,6 +233,19 @@ def LIFO(transactions, currency, sell_quantity, data):
     return gains
 
 def FIFO(transactions, currency, sell_quantity, data):
+    """
+    Description:
+    Implements First-In First-Out method for selling cryptocurrencies.
+
+    Parameters:
+    - transactions (dict): Dictionary containing transaction data.
+    - currency (dict): Dictionary containing currency data.
+    - sell_quantity (float): Quantity of currency to be sold.
+    - data (dict or None): Dictionary to store selling data.
+
+    Returns:
+    float: Total gains from selling.
+    """
     date_sold = datetime.now().strftime("%m/%d/%y")
     gains = 0
 
@@ -233,9 +289,15 @@ def FIFO(transactions, currency, sell_quantity, data):
 
 # Main function
 def main():
+    """
+    Description:
+    Main function to execute tax loss harvesting and selling processes.
+    """
     transactions = load.load_transactions_after_sales()
 
     harvesting, total_loss = tax_loss_harvesting(transactions)
+
+    print(total_loss)
 
     new_sale = sell()
 
