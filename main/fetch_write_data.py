@@ -4,35 +4,21 @@ from openpyxl import Workbook
 from datetime import datetime
 import time
 import json
-import os.path
+import load
 
-# Load coin list from JSON file
-with open('../crypto-excel/data/coin-list.json', 'r') as f:
-    coin_list = json.load(f)
-
-def load_coin_id_dict():
-    coin_id_dict = {}
-    if os.path.exists('../crypto-excel/data/coin-id-dictionary.json'):
-        with open('../crypto-excel/data/coin-id-dictionary.json', 'r') as f:
-            try:
-                coin_id_dict = json.load(f)
-            except json.JSONDecodeError:
-                print("Error loading coin ID dictionary. Initializing empty dictionary.")
-    return coin_id_dict
-
-def load_market_data():
-    market_data = {}
-    if os.path.exists('../crypto-excel/data/market-data.json'):
-        with open ('../crypto-excel/data/market-data.json', 'r') as f:
-            try:
-                market_data = json.load(f)
-            except json.JSONDecodeError:
-                print("Error loading market data. Initializing empty market data.")
-    return market_data
-
-# Function to get coin ID for a given symbol
 def get_coin_id(symbol):
-    coin_id_dict = load_coin_id_dict()
+    """
+    Description:
+    Retrieves the coin ID for a given symbol from the loaded coin ID dictionary.
+
+    Parameters:
+    - symbol (str): The symbol of the coin.
+
+    Returns:
+    str or None: The coin ID if found, or None if not found.
+    """
+    coin_list = load.load_coin_list
+    coin_id_dict = load.load_coin_id_dict()
     if symbol in coin_id_dict:
         return coin_id_dict[symbol]
     else:
@@ -59,29 +45,37 @@ def get_coin_id(symbol):
             return coin_id
 
 def get_symbols():
+    """
+    Description:
+    Retrieves symbols of coins with a current cost basis greater than $5 
+    or if coin is not found in historical-data from an Excel file.
+
+    Returns:
+    list: A list of symbols.
+    """
     excel_filename = "../crypto-excel/workbooks/Transactions.xlsm"
     sheet_name = "Currency Data"
 
-    wb = load_workbook(filename=excel_filename, read_only=True, data_only=True)
-    ws = wb[sheet_name]
+    wb_transactions = load_workbook(filename=excel_filename, read_only=True, data_only=True)
+    ws_transactions = wb_transactions[sheet_name]
+
+    excel_filename = "../crypto-excel/workbooks/historical-data.xlsx"
+    wb_data = load_workbook(filename=excel_filename, read_only=True, data_only=True)
 
     symbols = []
-    for row in ws.iter_rows(min_row=2, max_row=ws.max_row, min_col=1, max_col=8, values_only=True):
-        if row[7] and row[7] > 5:
+    for row in ws_transactions.iter_rows(min_row=2, max_row=ws_transactions.max_row, min_col=1, max_col=8, values_only=True):
+        if row[7] and row[7] > 5 or (row[0] and get_coin_id(row[0].lower()) not in wb_data.sheetnames):
             symbols.append(row[0].lower())
     return symbols
 
-def create_coin_id_dict(symbols):
-    coin_ids = {}
-    for symbol in symbols:
-        coin_id = get_coin_id(symbol)
-        if coin_id:
-            coin_ids[symbol] = coin_id
-        else:
-            print(f"No matching coin found for symbol '{symbol}'")
-    return coin_ids
-
 def get_all_symbols():
+    """
+    Description:
+    Retrieves all symbols of coins from an Excel file.
+
+    Returns:
+    list: A list of all symbols.
+    """
     excel_filename = "../crypto-excel/workbooks/Transactions.xlsm"
     sheet_name = "Currency Data"
 
@@ -95,6 +89,16 @@ def get_all_symbols():
     return symbols
 
 def create_coin_id_dict(symbols):
+    """
+    Description:
+    Creates a dictionary mapping symbols to coin IDs.
+
+    Parameters:
+    - symbols (list): A list of symbols.
+
+    Returns:
+    dict: A dictionary mapping symbols to coin IDs.
+    """
     coin_ids = {}
     for symbol in symbols:
         coin_id = get_coin_id(symbol)
@@ -104,9 +108,15 @@ def create_coin_id_dict(symbols):
             print(f"No matching coin found for symbol '{symbol}'")
     return coin_ids
 
-
-# Function to fetch data for a given coin and write it to Excel
 def fetch_and_write(coin_id, excel_filename):
+    """
+    Description:
+    Fetches data for a given coin from an API and writes it to an Excel file.
+
+    Parameters:
+    - coin_id (str): The ID of the coin.
+    - excel_filename (str): The filename of the Excel file to write data to.
+    """
     url = f"https://api.coingecko.com/api/v3/coins/{coin_id}/market_chart?vs_currency=usd&days=365&interval=daily&precision=8"
     headers = {"x-cg-demo-api-key": "CG-U3VbGJ3KKNE5dVgvttoKb1dv"}
     response = requests.get(url, headers=headers)
@@ -151,6 +161,13 @@ def fetch_and_write(coin_id, excel_filename):
     wb.save(filename=excel_filename)
 
 def write_historical_data(coin_ids):
+    """
+    Description:
+    Fetches historical data for each coin in a dictionary and writes it to an Excel file.
+
+    Parameters:
+    - coin_ids (dict): A dictionary mapping symbols to coin IDs.
+    """
     excel_filename = "../crypto-excel/workbooks/historical-data.xlsx"
     # Loop through each coin and fetch data
     for coin, coin_id in coin_ids.items():
@@ -169,6 +186,16 @@ def write_historical_data(coin_ids):
             print(f"Failed to fetch data for {coin} after 1 retry.")
 
 def fetch_market_data(coin_ids):
+    """
+    Description:
+    Fetches market data for each coin in a dictionary and writes it to a JSON file.
+
+    Parameters:
+    - coin_ids (dict): A dictionary mapping symbols to coin IDs.
+
+    Returns:
+    dict: A dictionary containing market data.
+    """
     coin_ids_str = '%2C'.join(coin_ids.values())
     url = f"https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids={coin_ids_str}&per_page=100&page=1&sparkline=false&price_change_percentage=1h%2C24h%2C7d%2C14d%2C30d%2C200d%2C1y&locale=en&precision=8"
     headers = {"x-cg-demo-api-key": "CG-U3VbGJ3KKNE5dVgvttoKb1dv"}
@@ -181,6 +208,10 @@ def fetch_market_data(coin_ids):
 
 
 def main():
+    """
+    Description:
+    Main function to execute the data fetching and writing process.
+    """
     current_symbols = get_symbols()
     all_symbols = get_all_symbols()
     current_coin_ids = create_coin_id_dict(current_symbols)
