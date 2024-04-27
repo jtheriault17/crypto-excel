@@ -1,7 +1,6 @@
 import pandas as pd
 from datetime import datetime, timedelta
 import json
-import os.path
 import load
 
 def tax_loss_harvesting(transactions):

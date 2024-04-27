@@ -1,7 +1,6 @@
 import pandas as pd
-from datetime import datetime, timedelta
+from datetime import datetime
 import json
-import os.path
 import load
 
 def LIFO(transactions, sub_quantity, sub_cost_basis):
@@ -152,7 +151,7 @@ def get_sub(data, year):
     Retrieves sub-quantity and sub-cost basis data for a specific year.
 
     Parameters:
-    - data (DataFrame): DataFrame containing transaction data.
+    - data (DataFrame): DataFrame containing transaction data from 8949.
     - year (int): The year for which data is to be retrieved.
 
     Returns:
@@ -186,7 +185,7 @@ def update_transactions(transactions, data, methods):
 
     Parameters:
     - transactions (DataFrame): DataFrame containing transaction data.
-    - data (DataFrame): DataFrame containing additional data.
+    - data (DataFrame): DataFrame containing data from 8949.
     - methods (dict): Dictionary specifying methods for different years.
 
     Returns:

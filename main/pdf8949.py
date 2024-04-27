@@ -59,10 +59,6 @@ def parse_8949_text(text):
     data['Proceeds'] = data['Proceeds'][:cut]
     data['Cost Basis'] = data['Cost Basis'][:cut]
 
-    print(len(data['Proceeds']))
-    print(len(data['Currency']))
-    print(len(data['Cost Basis']))
-
     df = pd.DataFrame(data)
     df['Return'] = df['Proceeds'] - df['Cost Basis']
     return df
@@ -80,22 +76,17 @@ def main():
     pdf_paths = ['/Users/jimmytheriault/Library/CloudStorage/OneDrive-Personal/Documents/Finance/Taxes/2023/Form8949.pdf',
                 '/Users/jimmytheriault/Library/CloudStorage/OneDrive-Personal/Documents/Finance/Taxes/2023/Capital Loss Carryover/2022/Form8949.pdf', 
                 '/Users/jimmytheriault/Library/CloudStorage/OneDrive-Personal/Documents/Finance/Taxes/2023/Capital Loss Carryover/2021/Form8949.pdf']
-    # dfs = []
-    # for pdf_path in pdf_paths:
-    #     pdf_text = extract_text_from_pdf(pdf_path)
-    #     df = parse_8949_text(pdf_text)
-    #     dfs.append(df)
-    # df = pd.concat(dfs, ignore_index=True)
+    dfs = []
+    for pdf_path in pdf_paths:
+        pdf_text = extract_text_from_pdf(pdf_path)
+        df = parse_8949_text(pdf_text)
+        dfs.append(df)
+    df = pd.concat(dfs, ignore_index=True)
 
-    # workbook_path = '../crypto-excel/workbooks/Book1.xlsx'
-    # sheet_name = '8949'
-    # with pd.ExcelWriter(workbook_path, engine='openpyxl', mode='w') as writer:
-    #     df.to_excel(writer, sheet_name=sheet_name, index=False)
-
-    pdf_text = extract_text_from_pdf(pdf_paths[0])
-    print(pdf_text)
-    # df = parse_8949_text(pdf_text)
-    # print(df)
+    workbook_path = '../crypto-excel/workbooks/8949Form.xlsx'
+    sheet_name = '8949'
+    with pd.ExcelWriter(workbook_path, engine='openpyxl', mode='w') as writer:
+        df.to_excel(writer, sheet_name=sheet_name, index=False)
 
 if __name__ == "__main__":
     main()
