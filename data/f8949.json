@@ -1558,12 +1558,12 @@
     },
     {
         "Currency":"HBAR",
-        "Quantity":1.0,
-        "Date Acquired":"08\/08\/2023",
+        "Quantity":84.666836,
+        "Date Acquired":"01\/20\/2023",
         "Date Sold":"08\/08\/2023",
-        "Proceeds":0.06,
-        "Cost Basis":0.06,
-        "Return":0.0
+        "Proceeds":4.99,
+        "Cost Basis":6.44,
+        "Return":-1.45
     },
     {
         "Currency":"DOGE",

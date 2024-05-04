@@ -1,73 +1,33 @@
-import re
 import pandas as pd
-import PyPDF2
+import camelot
 from pdfrw import PdfReader, PdfDict, PdfWriter, PdfName
 import load
 
-def extract_text_from_pdf(pdf_path):
-    """
-    Description:
-    Extracts text from a PDF file.
+def read_f8949(paths):
+    data = []
+    for path in paths:
+        tables = camelot.read_pdf(path, pages='all')
+        dfs = []
+        for table in tables:
+            df = table.df
+            df = df.iloc[2:16]
+            df = df[df[0] != '']
+            fixed_df = {}
+            fixed_df['Currency'] = df[0].str.split().str[-1]
+            fixed_df['Quantity'] = df[0].str.split().str[0].replace(',', '').astype(float)
+            fixed_df['Date Acquired'] = df[1]
+            fixed_df['Date Sold'] = df[2]
+            fixed_df['Proceeds'] = df[3].str.replace(',', '').astype(float)
+            fixed_df['Cost Basis'] = df[4].str.replace(',', '').astype(float)
+            fixed_df['Return'] = df[7].replace({'\(': '-', '\)': '', ',': ''}, regex=True).astype(float)
+            fixed_df = pd.DataFrame(fixed_df)
+            dfs.append(fixed_df)
+        data.append(pd.concat(dfs, ignore_index=True))
 
-    Parameters:
-    - pdf_path (str): The path to the PDF file.
+    return pd.concat(data, ignore_index=True)
 
-    Returns:
-    str: The extracted text from the PDF.
-    """
-    text = ""
-    with open(pdf_path, 'rb') as file:
-        pdf_reader = PyPDF2.PdfReader(file)
-        for page_num in range(len(pdf_reader.pages)):
-            page = pdf_reader.pages[page_num]
-            text += page.extract_text()
-    return text
-
-def parse_8949_text(text):
-    """
-    Description:
-    Parses text extracted from a 8949 form PDF.
-
-    Parameters:
-    - text (str): The text extracted from the PDF.
-
-    Returns:
-    pandas.DataFrame: A DataFrame containing parsed data from the 8949 form.
-    """
-    text = re.sub(r'(\d+,\d+)', lambda x: x.group(0).replace(',', ''), text)
-
-    currency = re.findall(r'\d+\.\d{8} (\w+)\n', text)
-    quantity = [float(x) for x in re.findall(r'(\d+\.\d{8}) \w+\n', text)]
-    date_acquired = re.findall(r'(\d{2}/\d{2}/\d{4})\n\d{2}/\d{2}/\d{4}', text)
-    date_sold = re.findall(r'\d{2}/\d{2}/\d{4}\n(\d{2}/\d{2}/\d{4})', text)
-    proceeds = [float(x) for x in re.findall(r'\n(\d+\.\d{2})\n\d+\.\d{2}\n', text)]
-    cost_basis = [float(x) for x in re.findall(r'\n\d+\.\d{2}\n(\d+\.\d{2})\n', text)]
-
-    # Skip every 15th data point
-    skip_indices = [i for i in range(14, len(currency), 15)]
-    proceeds = [val for i, val in enumerate(proceeds) if i not in skip_indices]
-    cost_basis = [val for i, val in enumerate(cost_basis) if i not in skip_indices]
-
-    data = {
-        'Currency': currency,
-        'Quantity': quantity,
-        'Date Acquired': date_acquired,
-        'Date Sold': date_sold,
-        'Proceeds': proceeds,
-        'Cost Basis': cost_basis,
-    }
-
-    cut = len(data['Currency']) - len(data['Proceeds'])
-    data['Proceeds'] = data['Proceeds'][:cut]
-    data['Cost Basis'] = data['Cost Basis'][:cut]
-
-    df = pd.DataFrame(data)
-    df['Return'] = df['Proceeds'] - df['Cost Basis']
-    return df
-
-# Write function to write to 8949 Form eventually
 def write_to_f8949():
-    sell = load.load_sell()
+    sell = load.load_sold()
     shorts = []
     longs = []
 
@@ -81,11 +41,11 @@ def write_to_f8949():
                 'Asset': "{:.8f} {}".format(value['Quantity'], value['Currency']),
                 'Date Acquired': value['Date Acquired'],
                 'Date Sold': value['Date Sold'],
-                'Proceeds': "{:.8f}".format(value['Proceeds']),
-                'Cost Basis': "{:.8f}".format(value['Cost Basis']),
+                'Proceeds': "{:.2f}".format(round(value['Proceeds'], 2)),
+                'Cost Basis': "{:.2f}".format(round(value['Cost Basis'], 2)),
                 'Empty1': "",
                 'Empty2': "",
-                'Gain or Loss': "({:.8f})".format(abs(value['Return'])) if value['Return'] < 0 else "{:.8f}".format(value['Return'])
+                'Gain or Loss': "({:.2f})".format(abs(round(value['Return'], 2))) if value['Return'] < 0 else "{:.2f}".format(round(value['Return'],2))
             }
             shorts.append(new_transaction)
         else:
@@ -93,11 +53,11 @@ def write_to_f8949():
                 'Asset': "{:.8f} {}".format(value['Quantity'], value['Currency']),
                 'Date Acquired': value['Date Acquired'],
                 'Date Sold': value['Date Sold'],
-                'Proceeds': "{:.8f}".format(value['Proceeds']),
-                'Cost Basis': "{:.8f}".format(value['Cost Basis']),
+                'Proceeds': "{:.2f}".format(round(value['Proceeds'], 2)),
+                'Cost Basis': "{:.2f}".format(round(value['Cost Basis'], 2)),
                 'Empty1': "",
                 'Empty2': "",
-                'Gain or Loss': "({:.8f})".format(abs(value['Return'])) if value['Return'] < 0 else "{:.8f}".format(value['Return'])
+                'Gain or Loss': "({:.2f})".format(abs(round(value['Return'], 2))) if value['Return'] < 0 else "{:.2f}".format(round(value['Return'],2))
             }
             longs.append(new_transaction)
     
@@ -167,6 +127,7 @@ def fill_table(annotations, data, index_offset):
                 break
             
             annotation.update(PdfDict(V='{}'.format(value), AS='{}'.format(value)))
+
             if col == 3:
                 sums['Proceeds'] += float(value.replace('$', '').replace(',', ''))
             elif col == 4:
@@ -203,15 +164,12 @@ def main():
 
     This function currently extracts text from a PDF, parses it, and prints the parsed data.
     """
-    pdf_paths = ['/Users/jimmytheriault/Library/CloudStorage/OneDrive-Personal/Documents/Finance/Taxes/2023/Form8949.pdf',
+    pdf_paths = [
+                '/Users/jimmytheriault/Library/CloudStorage/OneDrive-Personal/Documents/Finance/Taxes/2023/Form8949.pdf',
                 '/Users/jimmytheriault/Library/CloudStorage/OneDrive-Personal/Documents/Finance/Taxes/2023/Capital Loss Carryover/2022/Form8949.pdf', 
-                '/Users/jimmytheriault/Library/CloudStorage/OneDrive-Personal/Documents/Finance/Taxes/2023/Capital Loss Carryover/2021/Form8949.pdf']
-    dfs = []
-    for pdf_path in pdf_paths:
-        pdf_text = extract_text_from_pdf(pdf_path)
-        df = parse_8949_text(pdf_text)
-        dfs.append(df)
-    df = pd.concat(dfs, ignore_index=True)
+                '/Users/jimmytheriault/Library/CloudStorage/OneDrive-Personal/Documents/Finance/Taxes/2023/Capital Loss Carryover/2021/Form8949.pdf'
+                ]
+    df = read_f8949(pdf_paths)
 
     workbook_path = '../crypto-excel/workbooks/8949Form.xlsx'
     sheet_name = '8949'

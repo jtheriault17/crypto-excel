@@ -54,16 +54,15 @@ def tax_loss_harvesting(transactions):
 def sell():
     """
     Description:
-    Facilitates the selling process for cryptocurrencies.
-
-    Returns:
-    dict: Dictionary containing sales data.
+    Gets data needed to fill Form 8949 for new SELL transactions.
     """
     currency_data = load.load_currency_data()
     transactions = load.load_transactions_after_sales()
     portfolio = {}
     sell_quantity = {}
     methods = {}
+
+    date_sold = datetime.now().strftime("%m/%d/%y %H:%M:%S")
 
     for index, row in currency_data.iterrows():
         total_quantity = row[4]
@@ -75,7 +74,7 @@ def sell():
             portfolio[currency] = {}
             portfolio[currency]['Currency'] = currency
             portfolio[currency]['Quantity'] = total_quantity
-            portfolio[currency]['Current Price'] = price
+            portfolio[currency]['Price'] = price
     
     for currency in portfolio:
         choice = float(input(f"\nHow much {currency} would you like to sell? You have {portfolio[currency]['Quantity']} {currency}.\n"))
@@ -87,9 +86,9 @@ def sell():
             choice = float(input(f"How much {currency} would you like to sell? You have {portfolio[currency]['Quantity']} {currency}.\n"))
         sell_quantity[currency] = choice
 
-        hifo = HIFO(transactions, portfolio[currency], sell_quantity[currency], None)
-        lifo = LIFO(transactions, portfolio[currency], sell_quantity[currency], None)
-        fifo = FIFO(transactions, portfolio[currency], sell_quantity[currency], None)
+        hifo = HIFO(transactions, portfolio[currency], sell_quantity[currency], None, date_sold)
+        lifo = LIFO(transactions, portfolio[currency], sell_quantity[currency], None, date_sold)
+        fifo = FIFO(transactions, portfolio[currency], sell_quantity[currency], None, date_sold)
 
         if choice != 0:
             choice = input(f"What method would you like to use for {currency} "
@@ -102,24 +101,72 @@ def sell():
             choice = input(f"What method would you like to use for {currency} (HIFO, LIFO, FIFO)?\n")
         methods[currency] = choice
 
-    data = {}
+    data = []
+    gains = {}
     for currency in portfolio:
         if sell_quantity[currency]:
             if methods[currency] == 'HIFO':
-                HIFO(transactions, portfolio[currency], sell_quantity[currency], data)
+                gains[portfolio[currency]['Currency']] = HIFO(transactions, portfolio[currency], sell_quantity[currency], data, date_sold)
             elif methods[currency] == 'LIFO':
-                LIFO(transactions, portfolio[currency], sell_quantity[currency], data)
+                gains[portfolio[currency]['Currency']] = LIFO(transactions, portfolio[currency], sell_quantity[currency], data, date_sold)
             elif methods[currency] == 'FIFO':
-                FIFO(transactions, portfolio[currency], sell_quantity[currency], data)
+                gains[portfolio[currency]['Currency']] = FIFO(transactions, portfolio[currency], sell_quantity[currency], data, date_sold)
         
     with open('../crypto-excel/data/sell.json', 'w') as f:
         json.dump({}, f, indent=4)
     with open('../crypto-excel/data/sell.json', 'w') as f:
         json.dump(data, f, indent=4)
+    
+    sum_gains = 0
+    for _, value in gains.items():
+        sum_gains += value
 
-    return data
+    return sum_gains
 
-def HIFO(transactions, currency, sell_quantity, data):
+def sold(year, method):
+    """
+    Description:
+    Gets data needed to fill Form 8949 from existing SELL transactions. 
+    If filling multiple years of forms, then start from oldest to newest. Transactions need to be updated in the correct order.
+    """
+    transactions_after_sales = load.load_transactions_after_sales()
+    transactions = load.load_transactions()
+
+    transactions['Date'] = pd.to_datetime(transactions['Date'])
+
+    sold_in_year = transactions[transactions['Type'].isin(['SELL', 'TRADE'])]
+    sold_in_year = sold_in_year[sold_in_year['Date'].dt.strftime('%Y') == year]
+    sold = {}
+    for index, row in sold_in_year[::-1].iterrows():
+        if row['Sent Currency'] == 'USD':
+            continue
+        sold[index] = {}
+        sold[index]['Date'] = row['Date'].strftime("%m/%d/%y %H:%M:%S")
+        sold[index]['Currency'] = row['Sent Currency']
+        sold[index]['Quantity'] = row['Sent Quantity']
+        sold[index]['Realized Return'] = row['Realized Return (USD)']
+        sold[index]['Cost Basis'] = row['Sent Cost Basis (USD)']
+
+        sold[index]['Price'] = (sold[index]['Cost Basis'] + sold[index]['Realized Return']) / sold[index]['Quantity']
+
+    data = []
+    gains = 0
+    for key, value in sold.items():
+        if method == 'HIFO':
+            gains += HIFO(transactions_after_sales, value, value['Quantity'], data, value['Date'])
+        elif method == 'LIFO':
+            gains += LIFO(transactions_after_sales, value, value['Quantity'], data, value['Date'])
+        else:
+            gains += FIFO(transactions_after_sales, value, value['Quantity'], data, value['Date'])
+
+    with open('../crypto-excel/data/sold.json', 'w') as f:
+        json.dump({}, f, indent=4)
+    with open('../crypto-excel/data/sold.json', 'w') as f:
+        json.dump(data, f, indent=4)
+    
+    return gains
+
+def HIFO(transactions, currency, sell_quantity, data, date_sold):
     """
     Description:
     Implements Highest-In First-Out method for selling cryptocurrencies.
@@ -133,50 +180,63 @@ def HIFO(transactions, currency, sell_quantity, data):
     Returns:
     float: Total gains from selling.
     """
-    date_sold = datetime.now().strftime("%m/%d/%y")
     gains = 0
+    date_sold = datetime.strptime(date_sold, "%m/%d/%y %H:%M:%S")
 
-    transactions = dict(sorted(transactions.items(), key=lambda x: x[1]['Price'], reverse=True))
+    hifo_transactions = dict(sorted(transactions.items(), key=lambda x: x[1]['Price'], reverse=True))
 
-    for key, value in transactions.items():
+    for key, value in hifo_transactions.items():
         if value['Currency'] == currency['Currency'] and sell_quantity:
-            date_acquired = datetime.strptime(value['Date'], "%m/%d/%y %H:%M:%S").strftime("%m/%d/%y")
-            term = 'LONG' if datetime.strptime(date_sold, "%m/%d/%y") - datetime.strptime(date_acquired, "%m/%d/%y") >= timedelta(days=365) else 'SHORT'
+            date_acquired = datetime.strptime(value['Date'], "%m/%d/%y %H:%M:%S")
+            if date_sold < date_acquired:
+                continue
+            term = 'LONG' if date_sold - date_acquired >= timedelta(days=365) else 'SHORT'
             received_quantity = value['Quantity']
             received_cost_basis = value['Cost Basis']
 
-            if sell_quantity > received_quantity:
+            if sell_quantity >= received_quantity and received_quantity:
                 sell_quantity -= received_quantity
-                if data != None:
-                    data[key] = {}
+                if data is not None:
+                    input = {}
 
-                    data[key]['Currency'] = currency['Currency']
-                    data[key]['Quantity'] = received_quantity
-                    data[key]['Date Acquired'] = date_acquired
-                    data[key]['Date Sold'] = date_sold
-                    data[key]['Proceeds'] = currency['Current Price'] * received_quantity
-                    data[key]['Cost Basis'] = received_cost_basis
-                    data[key]['Return'] = data[key]['Proceeds'] - received_cost_basis
-                    data[key]['Term'] = term
+                    input['Currency'] = currency['Currency']
+                    input['Quantity'] = received_quantity
+                    input['Date Acquired'] = date_acquired.strftime("%m/%d/%y")
+                    input['Date Sold'] = date_sold.strftime("%m/%d/%y")
+                    input['Proceeds'] = currency['Price'] * received_quantity
+                    input['Cost Basis'] = received_cost_basis
+                    input['Return'] = input['Proceeds'] - received_cost_basis
+                    input['Term'] = term
 
-                gains +=  (currency['Current Price'] * received_quantity) - received_cost_basis
-            else:
-                if data!= None:
-                    data[key] = {}
+                    transactions[key]['Quantity'] = 0
+                    transactions[key]['Cost Basis'] = 0
 
-                    data[key]['Currency'] = currency['Currency']
-                    data[key]['Quantity'] = sell_quantity
-                    data[key]['Date Acquired'] = date_acquired
-                    data[key]['Date Sold'] = date_sold
-                    data[key]['Proceeds'] = currency['Current Price'] * sell_quantity
-                    data[key]['Cost Basis'] = (sell_quantity / received_quantity) * received_cost_basis
-                    data[key]['Return'] = data[key]['Proceeds'] - data[key]['Cost Basis']
-                    data[key]['Term'] = term
-                gains += (currency['Current Price'] * sell_quantity) - ( (sell_quantity / received_quantity) * received_cost_basis)
+                    data.append(input)
+                gains +=  (currency['Price'] * received_quantity) - received_cost_basis
+            elif received_quantity:
+                if data is not None:
+                    input = {}
+
+                    input['Currency'] = currency['Currency']
+                    input['Quantity'] = sell_quantity
+                    input['Date Acquired'] = date_acquired.strftime("%m/%d/%y")
+                    input['Date Sold'] = date_sold.strftime("%m/%d/%y")
+                    input['Proceeds'] = currency['Price'] * sell_quantity
+                    input['Cost Basis'] = (sell_quantity / received_quantity) * received_cost_basis
+                    input['Return'] = input['Proceeds'] - input['Cost Basis']
+                    input['Term'] = term
+
+                    transactions[key]['Quantity'] -= sell_quantity
+                    transactions[key]['Cost Basis'] -= input['Cost Basis']
+                   
+                    data.append(input)
+
+                gains += (currency['Price'] * sell_quantity) - ((sell_quantity / received_quantity) * received_cost_basis)
                 sell_quantity = 0
+
     return gains
     
-def LIFO(transactions, currency, sell_quantity, data):
+def LIFO(transactions, currency, sell_quantity, data, date_sold):
     """
     Description:
     Implements Last-In First-Out method for selling cryptocurrencies.
@@ -190,48 +250,60 @@ def LIFO(transactions, currency, sell_quantity, data):
     Returns:
     float: Total gains from selling.
     """
-    date_sold = datetime.now().strftime("%m/%d/%y")
     gains = 0
+    date_sold = datetime.strptime(date_sold, "%m/%d/%y %H:%M:%S")
 
     for key, value in transactions.items():
         if value['Currency'] == currency['Currency'] and sell_quantity:
-            date_acquired = datetime.strptime(value['Date'], "%m/%d/%y %H:%M:%S").strftime("%m/%d/%y")
-            term = 'LONG' if datetime.strptime(date_sold, "%m/%d/%y") - datetime.strptime(date_acquired, "%m/%d/%y") >= timedelta(days=365) else 'SHORT'
+            date_acquired = datetime.strptime(value['Date'], "%m/%d/%y %H:%M:%S")
+            if date_sold < date_acquired:
+                continue
+            term = 'LONG' if date_sold - date_acquired >= timedelta(days=365) else 'SHORT'
             received_quantity = value['Quantity']
             received_cost_basis = value['Cost Basis']
 
             if sell_quantity > received_quantity:
                 sell_quantity -= received_quantity
                 if data != None:
-                    data[key] = {}
+                    input = {}
 
-                    data[key]['Currency'] = currency['Currency']
-                    data[key]['Quantity'] = received_quantity
-                    data[key]['Date Acquired'] = date_acquired
-                    data[key]['Date Sold'] = date_sold
-                    data[key]['Proceeds'] = currency['Current Price'] * received_quantity
-                    data[key]['Cost Basis'] = received_cost_basis
-                    data[key]['Return'] = data[key]['Proceeds'] - received_cost_basis
-                    data[key]['Term'] = term
+                    input['Currency'] = currency['Currency']
+                    input['Quantity'] = received_quantity
+                    input['Date Acquired'] = date_acquired.strftime("%m/%d/%y")
+                    input['Date Sold'] = date_sold.strftime("%m/%d/%y")
+                    input['Proceeds'] = currency['Price'] * received_quantity
+                    input['Cost Basis'] = received_cost_basis
+                    input['Return'] = input['Proceeds'] - received_cost_basis
+                    input['Term'] = term
 
-                gains +=  (currency['Current Price'] * received_quantity) - received_cost_basis
+                    transactions[key]['Quantity'] = 0
+                    transactions[key]['Cost Basis'] = 0
+
+                    data.append(input)
+                gains +=  (currency['Price'] * received_quantity) - received_cost_basis
             else:
                 if data!= None:
-                    data[key] = {}
+                    input = {}
 
-                    data[key]['Currency'] = currency['Currency']
-                    data[key]['Quantity'] = sell_quantity
-                    data[key]['Date Acquired'] = date_acquired
-                    data[key]['Date Sold'] = date_sold
-                    data[key]['Proceeds'] = currency['Current Price'] * sell_quantity
-                    data[key]['Cost Basis'] = (sell_quantity / received_quantity) * received_cost_basis
-                    data[key]['Return'] = data[key]['Proceeds'] - data[key]['Cost Basis']
-                    data[key]['Term'] = term
-                gains += (currency['Current Price'] * sell_quantity) - ( (sell_quantity / received_quantity) * received_cost_basis)
+                    input['Currency'] = currency['Currency']
+                    input['Quantity'] = sell_quantity
+                    input['Date Acquired'] = date_acquired.strftime("%m/%d/%y")
+                    input['Date Sold'] = date_sold.strftime("%m/%d/%y")
+                    input['Proceeds'] = currency['Price'] * sell_quantity
+                    input['Cost Basis'] = (sell_quantity / received_quantity) * received_cost_basis
+                    input['Return'] = input['Proceeds'] - input['Cost Basis']
+                    input['Term'] = term
+
+                    transactions[key]['Quantity'] -= sell_quantity
+                    transactions[key]['Cost Basis'] -=  input['Cost Basis']
+
+                    data.append(input)
+
+                gains += (currency['Price'] * sell_quantity) - ((sell_quantity / received_quantity) * received_cost_basis)
                 sell_quantity = 0
     return gains
 
-def FIFO(transactions, currency, sell_quantity, data):
+def FIFO(transactions, currency, sell_quantity, data, date_sold):
     """
     Description:
     Implements First-In First-Out method for selling cryptocurrencies.
@@ -245,44 +317,56 @@ def FIFO(transactions, currency, sell_quantity, data):
     Returns:
     float: Total gains from selling.
     """
-    date_sold = datetime.now().strftime("%m/%d/%y")
     gains = 0
+    date_sold = datetime.strptime(date_sold, "%m/%d/%y %H:%M:%S")
 
     for key, value in reversed(transactions.items()):
         if value['Currency'] == currency['Currency'] and sell_quantity:
-            date_acquired = datetime.strptime(value['Date'], "%m/%d/%y %H:%M:%S").strftime("%m/%d/%y")
-            term = 'LONG' if datetime.strptime(date_sold, "%m/%d/%y") - datetime.strptime(date_acquired, "%m/%d/%y") >= timedelta(days=365) else 'SHORT'
+            date_acquired = datetime.strptime(value['Date'], "%m/%d/%y %H:%M:%S")
+            if date_sold < date_acquired:
+                continue
+            term = 'LONG' if date_sold - date_acquired >= timedelta(days=365) else 'SHORT'
             received_quantity = value['Quantity']
             received_cost_basis = value['Cost Basis']
 
             if sell_quantity > received_quantity:
                 sell_quantity -= received_quantity
                 if data != None:
-                    data[key] = {}
+                    input = {}
 
-                    data[key]['Currency'] = currency['Currency']
-                    data[key]['Quantity'] = received_quantity
-                    data[key]['Date Acquired'] = date_acquired
-                    data[key]['Date Sold'] = date_sold
-                    data[key]['Proceeds'] = currency['Current Price'] * received_quantity
-                    data[key]['Cost Basis'] = received_cost_basis
-                    data[key]['Return'] = data[key]['Proceeds'] - received_cost_basis
-                    data[key]['Term'] = term
+                    input['Currency'] = currency['Currency']
+                    input['Quantity'] = received_quantity
+                    input['Date Acquired'] = date_acquired.strftime("%m/%d/%y")
+                    input['Date Sold'] = date_sold.strftime("%m/%d/%y")
+                    input['Proceeds'] = currency['Price'] * received_quantity
+                    input['Cost Basis'] = received_cost_basis
+                    input['Return'] = input['Proceeds'] - received_cost_basis
+                    input['Term'] = term
 
-                gains +=  (currency['Current Price'] * received_quantity) - received_cost_basis
+                    transactions[key]['Quantity'] = 0
+                    transactions[key]['Cost Basis'] = 0
+
+                    data.append(input)
+                gains +=  (currency['Price'] * received_quantity) - received_cost_basis
             else:
                 if data!= None:
-                    data[key] = {}
+                    input = {}
 
-                    data[key]['Currency'] = currency['Currency']
-                    data[key]['Quantity'] = sell_quantity
-                    data[key]['Date Acquired'] = date_acquired
-                    data[key]['Date Sold'] = date_sold
-                    data[key]['Proceeds'] = currency['Current Price'] * sell_quantity
-                    data[key]['Cost Basis'] = (sell_quantity / received_quantity) * received_cost_basis
-                    data[key]['Return'] = data[key]['Proceeds'] - data[key]['Cost Basis']
-                    data[key]['Term'] = term
-                gains += (currency['Current Price'] * sell_quantity) - ( (sell_quantity / received_quantity) * received_cost_basis)
+                    input['Currency'] = currency['Currency']
+                    input['Quantity'] = sell_quantity
+                    input['Date Acquired'] = date_acquired.strftime("%m/%d/%y")
+                    input['Date Sold'] = date_sold.strftime("%m/%d/%y")
+                    input['Proceeds'] = currency['Price'] * sell_quantity
+                    input['Cost Basis'] = (sell_quantity / received_quantity) * received_cost_basis
+                    input['Return'] = input['Proceeds'] - input['Cost Basis']
+                    input['Term'] = term
+
+                    transactions[key]['Quantity'] -= sell_quantity
+                    transactions[key]['Cost Basis'] -=  input['Cost Basis']
+
+                    data.append(input)
+
+                gains += (currency['Price'] * sell_quantity) - ((sell_quantity / received_quantity) * received_cost_basis)
                 sell_quantity = 0
     return gains
 
@@ -290,15 +374,17 @@ def FIFO(transactions, currency, sell_quantity, data):
 def main():
     """
     Description:
-    Main function to execute tax loss harvesting and selling processes.
+    Main function to execute tax loss harvesting and selling processes. Use sell if you want to decide method for each transaction. 
+    Need to update writing to f8949 for use of sell or update sell, tax_loss_harvesting. Have to manually update it as of now. As of now write_to_f8949 uses sold to write to f8949.
     """
-    transactions = load.load_transactions_after_sales()
+    # transactions = load.load_transactions_after_sales()
+    # harvesting, total_loss = tax_loss_harvesting(transactions)
+    # print(total_loss)
 
-    harvesting, total_loss = tax_loss_harvesting(transactions)
+    # gains = sell()
+    gains = sold('2024', 'HIFO')
 
-    print(total_loss)
-
-    new_sale = sell()
+    print(gains)
 
 if __name__ == "__main__":
     main()

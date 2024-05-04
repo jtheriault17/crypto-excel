@@ -123,6 +123,7 @@ def HIFO(transactions, sub_quantity, sub_cost_basis):
             received_currency = row[3] if pd.notna(row[3]) else 0
             price = row[4] if pd.notna(row[4]) else 0
             received_cost_basis = row[5] if pd.notna(row[5]) else 0
+            fee_cost_basis = row[11] if pd.notna(row[11]) else 0
 
             if received_quantity >= sub_quantity.get(f"{received_currency} {sub_date}", 0) and received_cost_basis >= sub_cost_basis.get(f"{received_currency} {sub_date}", 0):
                 updated_transactions[f'{received_currency} {transaction_date}'] = {}
@@ -130,7 +131,7 @@ def HIFO(transactions, sub_quantity, sub_cost_basis):
                 updated_transactions[f'{received_currency} {transaction_date}']['Currency'] = received_currency
                 updated_transactions[f'{received_currency} {transaction_date}']['Price'] = price
                 updated_transactions[f'{received_currency} {transaction_date}']['Quantity'] = received_quantity - sub_quantity.get(f'{received_currency} {sub_date}', 0)
-                updated_transactions[f'{received_currency} {transaction_date}']['Cost Basis'] = received_cost_basis - sub_cost_basis.get(f'{received_currency} {sub_date}', 0)
+                updated_transactions[f'{received_currency} {transaction_date}']['Cost Basis'] = received_cost_basis + fee_cost_basis - sub_cost_basis.get(f'{received_currency} {sub_date}', 0)
 
                 sub_quantity[f'{received_currency} {sub_date}'] = 0
                 sub_cost_basis[f'{received_currency} {sub_date}'] = 0
@@ -165,7 +166,7 @@ def get_sub(data, year):
     for index, row in data.iterrows():
         currency = row[0]
         quantity = row[1]
-        date_acquired = datetime.strptime(row[2], '%m/%d/%Y').strftime('%m/%d/%y')
+        date_acquired = row[2].strftime('%m/%d/%y')
         cost_basis = row[5]
 
         if f'{currency} {date_acquired}' not in sub_cost_basis:
@@ -200,8 +201,29 @@ def update_transactions(transactions, data, methods):
         elif methods[method] == 'LIFO':
             updated_transactions.update(LIFO(transactions, sub_quantity, sub_cost_basis))
         elif methods[method] == 'FIFO':
-            updated_transactions.update(HIFO(transactions, sub_quantity, sub_cost_basis))
-        
+            updated_transactions.update(FIFO(transactions, sub_quantity, sub_cost_basis))
+
+    if methods == {}:
+        for index, row in transactions.iterrows():
+            if row[1] == 'BUY' or row[1] == 'TRADE':
+                seconds = row[0].second
+                seconds_rounded = round(seconds, 2)
+                seconds_str = str(seconds_rounded).zfill(2)
+                transaction_date = row[0].strftime('%m/%d/%y %H:%M:') + seconds_str
+
+                received_quantity = row[2] if pd.notna(row[2]) else 0
+                received_currency = row[3] if pd.notna(row[3]) else 0
+                price = row[4] if pd.notna(row[4]) else 0
+                received_cost_basis = row[5] if pd.notna(row[5]) else 0
+                fee_cost_basis = row[11] if pd.notna(row[11]) else 0
+
+                updated_transactions[f'{received_currency} {transaction_date}'] = {}
+                updated_transactions[f'{received_currency} {transaction_date}']['Date'] = transaction_date
+                updated_transactions[f'{received_currency} {transaction_date}']['Currency'] = received_currency
+                updated_transactions[f'{received_currency} {transaction_date}']['Price'] = price
+                updated_transactions[f'{received_currency} {transaction_date}']['Quantity'] = received_quantity
+                updated_transactions[f'{received_currency} {transaction_date}']['Cost Basis'] = received_cost_basis + fee_cost_basis 
+
     with open('../crypto-excel/data/transactions-after-sales.json', 'w') as f:
         json.dump({}, f, indent=4)
     with open('../crypto-excel/data/transactions-after-sales.json', 'w') as f:
@@ -231,11 +253,13 @@ def main():
     Main function to update transactions after sales and write them to an Excel file.
     """
     transactions = load.load_transactions()
-    data = load.load_8949_data()
+    data = load.load_f8949()
+
     methods = {}
     methods[2021] = 'HIFO'
     methods[2022] = 'HIFO'
     methods[2023] = 'HIFO'
+    methods[2024] = 'HIFO'
 
     updated_transactions = update_transactions(transactions, data, methods)
 

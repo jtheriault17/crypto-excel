@@ -174,6 +174,57 @@ def load_sell():
                 print("Error loading sell. Initializing empty sell.")
     return sell
 
+def load_sell():
+    """
+    Description:
+    Loads sold data from a JSON file.
+
+    Returns:
+    dict: A dictionary containing sold data, or an empty dictionary if the file doesn't exist or is invalid.
+    """
+    sold = {}  
+    if os.path.exists('../crypto-excel/data/sold.json'): 
+        with open('../crypto-excel/data/sold.json', 'r') as f:
+            try:
+                sold = json.load(f)
+            except json.JSONDecodeError:
+                print("Error loading sold. Initializing empty sell.")
+    return sold
+
+def load_f8949():
+    """
+    Description:
+    Loads f8949 data from a JSON file.
+
+    Returns:
+    pandas.DataFrame: A DataFrame containing 8949 data.
+    """
+    f8949_df = pd.DataFrame() 
+    path = '../crypto-excel/data/f8949.json'
+    if os.path.exists(path):
+        with open(path, 'r') as f:
+            try:
+                f8949_data = json.load(f)
+                # Convert date strings to datetime objects
+                for entry in f8949_data:
+                    entry['Date Acquired'] = pd.to_datetime(entry['Date Acquired'], format='%m/%d/%Y')
+                    entry['Date Sold'] = pd.to_datetime(entry['Date Sold'], format='%m/%d/%Y')
+                # Create DataFrame from the list of dictionaries
+                f8949_df = pd.DataFrame(f8949_data)
+                # Rename columns to match the desired column names
+                f8949_df = f8949_df.rename(columns={
+                    'Date Acquired': 'Date Acquired',
+                    'Date Sold': 'Date Sold',
+                    'Proceeds': 'Proceeds',
+                    'Cost Basis': 'Cost Basis',
+                    'Return': 'Return'
+                })
+                # Reorder columns as needed
+                f8949_df = f8949_df[['Currency', 'Quantity', 'Date Acquired', 'Date Sold', 'Proceeds', 'Cost Basis', 'Return']]
+            except json.JSONDecodeError:
+                print("Error loading f8949. Initializing empty f8949.")
+    return f8949_df
+
 # --------------------------- EXCEL ----------------------------------------------------
 def load_historical_data(symbol):
     """
@@ -206,18 +257,6 @@ def load_transactions():
     workbook_path = '../crypto-excel/workbooks/Transactions.xlsm'
     transactions = pd.read_excel(workbook_path, sheet_name='Transactions')
     return transactions
-
-def load_8949_data():
-    """
-    Description:
-    Loads 8949 data from an Excel file.
-
-    Returns:
-    pandas.DataFrame: A DataFrame containing 8949 data.
-    """
-    workbook_path = '../crypto-excel/workbooks/Transactions.xlsm'
-    data_8949 = pd.read_excel(workbook_path, sheet_name='8949 Data')
-    return data_8949
 
 def load_currency_data():
     """

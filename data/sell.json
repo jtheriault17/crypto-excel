@@ -1,22 +1,42 @@
-{
-    "XRP 07/17/23 18:09:30": {
+[
+    {
         "Currency": "XRP",
         "Quantity": 971.856015,
         "Date Acquired": "07/17/23",
-        "Date Sold": "04/30/24",
-        "Proceeds": 501.26198086035043,
+        "Date Sold": "05/04/24",
+        "Proceeds": 519.2209373172159,
         "Cost Basis": 725.94,
-        "Return": -224.67801913964962,
+        "Return": -206.71906268278417,
         "Term": "SHORT"
     },
-    "XRP 07/17/23 19:22:07": {
+    {
         "Currency": "XRP",
         "Quantity": 28.143985000000043,
         "Date Acquired": "07/17/23",
-        "Date Sold": "04/30/24",
-        "Proceeds": 14.516049139649573,
+        "Date Sold": "05/04/24",
+        "Proceeds": 15.036122682784121,
         "Cost Basis": 20.58168197817173,
-        "Return": -6.065632838522157,
+        "Return": -5.5455592953876085,
         "Term": "SHORT"
+    },
+    {
+        "Currency": "HBAR",
+        "Quantity": 34.12963782,
+        "Date Acquired": "12/21/23",
+        "Date Sold": "05/04/24",
+        "Proceeds": 3.749969723429648,
+        "Cost Basis": 2.97,
+        "Return": 0.7799697234296477,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "HBAR",
+        "Quantity": 965.87036218,
+        "Date Acquired": "01/20/23",
+        "Date Sold": "05/04/24",
+        "Proceeds": 106.12432027657036,
+        "Cost Basis": 73.48640800483012,
+        "Return": 32.637912271740234,
+        "Term": "LONG"
     }
-}
+]
