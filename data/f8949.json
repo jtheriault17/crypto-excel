@@ -162,7 +162,7 @@
         "Return":-0.15
     },
     {
-        "Currency":"ETH",
+        "Currency":"LINK",
         "Quantity":105.2927045,
         "Date Acquired":"04\/18\/2023",
         "Date Sold":"07\/17\/2023",
@@ -1768,31 +1768,22 @@
         "Quantity":2.031601,
         "Date Acquired":"05\/12\/2023",
         "Date Sold":"06\/20\/2023",
-        "Proceeds":697.36,
-        "Cost Basis":702.41,
-        "Return":-5.05
-    },
-    {
-        "Currency":"CSPR",
-        "Quantity":10581.61742294,
-        "Date Acquired":"03\/21\/2023",
-        "Date Sold":"03\/27\/2023",
         "Proceeds":1.0,
         "Cost Basis":0.87,
         "Return":0.13
     },
     {
         "Currency":"CSPR",
-        "Quantity":22.76346173,
-        "Date Acquired":"06\/03\/2023",
-        "Date Sold":"07\/09\/2023",
+        "Quantity":10581.61742294,
+        "Date Acquired":"03\/21\/2023",
+        "Date Sold":"03\/27\/2023",
         "Proceeds":361.53,
         "Cost Basis":400.0,
         "Return":-38.47
     },
     {
         "Currency":"CSPR",
-        "Quantity":30.23338391,
+        "Quantity":22.76346173,
         "Date Acquired":"06\/03\/2023",
         "Date Sold":"07\/09\/2023",
         "Proceeds":0.0,
@@ -1801,21 +1792,30 @@
     },
     {
         "Currency":"CSPR",
-        "Quantity":28.19330882,
+        "Quantity":30.23338391,
         "Date Acquired":"06\/03\/2023",
-        "Date Sold":"07\/13\/2023",
+        "Date Sold":"07\/09\/2023",
         "Proceeds":1.15,
         "Cost Basis":1.43,
         "Return":-0.28
     },
     {
         "Currency":"CSPR",
-        "Quantity":10480.33059977,
+        "Quantity":28.19330882,
         "Date Acquired":"06\/03\/2023",
         "Date Sold":"07\/13\/2023",
         "Proceeds":1.0,
         "Cost Basis":1.33,
         "Return":-0.33
+    },
+    {
+        "Currency":"CSPR",
+        "Quantity":10480.33059977,
+        "Date Acquired":"06\/03\/2023",
+        "Date Sold":"07\/13\/2023",
+        "Proceeds":372.09,
+        "Cost Basis":496.16,
+        "Return":-124.07
     },
     {
         "Currency":"BTC",
