@@ -174,7 +174,7 @@ def load_sell():
                 print("Error loading sell. Initializing empty sell.")
     return sell
 
-def load_sell():
+def load_sold():
     """
     Description:
     Loads sold data from a JSON file.
