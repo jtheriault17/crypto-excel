@@ -24,7 +24,12 @@ def read_f8949(paths):
             dfs.append(fixed_df)
         data.append(pd.concat(dfs, ignore_index=True))
 
-    return pd.concat(data, ignore_index=True)
+    workbook_path = '../crypto-excel/workbooks/8949Form.xlsx'
+    sheet_name = '8949'
+    with pd.ExcelWriter(workbook_path, engine='openpyxl', mode='w') as writer:
+        df.to_excel(writer, sheet_name=sheet_name, index=False)
+
+    df.to_json('../crypto-excel/data/f8949.json', orient='records', indent=4)
 
 def write_to_f8949():
     sell = load.load_sold()
@@ -147,7 +152,7 @@ def fill_sum_fields(annotations, sums):
 
 def fill_initial_fields(annotations):
     """Fill in the initial fields of the PDF page."""
-    annotations[0].update(PdfDict(V='{}'.format("James Theriault"), AS='{}'.format("James Theriault")))
+    annotations[0].update(PdfDict(V='{}'.format("NAME"), AS='{}'.format("NAME")))
     annotations[1].update(PdfDict(V='{}'.format("123-45-6789"), AS='{}'.format("123-45-6789")))
     annotations[4].update(PdfDict(V=PdfName('On'), AS=PdfName('On')))
 
@@ -169,16 +174,8 @@ def main():
                 '/Users/jimmytheriault/Library/CloudStorage/OneDrive-Personal/Documents/Finance/Taxes/2023/Capital Loss Carryover/2022/Form8949.pdf', 
                 '/Users/jimmytheriault/Library/CloudStorage/OneDrive-Personal/Documents/Finance/Taxes/2023/Capital Loss Carryover/2021/Form8949.pdf'
                 ]
-    df = read_f8949(pdf_paths)
-
-    workbook_path = '../crypto-excel/workbooks/8949Form.xlsx'
-    sheet_name = '8949'
-    with pd.ExcelWriter(workbook_path, engine='openpyxl', mode='w') as writer:
-        df.to_excel(writer, sheet_name=sheet_name, index=False)
-
-    df.to_json('../crypto-excel/data/f8949.json', orient='records', indent=4)
-
-    # Write to f8949 pdf
+    
+    read_f8949(pdf_paths)
 
     write_to_f8949()
 

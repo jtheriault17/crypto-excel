@@ -48,7 +48,7 @@ def get_symbols():
     """
     Description:
     Retrieves symbols of coins with a current cost basis greater than $5 
-    or if coin is not found in historical-data from an Excel file.
+    or if coin is not found in historical-data.
 
     Returns:
     list: A list of symbols.
