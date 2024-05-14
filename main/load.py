@@ -188,7 +188,7 @@ def load_sold():
             try:
                 sold = json.load(f)
             except json.JSONDecodeError:
-                print("Error loading sold. Initializing empty sell.")
+                print("Error loading sold. Initializing empty sold.")
     return sold
 
 def load_f8949():
@@ -197,7 +197,7 @@ def load_f8949():
     Loads f8949 data from a JSON file.
 
     Returns:
-    pandas.DataFrame: A DataFrame containing 8949 data.
+    pandas.DataFrame: A DataFrame containing f8949 data.
     """
     f8949_df = pd.DataFrame() 
     path = '../crypto-excel/data/f8949.json'
@@ -224,6 +224,23 @@ def load_f8949():
             except json.JSONDecodeError:
                 print("Error loading f8949. Initializing empty f8949.")
     return f8949_df
+
+def load_transactions_json():
+    """
+    Description:
+    Loads transactions data from a JSON file.
+
+    Returns:
+    dict: A dictionary containing transactions data, or an empty dictionary if the file doesn't exist or is invalid.
+    """
+    transactions = {}  
+    if os.path.exists('../crypto-excel/data/transactions.json'): 
+        with open('../crypto-excel/data/transactions.json', 'r') as f:
+            try:
+                sold = json.load(f)
+            except json.JSONDecodeError:
+                print("Error loading transactions. Initializing empty transactions.")
+    return transactions
 
 # --------------------------- EXCEL ----------------------------------------------------
 def load_historical_data(symbol):
@@ -256,6 +273,12 @@ def load_transactions():
     """
     workbook_path = '../crypto-excel/workbooks/Transactions.xlsm'
     transactions = pd.read_excel(workbook_path, sheet_name='Transactions')
+
+    transactions_json = transactions
+    transactions_json.fillna("", inplace=True)
+
+    transactions.to_json('../crypto-excel/data/transactions.json', orient='records', indent=4)
+
     return transactions
 
 def load_currency_data():

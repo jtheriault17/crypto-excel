@@ -4,10 +4,9 @@ from pdfrw import PdfReader, PdfDict, PdfWriter, PdfName
 import load
 
 def read_f8949(paths):
-    data = []
+    dfs = []
     for path in paths:
         tables = camelot.read_pdf(path, pages='all')
-        dfs = []
         for table in tables:
             df = table.df
             df = df.iloc[2:16]
@@ -22,7 +21,8 @@ def read_f8949(paths):
             fixed_df['Return'] = df[7].replace({'\(': '-', '\)': '', ',': ''}, regex=True).astype(float)
             fixed_df = pd.DataFrame(fixed_df)
             dfs.append(fixed_df)
-        data.append(pd.concat(dfs, ignore_index=True))
+
+    df = pd.concat(dfs, ignore_index=True)
 
     workbook_path = '../crypto-excel/workbooks/8949Form.xlsx'
     sheet_name = '8949'
@@ -40,7 +40,7 @@ def write_to_f8949():
     short_template = f8949_template.pages[0]
     long_template = f8949_template.pages[1]
 
-    for key, value in sell.items():
+    for value in sell:
         if value['Term'] == "SHORT":
             new_transaction = {
                 'Asset': "{:.8f} {}".format(value['Quantity'], value['Currency']),
