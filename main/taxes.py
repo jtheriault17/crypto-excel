@@ -2,6 +2,7 @@ import pandas as pd
 from datetime import datetime, timedelta
 import json
 import load
+import transactions as t
 
 def tax_loss_harvesting(transactions):
     """
@@ -159,9 +160,9 @@ def sold(year, method):
         else:
             gains += FIFO(transactions_after_sales, value, value['Quantity'], data, value['Date'])
 
-    with open('../crypto-excel/data/sold.json', 'w') as f:
+    with open(f'../crypto-excel/data/sold/sold-{year}.json', 'w') as f:
         json.dump({}, f, indent=4)
-    with open('../crypto-excel/data/sold.json', 'w') as f:
+    with open(f'../crypto-excel/data/sold/sold-{year}.json', 'w') as f:
         json.dump(data, f, indent=4)
     
     return gains
@@ -173,8 +174,8 @@ def HIFO(transactions, currency, sell_quantity, data, date_sold):
 
     Parameters:
     - transactions (dict): Dictionary containing transaction data.
-    - currency (dict): Dictionary containing currency data.
-    - sell_quantity (float): Quantity of currency to be sold.
+    - currency (dict): Dictionary containing currency sold data.
+    - sell_quantity (float): Quantity of currency that was sold.
     - data (dict or None): Dictionary to store selling data.
 
     Returns:
@@ -377,14 +378,30 @@ def main():
     Main function to execute tax loss harvesting and selling processes. Use sell if you want to decide method for each transaction. 
     Need to update writing to f8949 for use of sell or update sell, tax_loss_harvesting. Have to manually update it as of now. As of now write_to_f8949 uses sold to write to f8949.
     """
-    # transactions = load.load_transactions_after_sales()
+    transactions = load.load_transactions()
+
     # harvesting, total_loss = tax_loss_harvesting(transactions)
     # print(total_loss)
 
-    # gains = sell()
-    gains = sold('2024', 'HIFO')
+    with open('../crypto-excel/data/transactions-after-sales.json', 'w') as f:
+        json.dump({}, f, indent=4)
 
-    print(gains)
+    t.update_transactions(transactions, None, None)
+
+    print(f"2021: {sold('2021', 'HIFO')}")
+    updated = t.update_transactions(transactions, load.load_f8949('2021'), 'HIFO')
+    t.write_to_after_sales(updated)
+    
+    print(f"2022: {sold('2022', 'HIFO')}")
+    updated = t.update_transactions(transactions, load.load_f8949('2022'), 'HIFO')
+    t.write_to_after_sales(updated)
+    
+    print(f"2023: {sold('2023', 'HIFO')}")
+    updated = t.update_transactions(transactions, load.load_f8949('2023'), 'HIFO')
+    t.write_to_after_sales(updated)
+
+    print(f"2024: {sold('2024', 'HIFO')}")
+
 
 if __name__ == "__main__":
     main()

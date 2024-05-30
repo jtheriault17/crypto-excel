@@ -1,0 +1,742 @@
+[
+    {
+        "Currency": "CLV",
+        "Quantity": 0.87336244,
+        "Date Acquired": "11/30/21",
+        "Date Sold": "11/30/21",
+        "Proceeds": 0.9739999955390801,
+        "Cost Basis": 1.0,
+        "Return": -0.02600000446091988,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "CLV",
+        "Quantity": 0.87336244,
+        "Date Acquired": "11/30/21",
+        "Date Sold": "11/30/21",
+        "Proceeds": 0.9739999955390801,
+        "Cost Basis": 1.0,
+        "Return": -0.02600000446091988,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "CLV",
+        "Quantity": 0.87336244,
+        "Date Acquired": "11/30/21",
+        "Date Sold": "11/30/21",
+        "Proceeds": 0.9739999955390801,
+        "Cost Basis": 1.0,
+        "Return": -0.02600000446091988,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "CLV",
+        "Quantity": 0.87336244,
+        "Date Acquired": "11/30/21",
+        "Date Sold": "11/30/21",
+        "Proceeds": 0.9739999955390801,
+        "Cost Basis": 1.0,
+        "Return": -0.02600000446091988,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "CLV",
+        "Quantity": 0.87336244,
+        "Date Acquired": "11/30/21",
+        "Date Sold": "11/30/21",
+        "Proceeds": 0.9739999955390801,
+        "Cost Basis": 1.0,
+        "Return": -0.02600000446091988,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ANKR",
+        "Quantity": 6.40368852,
+        "Date Acquired": "11/30/21",
+        "Date Sold": "11/30/21",
+        "Proceeds": 0.9649613766874997,
+        "Cost Basis": 1.0,
+        "Return": -0.035038623312500294,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ANKR",
+        "Quantity": 6.40389356,
+        "Date Acquired": "11/30/21",
+        "Date Sold": "11/30/21",
+        "Proceeds": 0.9649922738306163,
+        "Cost Basis": 1.0,
+        "Return": -0.035007726169383746,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ANKR",
+        "Quantity": 6.40409862,
+        "Date Acquired": "11/30/21",
+        "Date Sold": "11/30/21",
+        "Proceeds": 0.9650231739875001,
+        "Cost Basis": 1.0,
+        "Return": -0.03497682601249985,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ANKR",
+        "Quantity": 6.40409862,
+        "Date Acquired": "11/30/21",
+        "Date Sold": "11/30/21",
+        "Proceeds": 0.9650231739875001,
+        "Cost Basis": 1.0,
+        "Return": -0.03497682601249985,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "XLM",
+        "Quantity": 6.8175156,
+        "Date Acquired": "12/04/21",
+        "Date Sold": "12/04/21",
+        "Proceeds": 1.9881537086004804,
+        "Cost Basis": 2.0,
+        "Return": -0.011846291399519648,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "XLM",
+        "Quantity": 6.8210032,
+        "Date Acquired": "12/04/21",
+        "Date Sold": "12/04/21",
+        "Proceeds": 1.989170777761879,
+        "Cost Basis": 2.0,
+        "Return": -0.010829222238120995,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "XLM",
+        "Quantity": 6.8223993,
+        "Date Acquired": "12/04/21",
+        "Date Sold": "12/04/21",
+        "Proceeds": 1.9895779145482733,
+        "Cost Basis": 2.0,
+        "Return": -0.010422085451726737,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "XLM",
+        "Quantity": 6.8249602,
+        "Date Acquired": "12/04/21",
+        "Date Sold": "12/04/21",
+        "Proceeds": 1.9903247354037112,
+        "Cost Basis": 2.0,
+        "Return": -0.009675264596288757,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "XLM",
+        "Quantity": 6.833354999999997,
+        "Date Acquired": "12/04/21",
+        "Date Sold": "12/04/21",
+        "Proceeds": 1.9927728636856554,
+        "Cost Basis": 1.9999999999999991,
+        "Return": -0.007227136314343685,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "GRT",
+        "Quantity": 1.35630001,
+        "Date Acquired": "12/04/21",
+        "Date Sold": "12/04/21",
+        "Proceeds": 0.9912206252705924,
+        "Cost Basis": 1.0,
+        "Return": -0.008779374729407596,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "GRT",
+        "Quantity": 1.35851107,
+        "Date Acquired": "12/04/21",
+        "Date Sold": "12/04/21",
+        "Proceeds": 0.992836527548519,
+        "Cost Basis": 1.0,
+        "Return": -0.007163472451480968,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "GRT",
+        "Quantity": 1.35869565,
+        "Date Acquired": "12/04/21",
+        "Date Sold": "12/04/21",
+        "Proceeds": 0.9929714235904444,
+        "Cost Basis": 1.0,
+        "Return": -0.007028576409555565,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "GRT",
+        "Quantity": 1.3586956499999996,
+        "Date Acquired": "12/04/21",
+        "Date Sold": "12/04/21",
+        "Proceeds": 0.9929714235904441,
+        "Cost Basis": 0.9999999999999997,
+        "Return": -0.007028576409555565,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "FET",
+        "Quantity": 1.48345943,
+        "Date Acquired": "12/04/21",
+        "Date Sold": "12/04/21",
+        "Proceeds": 0.9965680797524311,
+        "Cost Basis": 1.0,
+        "Return": -0.003431920247568887,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "FET",
+        "Quantity": 1.48345943,
+        "Date Acquired": "12/04/21",
+        "Date Sold": "12/04/21",
+        "Proceeds": 0.9965680797524311,
+        "Cost Basis": 1.0,
+        "Return": -0.003431920247568887,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "FET",
+        "Quantity": 1.48389969,
+        "Date Acquired": "12/04/21",
+        "Date Sold": "12/04/21",
+        "Proceeds": 0.9968638404951378,
+        "Cost Basis": 1.0,
+        "Return": -0.003136159504862235,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "AMP",
+        "Quantity": 18.87148519,
+        "Date Acquired": "12/04/21",
+        "Date Sold": "12/04/21",
+        "Proceeds": 0.9959760630832513,
+        "Cost Basis": 1.0,
+        "Return": -0.004023936916748738,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "AMP",
+        "Quantity": 18.87148519,
+        "Date Acquired": "12/04/21",
+        "Date Sold": "12/04/21",
+        "Proceeds": 0.9959760630832513,
+        "Cost Basis": 1.0,
+        "Return": -0.004023936916748738,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "AMP",
+        "Quantity": 18.910741299999998,
+        "Date Acquired": "12/04/21",
+        "Date Sold": "12/04/21",
+        "Proceeds": 0.9980478738334977,
+        "Cost Basis": 0.9999999999999998,
+        "Return": -0.0019521261665020884,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "BTC",
+        "Quantity": 8.235e-05,
+        "Date Acquired": "11/30/21",
+        "Date Sold": "12/05/21",
+        "Proceeds": 3.9901825657894734,
+        "Cost Basis": 4.88,
+        "Return": -0.8898174342105265,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "BTC",
+        "Quantity": 6.528999999999999e-05,
+        "Date Acquired": "11/30/21",
+        "Date Sold": "12/05/21",
+        "Proceeds": 3.1635582236842104,
+        "Cost Basis": 3.86,
+        "Return": -0.6964417763157895,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "BTC",
+        "Quantity": 5.948e-05,
+        "Date Acquired": "12/04/21",
+        "Date Sold": "12/05/21",
+        "Proceeds": 2.882040789473684,
+        "Cost Basis": 2.99,
+        "Return": -0.10795921052631607,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "BTC",
+        "Quantity": 5.95e-05,
+        "Date Acquired": "12/04/21",
+        "Date Sold": "12/05/21",
+        "Proceeds": 2.883009868421053,
+        "Cost Basis": 2.99,
+        "Return": -0.10699013157894743,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "BTC",
+        "Quantity": 7.914e-05,
+        "Date Acquired": "12/04/21",
+        "Date Sold": "12/05/21",
+        "Proceeds": 3.8346453947368424,
+        "Cost Basis": 3.97,
+        "Return": -0.1353546052631578,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "BTC",
+        "Quantity": 0.00019903,
+        "Date Acquired": "12/04/21",
+        "Date Sold": "12/05/21",
+        "Proceeds": 9.643789144736843,
+        "Cost Basis": 9.95,
+        "Return": -0.3062108552631564,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "BTC",
+        "Quantity": 6.321000000000007e-05,
+        "Date Acquired": "12/04/21",
+        "Date Sold": "12/05/21",
+        "Proceeds": 3.062774013157898,
+        "Cost Basis": 3.1127222571817454,
+        "Return": -0.049948244023847455,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "BTC",
+        "Quantity": 0.000206,
+        "Date Acquired": "12/04/21",
+        "Date Sold": "12/05/21",
+        "Proceeds": 9.78,
+        "Cost Basis": 10.144293386797008,
+        "Return": -0.3642933867970086,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "BTC",
+        "Quantity": 0.000198,
+        "Date Acquired": "12/04/21",
+        "Date Sold": "12/08/21",
+        "Proceeds": 9.790000000000001,
+        "Cost Basis": 9.750340245562173,
+        "Return": 0.0396597544378281,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "BTC",
+        "Quantity": 0.0001982,
+        "Date Acquired": "12/04/21",
+        "Date Sold": "12/08/21",
+        "Proceeds": 10.0,
+        "Cost Basis": 9.760189074093045,
+        "Return": 0.23981092590695496,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "BTC",
+        "Quantity": 1.7919999999999937e-05,
+        "Date Acquired": "12/04/21",
+        "Date Sold": "12/09/21",
+        "Proceeds": 0.8882875949367058,
+        "Cost Basis": 0.8824550363660268,
+        "Return": 0.005832558570678992,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "BTC",
+        "Quantity": 0.00037708000000000007,
+        "Date Acquired": "12/04/21",
+        "Date Sold": "12/09/21",
+        "Proceeds": 18.691712405063296,
+        "Cost Basis": 19.29140035061631,
+        "Return": -0.5996879455530149,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "IOTX",
+        "Quantity": 5.60051524,
+        "Date Acquired": "12/09/21",
+        "Date Sold": "12/09/21",
+        "Proceeds": 0.9999999970240833,
+        "Cost Basis": 1.0,
+        "Return": -2.9759167352594318e-09,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "IOTX",
+        "Quantity": 5.6002016,
+        "Date Acquired": "12/09/21",
+        "Date Sold": "12/09/21",
+        "Proceeds": 0.9999439950339759,
+        "Cost Basis": 0.99,
+        "Return": 0.009943995033975916,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "IOTX",
+        "Quantity": 5.60082892,
+        "Date Acquired": "12/09/21",
+        "Date Sold": "12/09/21",
+        "Proceeds": 1.0000560061563906,
+        "Cost Basis": 0.99,
+        "Return": 0.010056006156390573,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "SOL",
+        "Quantity": 0.01499268,
+        "Date Acquired": "12/09/21",
+        "Date Sold": "12/09/21",
+        "Proceeds": 2.85794813629686,
+        "Cost Basis": 4.08,
+        "Return": -1.2220518637031401,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "SOL",
+        "Quantity": 0.05226052,
+        "Date Acquired": "12/05/21",
+        "Date Sold": "12/09/21",
+        "Proceeds": 9.962051863703138,
+        "Cost Basis": 9.78,
+        "Return": 0.18205186370313875,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "BTC",
+        "Quantity": 0.0001871,
+        "Date Acquired": "12/09/21",
+        "Date Sold": "12/09/21",
+        "Proceeds": 9.1660101010101,
+        "Cost Basis": 9.45,
+        "Return": -0.28398989898989946,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "BTC",
+        "Quantity": 1.0899999999999994e-05,
+        "Date Acquired": "12/04/21",
+        "Date Sold": "12/09/21",
+        "Proceeds": 0.5339898989898987,
+        "Cost Basis": 0.5576436401339706,
+        "Return": -0.023653741144071927,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "IDEX",
+        "Quantity": 27.31084639,
+        "Date Acquired": "12/09/21",
+        "Date Sold": "12/09/21",
+        "Proceeds": 9.469999999999999,
+        "Cost Basis": 9.7,
+        "Return": -0.23000000000000043,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "QNT",
+        "Quantity": 0.00613271,
+        "Date Acquired": "12/10/21",
+        "Date Sold": "12/10/21",
+        "Proceeds": 1.0100000000000002,
+        "Cost Basis": 1.0,
+        "Return": 0.010000000000000231,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "QNT",
+        "Quantity": 0.00613271,
+        "Date Acquired": "12/10/21",
+        "Date Sold": "12/10/21",
+        "Proceeds": 1.0100000000000002,
+        "Cost Basis": 0.99,
+        "Return": 0.02000000000000024,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "QNT",
+        "Quantity": 0.006132709999999999,
+        "Date Acquired": "12/10/21",
+        "Date Sold": "12/10/21",
+        "Proceeds": 1.0099999999999998,
+        "Cost Basis": 0.9899999999999997,
+        "Return": 0.02000000000000013,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "SPELL",
+        "Quantity": 1073.79167472,
+        "Date Acquired": "12/09/21",
+        "Date Sold": "12/10/21",
+        "Proceeds": 15.897186081452553,
+        "Cost Basis": 19.58,
+        "Return": -3.6828139185474456,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "SPELL",
+        "Quantity": 345.35023947000013,
+        "Date Acquired": "12/08/21",
+        "Date Sold": "12/10/21",
+        "Proceeds": 5.112813918547451,
+        "Cost Basis": 6.294514939787477,
+        "Return": -1.181701021240026,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "SPELL",
+        "Quantity": 191.78071926999985,
+        "Date Acquired": "12/08/21",
+        "Date Sold": "12/10/21",
+        "Proceeds": 2.5882691451973923,
+        "Cost Basis": 3.4954850602125225,
+        "Return": -0.9072159150151302,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "SPELL",
+        "Quantity": 705.97175244,
+        "Date Acquired": "12/09/21",
+        "Date Sold": "12/10/21",
+        "Proceeds": 9.527782100185389,
+        "Cost Basis": 12.82,
+        "Return": -3.292217899814611,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "SPELL",
+        "Quantity": 536.74854684,
+        "Date Acquired": "12/09/21",
+        "Date Sold": "12/10/21",
+        "Proceeds": 7.243948754617215,
+        "Cost Basis": 9.47,
+        "Return": -2.226051245382785,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "COVAL",
+        "Quantity": 97.59880058,
+        "Date Acquired": "12/10/21",
+        "Date Sold": "12/10/21",
+        "Proceeds": 17.909059984430456,
+        "Cost Basis": 19.36,
+        "Return": -1.450940015569543,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "COVAL",
+        "Quantity": 19.84954365,
+        "Date Acquired": "12/10/21",
+        "Date Sold": "12/10/21",
+        "Proceeds": 3.6423261943678766,
+        "Cost Basis": 3.03,
+        "Return": 0.6123261943678768,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "COVAL",
+        "Quantity": 139.17749338,
+        "Date Acquired": "12/10/21",
+        "Date Sold": "12/10/21",
+        "Proceeds": 25.53861382120166,
+        "Cost Basis": 21.01,
+        "Return": 4.52861382120166,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.007081,
+        "Date Acquired": "12/05/21",
+        "Date Sold": "12/11/21",
+        "Proceeds": 28.289131326858392,
+        "Cost Basis": 29.46,
+        "Return": -1.1708686731416087,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.0026910299999999996,
+        "Date Acquired": "12/09/21",
+        "Date Sold": "12/11/21",
+        "Proceeds": 10.750868673141609,
+        "Cost Basis": 12.39923144974013,
+        "Return": -1.6483627765985212,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ADA",
+        "Quantity": 21.051154,
+        "Date Acquired": "12/11/21",
+        "Date Sold": "12/23/21",
+        "Proceeds": 30.0,
+        "Cost Basis": 27.707900426516552,
+        "Return": 2.2920995734834477,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "BTC",
+        "Quantity": 0.00059005,
+        "Date Acquired": "12/23/21",
+        "Date Sold": "12/23/21",
+        "Proceeds": 28.772288621262458,
+        "Cost Basis": 30.0,
+        "Return": -1.227711378737542,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "BTC",
+        "Quantity": 0.00061395,
+        "Date Acquired": "12/04/21",
+        "Date Sold": "12/23/21",
+        "Proceeds": 29.937711378737546,
+        "Cost Basis": 31.4096617302983,
+        "Return": -1.4719503515607535,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ADA",
+        "Quantity": 13.678955,
+        "Date Acquired": "12/23/21",
+        "Date Sold": "12/23/21",
+        "Proceeds": 19.99,
+        "Cost Basis": 19.492309801415885,
+        "Return": 0.4976901985841131,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.0005644500000000002,
+        "Date Acquired": "12/09/21",
+        "Date Sold": "12/23/21",
+        "Proceeds": 2.277294475993169,
+        "Cost Basis": 2.60076855025987,
+        "Return": -0.3234740742667013,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.00430104,
+        "Date Acquired": "12/10/21",
+        "Date Sold": "12/23/21",
+        "Proceeds": 17.35270552400683,
+        "Cost Basis": 17.49891773081509,
+        "Return": -0.1462122068082614,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ADA",
+        "Quantity": 10.284186,
+        "Date Acquired": "12/23/21",
+        "Date Sold": "12/23/21",
+        "Proceeds": 15.0,
+        "Cost Basis": 14.654813877769465,
+        "Return": 0.345186122230535,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "SOL",
+        "Quantity": 0.05218526,
+        "Date Acquired": "12/23/21",
+        "Date Sold": "12/26/21",
+        "Proceeds": 9.9,
+        "Cost Basis": 9.911444512612993,
+        "Return": -0.011444512612992952,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "XLM",
+        "Quantity": 34.7109532,
+        "Date Acquired": "12/23/21",
+        "Date Sold": "12/26/21",
+        "Proceeds": 9.77,
+        "Cost Basis": 10.186790051928932,
+        "Return": -0.4167900519289329,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.00447964,
+        "Date Acquired": "12/10/21",
+        "Date Sold": "12/26/21",
+        "Proceeds": 17.64,
+        "Cost Basis": 18.225557498574414,
+        "Return": -0.5855574985744134,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ADA",
+        "Quantity": 8.475773,
+        "Date Acquired": "12/23/21",
+        "Date Sold": "12/26/21",
+        "Proceeds": 11.74,
+        "Cost Basis": 12.077851935507947,
+        "Return": -0.33785193550794723,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "MDT",
+        "Quantity": 66.26274696,
+        "Date Acquired": "12/26/21",
+        "Date Sold": "12/28/21",
+        "Proceeds": 7.619681295945604,
+        "Cost Basis": 9.9,
+        "Return": -2.2803187040543964,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "MDT",
+        "Quantity": 66.00740216,
+        "Date Acquired": "12/26/21",
+        "Date Sold": "12/28/21",
+        "Proceeds": 7.590318704054394,
+        "Cost Basis": 9.77,
+        "Return": -2.1796812959456053,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "SOL",
+        "Quantity": 0.05116967,
+        "Date Acquired": "12/23/21",
+        "Date Sold": "12/28/21",
+        "Proceeds": 9.290000000000001,
+        "Cost Basis": 9.718555487387006,
+        "Return": -0.4285554873870048,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "XLM",
+        "Quantity": 33.4039241,
+        "Date Acquired": "12/23/21",
+        "Date Sold": "12/28/21",
+        "Proceeds": 9.57,
+        "Cost Basis": 9.803209948071064,
+        "Return": -0.23320994807106388,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.00279352,
+        "Date Acquired": "12/10/21",
+        "Date Sold": "12/30/21",
+        "Proceeds": 9.98944602238126,
+        "Cost Basis": 11.365524770610499,
+        "Return": -1.3760787482292383,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.0013116999999999998,
+        "Date Acquired": "12/28/21",
+        "Date Sold": "12/30/21",
+        "Proceeds": 4.690553977618738,
+        "Cost Basis": 5.137034309623431,
+        "Return": -0.4464803320046924,
+        "Term": "SHORT"
+    }
+]

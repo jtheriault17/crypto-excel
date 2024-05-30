@@ -101,7 +101,6 @@ def get_portfolio(transactions, dates):
     dict: Portfolio data for the specified dates.
     """
     portfolio = load.load_portfolio()
-
     portfolio_dates = [datetime.strptime(date_str, '%m/%d/%y') for date_str in portfolio.keys()]
 
     if portfolio:

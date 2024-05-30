@@ -174,7 +174,7 @@ def load_sell():
                 print("Error loading sell. Initializing empty sell.")
     return sell
 
-def load_sold():
+def load_sold(year):
     """
     Description:
     Loads sold data from a JSON file.
@@ -183,15 +183,16 @@ def load_sold():
     dict: A dictionary containing sold data, or an empty dictionary if the file doesn't exist or is invalid.
     """
     sold = {}  
-    if os.path.exists('../crypto-excel/data/sold.json'): 
-        with open('../crypto-excel/data/sold.json', 'r') as f:
+    path = f'../crypto-excel/data/sold/sold-{year}.json'
+    if os.path.exists(path): 
+        with open(path, 'r') as f:
             try:
                 sold = json.load(f)
             except json.JSONDecodeError:
                 print("Error loading sold. Initializing empty sold.")
     return sold
 
-def load_f8949():
+def load_f8949(year):
     """
     Description:
     Loads f8949 data from a JSON file.
@@ -200,7 +201,7 @@ def load_f8949():
     pandas.DataFrame: A DataFrame containing f8949 data.
     """
     f8949_df = pd.DataFrame() 
-    path = '../crypto-excel/data/f8949.json'
+    path = f'../crypto-excel/data/f8949/f8949-{year}.json'
     if os.path.exists(path):
         with open(path, 'r') as f:
             try:
@@ -258,37 +259,65 @@ def load_historical_data(symbol):
     coin_id = get_coin_id(symbol.lower())
     if coin_id is None:
         return {}
+    
     historical_data = pd.read_excel(historical_data_path, sheet_name=coin_id, index_col=0)
     historical_data.index = pd.to_datetime(historical_data.index).date
+
+    historical_data_json = historical_data.copy()
+    historical_data_json.index = pd.to_datetime(historical_data.index).strftime('%m/%d/%y')
+
     historical_data = historical_data.iloc[:, 0].to_dict()
+    historical_data_json = historical_data_json.iloc[:, 0].to_dict()
+
+     # Save the DataFrame to a JSON file
+    json_path = f'../crypto-excel/data/historical-data/{symbol}.json'
+    with open(json_path, 'w') as json_file:
+        json.dump(historical_data_json, json_file, indent=4)
+
     return historical_data
 
 def load_transactions():
     """
     Description:
-    Loads transaction data from an Excel file.
+    Loads transaction data from an Excel file and saves it as a JSON file.
 
     Returns:
     pandas.DataFrame: A DataFrame containing transaction data.
     """
+    # Load the Excel file
     workbook_path = '../crypto-excel/workbooks/Transactions.xlsm'
     transactions = pd.read_excel(workbook_path, sheet_name='Transactions')
 
-    transactions_json = transactions
+    # Copy the DataFrame and fill NaN values with empty strings
+    transactions_json = transactions.copy()
     transactions_json.fillna("", inplace=True)
 
-    transactions.to_json('../crypto-excel/data/transactions.json', orient='records', indent=4)
+    # Convert the "Date" column from milliseconds to a formatted date string
+    transactions_json["Date"] = pd.to_datetime(transactions_json["Date"], unit='ms').dt.strftime("%m/%d/%y")
+
+    # Convert the DataFrame to a JSON string
+    transactions_json_str = transactions_json.to_json(orient='records', indent=4)
+
+    # Write the JSON string to a file
+    with open('../crypto-excel/data/transactions.json', 'w') as file:
+        file.write(transactions_json_str)
 
     return transactions
 
 def load_currency_data():
     """
     Description:
-    Loads currency data from an Excel file.
+    Loads currency data from an Excel file and saves it as a JSON file.
 
     Returns:
     pandas.DataFrame: A DataFrame containing currency data.
     """
     workbook_path = '../crypto-excel/workbooks/Transactions.xlsm'
     data = pd.read_excel(workbook_path, sheet_name='Currency Data')
+    
+    # Save the DataFrame to a JSON file
+    json_path = '../crypto-excel/data/currency-data.json'
+    with open(json_path, 'w') as json_file:
+        json.dump(data.to_dict(orient='records'), json_file, indent=4)
+    
     return data
