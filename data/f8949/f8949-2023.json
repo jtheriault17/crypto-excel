@@ -1,0 +1,1820 @@
+[
+    {
+        "Currency":"BTC",
+        "Quantity":0.00002669,
+        "Date Acquired":"08\/02\/2023",
+        "Date Sold":"08\/02\/2023",
+        "Proceeds":0.78,
+        "Cost Basis":0.79,
+        "Return":-0.01
+    },
+    {
+        "Currency":"BTC",
+        "Quantity":0.0032611,
+        "Date Acquired":"08\/02\/2023",
+        "Date Sold":"08\/02\/2023",
+        "Proceeds":94.96,
+        "Cost Basis":95.98,
+        "Return":-1.02
+    },
+    {
+        "Currency":"BTC",
+        "Quantity":0.00011001,
+        "Date Acquired":"08\/02\/2023",
+        "Date Sold":"08\/03\/2023",
+        "Proceeds":3.17,
+        "Cost Basis":3.24,
+        "Return":-0.07
+    },
+    {
+        "Currency":"FIL",
+        "Quantity":33.36703741,
+        "Date Acquired":"03\/21\/2023",
+        "Date Sold":"03\/21\/2023",
+        "Proceeds":194.39,
+        "Cost Basis":200.0,
+        "Return":-5.61
+    },
+    {
+        "Currency":"LINK",
+        "Quantity":3.17769331,
+        "Date Acquired":"11\/21\/2022",
+        "Date Sold":"03\/02\/2023",
+        "Proceeds":23.08,
+        "Cost Basis":20.0,
+        "Return":3.08
+    },
+    {
+        "Currency":"LINK",
+        "Quantity":2.96042844,
+        "Date Acquired":"11\/28\/2022",
+        "Date Sold":"03\/02\/2023",
+        "Proceeds":21.5,
+        "Cost Basis":20.0,
+        "Return":1.5
+    },
+    {
+        "Currency":"LINK",
+        "Quantity":2.64100863,
+        "Date Acquired":"12\/05\/2022",
+        "Date Sold":"03\/02\/2023",
+        "Proceeds":19.18,
+        "Cost Basis":20.0,
+        "Return":-0.82
+    },
+    {
+        "Currency":"LINK",
+        "Quantity":2.56939872,
+        "Date Acquired":"02\/01\/2023",
+        "Date Sold":"03\/02\/2023",
+        "Proceeds":18.66,
+        "Cost Basis":20.0,
+        "Return":-1.34
+    },
+    {
+        "Currency":"LINK",
+        "Quantity":13.39468619,
+        "Date Acquired":"02\/09\/2023",
+        "Date Sold":"03\/02\/2023",
+        "Proceeds":97.28,
+        "Cost Basis":100.0,
+        "Return":-2.72
+    },
+    {
+        "Currency":"LINK",
+        "Quantity":2.63709192,
+        "Date Acquired":"02\/09\/2023",
+        "Date Sold":"03\/02\/2023",
+        "Proceeds":19.15,
+        "Cost Basis":20.0,
+        "Return":-0.85
+    },
+    {
+        "Currency":"LINK",
+        "Quantity":13.7991351,
+        "Date Acquired":"02\/10\/2023",
+        "Date Sold":"03\/02\/2023",
+        "Proceeds":100.22,
+        "Cost Basis":100.0,
+        "Return":0.22
+    },
+    {
+        "Currency":"LINK",
+        "Quantity":28.72333621,
+        "Date Acquired":"02\/11\/2023",
+        "Date Sold":"03\/02\/2023",
+        "Proceeds":208.61,
+        "Cost Basis":198.03,
+        "Return":10.58
+    },
+    {
+        "Currency":"LINK",
+        "Quantity":23.95634715,
+        "Date Acquired":"02\/11\/2023",
+        "Date Sold":"03\/02\/2023",
+        "Proceeds":173.99,
+        "Cost Basis":165.21,
+        "Return":8.78
+    },
+    {
+        "Currency":"LINK",
+        "Quantity":13.84058979,
+        "Date Acquired":"02\/17\/2023",
+        "Date Sold":"03\/02\/2023",
+        "Proceeds":100.52,
+        "Cost Basis":100.0,
+        "Return":0.52
+    },
+    {
+        "Currency":"LINK",
+        "Quantity":12.42352354,
+        "Date Acquired":"02\/24\/2023",
+        "Date Sold":"03\/02\/2023",
+        "Proceeds":90.23,
+        "Cost Basis":100.0,
+        "Return":-9.77
+    },
+    {
+        "Currency":"LINK",
+        "Quantity":53.4680293,
+        "Date Acquired":"03\/03\/2023",
+        "Date Sold":"03\/21\/2023",
+        "Proceeds":384.39,
+        "Cost Basis":369.59,
+        "Return":14.8
+    },
+    {
+        "Currency":"LINK",
+        "Quantity":26.00852109,
+        "Date Acquired":"03\/03\/2023",
+        "Date Sold":"03\/21\/2023",
+        "Proceeds":186.98,
+        "Cost Basis":179.75,
+        "Return":7.23
+    },
+    {
+        "Currency":"LINK",
+        "Quantity":0.60699496,
+        "Date Acquired":"04\/18\/2023",
+        "Date Sold":"04\/18\/2023",
+        "Proceeds":5.25,
+        "Cost Basis":5.4,
+        "Return":-0.15
+    },
+    {
+        "Currency":"LINK",
+        "Quantity":105.2927045,
+        "Date Acquired":"04\/18\/2023",
+        "Date Sold":"07\/17\/2023",
+        "Proceeds":694.1,
+        "Cost Basis":941.2,
+        "Return":-247.1
+    },
+    {
+        "Currency":"ADA",
+        "Quantity":128.040973,
+        "Date Acquired":"10\/09\/2022",
+        "Date Sold":"01\/11\/2023",
+        "Proceeds":38.97,
+        "Cost Basis":55.65,
+        "Return":-16.68
+    },
+    {
+        "Currency":"ADA",
+        "Quantity":16.625104,
+        "Date Acquired":"10\/09\/2022",
+        "Date Sold":"01\/20\/2023",
+        "Proceeds":5.99,
+        "Cost Basis":7.23,
+        "Return":-1.24
+    },
+    {
+        "Currency":"ADA",
+        "Quantity":0.117307,
+        "Date Acquired":"09\/09\/2022",
+        "Date Sold":"02\/11\/2023",
+        "Proceeds":0.04,
+        "Cost Basis":0.05,
+        "Return":-0.01
+    },
+    {
+        "Currency":"ADA",
+        "Quantity":0.115146,
+        "Date Acquired":"09\/17\/2022",
+        "Date Sold":"02\/11\/2023",
+        "Proceeds":0.04,
+        "Cost Basis":0.05,
+        "Return":-0.01
+    },
+    {
+        "Currency":"ADA",
+        "Quantity":0.118088,
+        "Date Acquired":"09\/24\/2022",
+        "Date Sold":"02\/11\/2023",
+        "Proceeds":0.04,
+        "Cost Basis":0.05,
+        "Return":-0.01
+    },
+    {
+        "Currency":"ADA",
+        "Quantity":190.225948,
+        "Date Acquired":"10\/09\/2022",
+        "Date Sold":"02\/11\/2023",
+        "Proceeds":66.5,
+        "Cost Basis":82.67,
+        "Return":-16.17
+    },
+    {
+        "Currency":"ADA",
+        "Quantity":93.468839,
+        "Date Acquired":"10\/20\/2022",
+        "Date Sold":"02\/11\/2023",
+        "Proceeds":32.68,
+        "Cost Basis":35.0,
+        "Return":-2.32
+    },
+    {
+        "Currency":"ADA",
+        "Quantity":0.171524,
+        "Date Acquired":"10\/30\/2022",
+        "Date Sold":"02\/11\/2023",
+        "Proceeds":0.06,
+        "Cost Basis":0.07,
+        "Return":-0.01
+    },
+    {
+        "Currency":"ADA",
+        "Quantity":0.186063,
+        "Date Acquired":"11\/03\/2022",
+        "Date Sold":"02\/11\/2023",
+        "Proceeds":0.07,
+        "Cost Basis":0.07,
+        "Return":0.0
+    },
+    {
+        "Currency":"ADA",
+        "Quantity":0.216723,
+        "Date Acquired":"11\/12\/2022",
+        "Date Sold":"02\/11\/2023",
+        "Proceeds":0.08,
+        "Cost Basis":0.07,
+        "Return":0.01
+    },
+    {
+        "Currency":"ADA",
+        "Quantity":0.202215,
+        "Date Acquired":"11\/17\/2022",
+        "Date Sold":"02\/11\/2023",
+        "Proceeds":0.07,
+        "Cost Basis":0.06,
+        "Return":0.01
+    },
+    {
+        "Currency":"ADA",
+        "Quantity":58.91846,
+        "Date Acquired":"11\/21\/2022",
+        "Date Sold":"02\/11\/2023",
+        "Proceeds":20.6,
+        "Cost Basis":20.0,
+        "Return":0.6
+    },
+    {
+        "Currency":"ADA",
+        "Quantity":0.200349,
+        "Date Acquired":"11\/22\/2022",
+        "Date Sold":"02\/11\/2023",
+        "Proceeds":0.07,
+        "Cost Basis":0.06,
+        "Return":0.01
+    },
+    {
+        "Currency":"ADA",
+        "Quantity":0.153801,
+        "Date Acquired":"11\/23\/2022",
+        "Date Sold":"02\/11\/2023",
+        "Proceeds":0.05,
+        "Cost Basis":0.04,
+        "Return":0.01
+    },
+    {
+        "Currency":"ADA",
+        "Quantity":64.990202,
+        "Date Acquired":"11\/28\/2022",
+        "Date Sold":"02\/11\/2023",
+        "Proceeds":22.72,
+        "Cost Basis":20.0,
+        "Return":2.72
+    },
+    {
+        "Currency":"ADA",
+        "Quantity":0.154609,
+        "Date Acquired":"11\/28\/2022",
+        "Date Sold":"02\/11\/2023",
+        "Proceeds":0.05,
+        "Cost Basis":0.04,
+        "Return":0.01
+    },
+    {
+        "Currency":"ADA",
+        "Quantity":0.154149,
+        "Date Acquired":"12\/03\/2022",
+        "Date Sold":"02\/11\/2023",
+        "Proceeds":0.05,
+        "Cost Basis":0.05,
+        "Return":0.0
+    },
+    {
+        "Currency":"ADA",
+        "Quantity":61.061675,
+        "Date Acquired":"12\/05\/2022",
+        "Date Sold":"02\/11\/2023",
+        "Proceeds":21.35,
+        "Cost Basis":20.0,
+        "Return":1.35
+    },
+    {
+        "Currency":"ADA",
+        "Quantity":0.171203,
+        "Date Acquired":"12\/09\/2022",
+        "Date Sold":"02\/11\/2023",
+        "Proceeds":0.06,
+        "Cost Basis":0.05,
+        "Return":0.01
+    },
+    {
+        "Currency":"ADA",
+        "Quantity":0.169772,
+        "Date Acquired":"12\/13\/2022",
+        "Date Sold":"02\/11\/2023",
+        "Proceeds":0.06,
+        "Cost Basis":0.05,
+        "Return":0.01
+    },
+    {
+        "Currency":"ADA",
+        "Quantity":0.186168,
+        "Date Acquired":"12\/21\/2022",
+        "Date Sold":"02\/11\/2023",
+        "Proceeds":0.07,
+        "Cost Basis":0.04,
+        "Return":0.03
+    },
+    {
+        "Currency":"ADA",
+        "Quantity":0.203218,
+        "Date Acquired":"12\/24\/2022",
+        "Date Sold":"02\/11\/2023",
+        "Proceeds":0.07,
+        "Cost Basis":0.05,
+        "Return":0.02
+    },
+    {
+        "Currency":"ADA",
+        "Quantity":0.18753,
+        "Date Acquired":"12\/29\/2022",
+        "Date Sold":"02\/11\/2023",
+        "Proceeds":0.07,
+        "Cost Basis":0.04,
+        "Return":0.03
+    },
+    {
+        "Currency":"ADA",
+        "Quantity":0.19011,
+        "Date Acquired":"01\/04\/2023",
+        "Date Sold":"02\/11\/2023",
+        "Proceeds":0.07,
+        "Cost Basis":0.05,
+        "Return":0.02
+    },
+    {
+        "Currency":"ADA",
+        "Quantity":0.19023,
+        "Date Acquired":"01\/07\/2023",
+        "Date Sold":"02\/11\/2023",
+        "Proceeds":0.07,
+        "Cost Basis":0.05,
+        "Return":0.02
+    },
+    {
+        "Currency":"ADA",
+        "Quantity":0.175432,
+        "Date Acquired":"01\/23\/2023",
+        "Date Sold":"02\/11\/2023",
+        "Proceeds":0.06,
+        "Cost Basis":0.06,
+        "Return":0.0
+    },
+    {
+        "Currency":"ADA",
+        "Quantity":0.178795,
+        "Date Acquired":"01\/26\/2023",
+        "Date Sold":"02\/11\/2023",
+        "Proceeds":0.06,
+        "Cost Basis":0.06,
+        "Return":0.0
+    },
+    {
+        "Currency":"ADA",
+        "Quantity":0.181661,
+        "Date Acquired":"01\/30\/2023",
+        "Date Sold":"02\/11\/2023",
+        "Proceeds":0.06,
+        "Cost Basis":0.06,
+        "Return":0.0
+    },
+    {
+        "Currency":"ADA",
+        "Quantity":0.13858,
+        "Date Acquired":"02\/02\/2023",
+        "Date Sold":"02\/11\/2023",
+        "Proceeds":0.05,
+        "Cost Basis":0.05,
+        "Return":0.0
+    },
+    {
+        "Currency":"ADA",
+        "Quantity":0.141051,
+        "Date Acquired":"02\/08\/2023",
+        "Date Sold":"02\/11\/2023",
+        "Proceeds":0.05,
+        "Cost Basis":0.05,
+        "Return":0.0
+    },
+    {
+        "Currency":"ADA",
+        "Quantity":0.136409,
+        "Date Acquired":"02\/12\/2023",
+        "Date Sold":"02\/26\/2023",
+        "Proceeds":0.05,
+        "Cost Basis":0.04,
+        "Return":0.01
+    },
+    {
+        "Currency":"ADA",
+        "Quantity":0.018183,
+        "Date Acquired":"02\/15\/2023",
+        "Date Sold":"02\/26\/2023",
+        "Proceeds":0.01,
+        "Cost Basis":0.0,
+        "Return":0.01
+    },
+    {
+        "Currency":"ADA",
+        "Quantity":0.129656,
+        "Date Acquired":"02\/16\/2023",
+        "Date Sold":"02\/26\/2023",
+        "Proceeds":0.05,
+        "Cost Basis":0.05,
+        "Return":0.0
+    },
+    {
+        "Currency":"ADA",
+        "Quantity":0.137732,
+        "Date Acquired":"02\/21\/2023",
+        "Date Sold":"02\/26\/2023",
+        "Proceeds":0.05,
+        "Cost Basis":0.05,
+        "Return":0.0
+    },
+    {
+        "Currency":"ADA",
+        "Quantity":0.180021,
+        "Date Acquired":"03\/27\/2023",
+        "Date Sold":"03\/27\/2023",
+        "Proceeds":0.06,
+        "Cost Basis":0.06,
+        "Return":0.0
+    },
+    {
+        "Currency":"ADA",
+        "Quantity":0.166909,
+        "Date Acquired":"03\/27\/2023",
+        "Date Sold":"07\/17\/2023",
+        "Proceeds":0.05,
+        "Cost Basis":0.06,
+        "Return":-0.01
+    },
+    {
+        "Currency":"ADA",
+        "Quantity":1677.920757,
+        "Date Acquired":"03\/27\/2023",
+        "Date Sold":"07\/17\/2023",
+        "Proceeds":506.29,
+        "Cost Basis":593.32,
+        "Return":-87.03
+    },
+    {
+        "Currency":"ADA",
+        "Quantity":526.103558,
+        "Date Acquired":"03\/27\/2023",
+        "Date Sold":"07\/17\/2023",
+        "Proceeds":158.74,
+        "Cost Basis":181.58,
+        "Return":-22.84
+    },
+    {
+        "Currency":"ADA",
+        "Quantity":32.43394,
+        "Date Acquired":"07\/17\/2023",
+        "Date Sold":"07\/17\/2023",
+        "Proceeds":9.79,
+        "Cost Basis":9.96,
+        "Return":-0.17
+    },
+    {
+        "Currency":"ETH",
+        "Quantity":0.000462,
+        "Date Acquired":"01\/09\/2023",
+        "Date Sold":"01\/12\/2023",
+        "Proceeds":0.72,
+        "Cost Basis":0.61,
+        "Return":0.11
+    },
+    {
+        "Currency":"ETH",
+        "Quantity":0.00361038,
+        "Date Acquired":"01\/09\/2023",
+        "Date Sold":"01\/12\/2023",
+        "Proceeds":4.92,
+        "Cost Basis":4.76,
+        "Return":0.16
+    },
+    {
+        "Currency":"ETH",
+        "Quantity":0.00144287,
+        "Date Acquired":"01\/09\/2023",
+        "Date Sold":"01\/12\/2023",
+        "Proceeds":1.86,
+        "Cost Basis":1.9,
+        "Return":-0.04
+    },
+    {
+        "Currency":"ETH",
+        "Quantity":0.000378,
+        "Date Acquired":"01\/09\/2023",
+        "Date Sold":"01\/12\/2023",
+        "Proceeds":0.66,
+        "Cost Basis":0.5,
+        "Return":0.16
+    },
+    {
+        "Currency":"ETH",
+        "Quantity":0.01124654,
+        "Date Acquired":"01\/23\/2023",
+        "Date Sold":"02\/18\/2023",
+        "Proceeds":19.01,
+        "Cost Basis":20.0,
+        "Return":-0.99
+    },
+    {
+        "Currency":"ETH",
+        "Quantity":0.01127567,
+        "Date Acquired":"01\/30\/2023",
+        "Date Sold":"02\/18\/2023",
+        "Proceeds":19.05,
+        "Cost Basis":20.0,
+        "Return":-0.95
+    },
+    {
+        "Currency":"ETH",
+        "Quantity":0.00008821,
+        "Date Acquired":"02\/06\/2023",
+        "Date Sold":"02\/18\/2023",
+        "Proceeds":0.15,
+        "Cost Basis":0.16,
+        "Return":-0.01
+    },
+    {
+        "Currency":"ETH",
+        "Quantity":0.00707179,
+        "Date Acquired":"02\/06\/2023",
+        "Date Sold":"02\/18\/2023",
+        "Proceeds":11.95,
+        "Cost Basis":12.49,
+        "Return":-0.54
+    },
+    {
+        "Currency":"ETH",
+        "Quantity":0.00416712,
+        "Date Acquired":"02\/06\/2023",
+        "Date Sold":"03\/25\/2023",
+        "Proceeds":7.08,
+        "Cost Basis":7.36,
+        "Return":-0.28
+    },
+    {
+        "Currency":"ETH",
+        "Quantity":0.05491701,
+        "Date Acquired":"02\/17\/2023",
+        "Date Sold":"03\/25\/2023",
+        "Proceeds":93.31,
+        "Cost Basis":93.69,
+        "Return":-0.38
+    },
+    {
+        "Currency":"ETH",
+        "Quantity":0.05859031,
+        "Date Acquired":"02\/18\/2023",
+        "Date Sold":"03\/25\/2023",
+        "Proceeds":99.55,
+        "Cost Basis":100.0,
+        "Return":-0.45
+    },
+    {
+        "Currency":"ETH",
+        "Quantity":0.05483242,
+        "Date Acquired":"03\/18\/2023",
+        "Date Sold":"03\/25\/2023",
+        "Proceeds":93.17,
+        "Cost Basis":100.0,
+        "Return":-6.83
+    },
+    {
+        "Currency":"ETH",
+        "Quantity":0.0568391,
+        "Date Acquired":"03\/25\/2023",
+        "Date Sold":"03\/25\/2023",
+        "Proceeds":96.57,
+        "Cost Basis":100.0,
+        "Return":-3.43
+    },
+    {
+        "Currency":"ETH",
+        "Quantity":0.000504,
+        "Date Acquired":"02\/17\/2023",
+        "Date Sold":"03\/27\/2023",
+        "Proceeds":1.29,
+        "Cost Basis":0.86,
+        "Return":0.43
+    },
+    {
+        "Currency":"ETH",
+        "Quantity":0.00052499,
+        "Date Acquired":"11\/28\/2022",
+        "Date Sold":"03\/27\/2023",
+        "Proceeds":0.9,
+        "Cost Basis":0.62,
+        "Return":0.28
+    },
+    {
+        "Currency":"ETH",
+        "Quantity":0.00030431,
+        "Date Acquired":"02\/17\/2023",
+        "Date Sold":"07\/17\/2023",
+        "Proceeds":0.59,
+        "Cost Basis":0.52,
+        "Return":0.07
+    },
+    {
+        "Currency":"ETH",
+        "Quantity":0.0010056,
+        "Date Acquired":"02\/17\/2023",
+        "Date Sold":"07\/17\/2023",
+        "Proceeds":1.93,
+        "Cost Basis":3.01,
+        "Return":-1.08
+    },
+    {
+        "Currency":"ETH",
+        "Quantity":0.00030228,
+        "Date Acquired":"11\/28\/2022",
+        "Date Sold":"08\/08\/2023",
+        "Proceeds":0.55,
+        "Cost Basis":0.36,
+        "Return":0.19
+    },
+    {
+        "Currency":"ETH",
+        "Quantity":0.01582851,
+        "Date Acquired":"11\/28\/2022",
+        "Date Sold":"08\/08\/2023",
+        "Proceeds":28.12,
+        "Cost Basis":18.67,
+        "Return":9.45
+    },
+    {
+        "Currency":"ETH",
+        "Quantity":0.04389548,
+        "Date Acquired":"11\/29\/2022",
+        "Date Sold":"08\/08\/2023",
+        "Proceeds":77.98,
+        "Cost Basis":53.05,
+        "Return":24.93
+    },
+    {
+        "Currency":"ETH",
+        "Quantity":0.30988966,
+        "Date Acquired":"12\/07\/2022",
+        "Date Sold":"08\/08\/2023",
+        "Proceeds":550.55,
+        "Cost Basis":382.25,
+        "Return":168.3
+    },
+    {
+        "Currency":"ETH",
+        "Quantity":0.01684499,
+        "Date Acquired":"12\/19\/2022",
+        "Date Sold":"08\/08\/2023",
+        "Proceeds":29.93,
+        "Cost Basis":20.01,
+        "Return":9.92
+    },
+    {
+        "Currency":"ETH",
+        "Quantity":0.123548,
+        "Date Acquired":"12\/22\/2022",
+        "Date Sold":"08\/08\/2023",
+        "Proceeds":219.5,
+        "Cost Basis":150.13,
+        "Return":69.37
+    },
+    {
+        "Currency":"ETH",
+        "Quantity":0.01631107,
+        "Date Acquired":"12\/26\/2022",
+        "Date Sold":"08\/08\/2023",
+        "Proceeds":28.98,
+        "Cost Basis":20.01,
+        "Return":8.97
+    },
+    {
+        "Currency":"ETH",
+        "Quantity":0.03627938,
+        "Date Acquired":"12\/27\/2022",
+        "Date Sold":"08\/08\/2023",
+        "Proceeds":64.45,
+        "Cost Basis":44.84,
+        "Return":19.61
+    },
+    {
+        "Currency":"ETH",
+        "Quantity":0.083766,
+        "Date Acquired":"12\/31\/2022",
+        "Date Sold":"08\/08\/2023",
+        "Proceeds":148.82,
+        "Cost Basis":100.1,
+        "Return":48.72
+    },
+    {
+        "Currency":"ETH",
+        "Quantity":0.01657242,
+        "Date Acquired":"01\/02\/2023",
+        "Date Sold":"08\/08\/2023",
+        "Proceeds":29.44,
+        "Cost Basis":20.01,
+        "Return":9.43
+    },
+    {
+        "Currency":"ETH",
+        "Quantity":0.058256,
+        "Date Acquired":"01\/02\/2023",
+        "Date Sold":"08\/08\/2023",
+        "Proceeds":103.5,
+        "Cost Basis":70.08,
+        "Return":33.42
+    },
+    {
+        "Currency":"ETH",
+        "Quantity":0.00928786,
+        "Date Acquired":"01\/09\/2023",
+        "Date Sold":"08\/08\/2023",
+        "Proceeds":16.5,
+        "Cost Basis":12.24,
+        "Return":4.26
+    },
+    {
+        "Currency":"ETH",
+        "Quantity":0.00300987,
+        "Date Acquired":"01\/12\/2023",
+        "Date Sold":"08\/08\/2023",
+        "Proceeds":5.35,
+        "Cost Basis":4.16,
+        "Return":1.19
+    },
+    {
+        "Currency":"ETH",
+        "Quantity":0.0127051,
+        "Date Acquired":"01\/16\/2023",
+        "Date Sold":"08\/08\/2023",
+        "Proceeds":22.57,
+        "Cost Basis":20.01,
+        "Return":2.56
+    },
+    {
+        "Currency":"ETH",
+        "Quantity":0.17811528,
+        "Date Acquired":"01\/20\/2023",
+        "Date Sold":"08\/08\/2023",
+        "Proceeds":316.44,
+        "Cost Basis":300.03,
+        "Return":16.41
+    },
+    {
+        "Currency":"ETH",
+        "Quantity":0.07128435,
+        "Date Acquired":"01\/20\/2023",
+        "Date Sold":"08\/08\/2023",
+        "Proceeds":126.64,
+        "Cost Basis":120.02,
+        "Return":6.62
+    },
+    {
+        "Currency":"ETH",
+        "Quantity":0.00356885,
+        "Date Acquired":"01\/20\/2023",
+        "Date Sold":"08\/08\/2023",
+        "Proceeds":6.34,
+        "Cost Basis":5.99,
+        "Return":0.35
+    },
+    {
+        "Currency":"ETH",
+        "Quantity":0.06571604,
+        "Date Acquired":"02\/11\/2023",
+        "Date Sold":"08\/08\/2023",
+        "Proceeds":116.75,
+        "Cost Basis":100.07,
+        "Return":16.68
+    },
+    {
+        "Currency":"ETH",
+        "Quantity":0.06598791,
+        "Date Acquired":"02\/17\/2023",
+        "Date Sold":"08\/08\/2023",
+        "Proceeds":117.23,
+        "Cost Basis":112.66,
+        "Return":4.57
+    },
+    {
+        "Currency":"ETH",
+        "Quantity":0.118511,
+        "Date Acquired":"02\/19\/2023",
+        "Date Sold":"08\/08\/2023",
+        "Proceeds":210.55,
+        "Cost Basis":201.12,
+        "Return":9.43
+    },
+    {
+        "Currency":"ETH",
+        "Quantity":0.06234141,
+        "Date Acquired":"02\/25\/2023",
+        "Date Sold":"08\/08\/2023",
+        "Proceeds":110.76,
+        "Cost Basis":100.07,
+        "Return":10.69
+    },
+    {
+        "Currency":"ETH",
+        "Quantity":0.00009326,
+        "Date Acquired":"02\/26\/2023",
+        "Date Sold":"08\/08\/2023",
+        "Proceeds":0.17,
+        "Cost Basis":0.15,
+        "Return":0.02
+    },
+    {
+        "Currency":"ETH",
+        "Quantity":0.06329074,
+        "Date Acquired":"03\/04\/2023",
+        "Date Sold":"08\/08\/2023",
+        "Proceeds":112.44,
+        "Cost Basis":100.07,
+        "Return":12.37
+    },
+    {
+        "Currency":"ETH",
+        "Quantity":0.06802628,
+        "Date Acquired":"03\/11\/2023",
+        "Date Sold":"08\/08\/2023",
+        "Proceeds":120.86,
+        "Cost Basis":100.07,
+        "Return":20.79
+    },
+    {
+        "Currency":"OP",
+        "Quantity":73.09505803,
+        "Date Acquired":"03\/21\/2023",
+        "Date Sold":"03\/27\/2023",
+        "Proceeds":150.17,
+        "Cost Basis":194.39,
+        "Return":-44.22
+    },
+    {
+        "Currency":"OP",
+        "Quantity":215.65512081,
+        "Date Acquired":"03\/21\/2023",
+        "Date Sold":"03\/27\/2023",
+        "Proceeds":443.06,
+        "Cost Basis":571.37,
+        "Return":-128.31
+    },
+    {
+        "Currency":"ARB",
+        "Quantity":314.03690116,
+        "Date Acquired":"03\/25\/2023",
+        "Date Sold":"03\/27\/2023",
+        "Proceeds":363.23,
+        "Cost Basis":389.68,
+        "Return":-26.45
+    },
+    {
+        "Currency":"USDC",
+        "Quantity":1000.12,
+        "Date Acquired":"03\/28\/2023",
+        "Date Sold":"03\/28\/2023",
+        "Proceeds":992.17,
+        "Cost Basis":1000.12,
+        "Return":-7.95
+    },
+    {
+        "Currency":"USDC",
+        "Quantity":231.88,
+        "Date Acquired":"03\/28\/2023",
+        "Date Sold":"03\/28\/2023",
+        "Proceeds":229.5,
+        "Cost Basis":231.88,
+        "Return":-2.38
+    },
+    {
+        "Currency":"USDC",
+        "Quantity":267.840588,
+        "Date Acquired":"03\/29\/2023",
+        "Date Sold":"03\/29\/2023",
+        "Proceeds":267.84,
+        "Cost Basis":270.66,
+        "Return":-2.82
+    },
+    {
+        "Currency":"QNT",
+        "Quantity":0.83455039,
+        "Date Acquired":"11\/03\/2022",
+        "Date Sold":"01\/20\/2023",
+        "Proceeds":119.94,
+        "Cost Basis":137.73,
+        "Return":-17.79
+    },
+    {
+        "Currency":"QNT",
+        "Quantity":0.37735038,
+        "Date Acquired":"11\/03\/2022",
+        "Date Sold":"02\/26\/2023",
+        "Proceeds":48.47,
+        "Cost Basis":62.27,
+        "Return":-13.8
+    },
+    {
+        "Currency":"QNT",
+        "Quantity":0.16911129,
+        "Date Acquired":"11\/21\/2022",
+        "Date Sold":"02\/26\/2023",
+        "Proceeds":21.72,
+        "Cost Basis":20.0,
+        "Return":1.72
+    },
+    {
+        "Currency":"QNT",
+        "Quantity":0.1767161,
+        "Date Acquired":"11\/28\/2022",
+        "Date Sold":"02\/26\/2023",
+        "Proceeds":22.7,
+        "Cost Basis":20.0,
+        "Return":2.7
+    },
+    {
+        "Currency":"QNT",
+        "Quantity":0.15407247,
+        "Date Acquired":"12\/05\/2022",
+        "Date Sold":"02\/26\/2023",
+        "Proceeds":19.79,
+        "Cost Basis":20.0,
+        "Return":-0.21
+    },
+    {
+        "Currency":"QNT",
+        "Quantity":0.17153694,
+        "Date Acquired":"12\/12\/2022",
+        "Date Sold":"02\/26\/2023",
+        "Proceeds":22.03,
+        "Cost Basis":20.0,
+        "Return":2.03
+    },
+    {
+        "Currency":"QNT",
+        "Quantity":0.18022097,
+        "Date Acquired":"12\/19\/2022",
+        "Date Sold":"02\/26\/2023",
+        "Proceeds":23.15,
+        "Cost Basis":20.0,
+        "Return":3.15
+    },
+    {
+        "Currency":"QNT",
+        "Quantity":0.18544404,
+        "Date Acquired":"12\/26\/2022",
+        "Date Sold":"02\/26\/2023",
+        "Proceeds":23.82,
+        "Cost Basis":20.0,
+        "Return":3.82
+    },
+    {
+        "Currency":"QNT",
+        "Quantity":0.18579031,
+        "Date Acquired":"01\/02\/2023",
+        "Date Sold":"02\/26\/2023",
+        "Proceeds":23.86,
+        "Cost Basis":20.0,
+        "Return":3.86
+    },
+    {
+        "Currency":"QNT",
+        "Quantity":0.16864407,
+        "Date Acquired":"01\/09\/2023",
+        "Date Sold":"02\/26\/2023",
+        "Proceeds":21.66,
+        "Cost Basis":20.0,
+        "Return":1.66
+    },
+    {
+        "Currency":"QNT",
+        "Quantity":0.15222214,
+        "Date Acquired":"02\/25\/2023",
+        "Date Sold":"02\/26\/2023",
+        "Proceeds":19.55,
+        "Cost Basis":20.0,
+        "Return":-0.45
+    },
+    {
+        "Currency":"QNT",
+        "Quantity":3.07045689,
+        "Date Acquired":"03\/02\/2023",
+        "Date Sold":"03\/03\/2023",
+        "Proceeds":369.59,
+        "Cost Basis":400.08,
+        "Return":-30.49
+    },
+    {
+        "Currency":"ATOM",
+        "Quantity":2.642361,
+        "Date Acquired":"10\/09\/2022",
+        "Date Sold":"01\/11\/2023",
+        "Proceeds":28.81,
+        "Cost Basis":34.88,
+        "Return":-6.07
+    },
+    {
+        "Currency":"ATOM",
+        "Quantity":0.038844,
+        "Date Acquired":"11\/05\/2022",
+        "Date Sold":"01\/11\/2023",
+        "Proceeds":0.42,
+        "Cost Basis":0.59,
+        "Return":-0.17
+    },
+    {
+        "Currency":"ATOM",
+        "Quantity":9.207788,
+        "Date Acquired":"10\/09\/2022",
+        "Date Sold":"02\/25\/2023",
+        "Proceeds":115.19,
+        "Cost Basis":121.54,
+        "Return":-6.35
+    },
+    {
+        "Currency":"ATOM",
+        "Quantity":0.03088,
+        "Date Acquired":"10\/21\/2022",
+        "Date Sold":"02\/25\/2023",
+        "Proceeds":0.39,
+        "Cost Basis":0.35,
+        "Return":0.04
+    },
+    {
+        "Currency":"ATOM",
+        "Quantity":0.022513,
+        "Date Acquired":"11\/12\/2022",
+        "Date Sold":"02\/25\/2023",
+        "Proceeds":0.28,
+        "Cost Basis":0.26,
+        "Return":0.02
+    },
+    {
+        "Currency":"ATOM",
+        "Quantity":0.00113,
+        "Date Acquired":"11\/18\/2022",
+        "Date Sold":"02\/25\/2023",
+        "Proceeds":0.01,
+        "Cost Basis":0.01,
+        "Return":0.0
+    },
+    {
+        "Currency":"ATOM",
+        "Quantity":0.024909,
+        "Date Acquired":"11\/22\/2022",
+        "Date Sold":"02\/25\/2023",
+        "Proceeds":0.31,
+        "Cost Basis":0.23,
+        "Return":0.08
+    },
+    {
+        "Currency":"ATOM",
+        "Quantity":0.021043,
+        "Date Acquired":"11\/25\/2022",
+        "Date Sold":"02\/25\/2023",
+        "Proceeds":0.26,
+        "Cost Basis":0.21,
+        "Return":0.05
+    },
+    {
+        "Currency":"ATOM",
+        "Quantity":0.024103,
+        "Date Acquired":"12\/03\/2022",
+        "Date Sold":"02\/25\/2023",
+        "Proceeds":0.3,
+        "Cost Basis":0.25,
+        "Return":0.05
+    },
+    {
+        "Currency":"ATOM",
+        "Quantity":0.017911,
+        "Date Acquired":"12\/14\/2022",
+        "Date Sold":"02\/25\/2023",
+        "Proceeds":0.22,
+        "Cost Basis":0.17,
+        "Return":0.05
+    },
+    {
+        "Currency":"ATOM",
+        "Quantity":0.01942,
+        "Date Acquired":"12\/16\/2022",
+        "Date Sold":"02\/25\/2023",
+        "Proceeds":0.24,
+        "Cost Basis":0.17,
+        "Return":0.07
+    },
+    {
+        "Currency":"ATOM",
+        "Quantity":0.020128,
+        "Date Acquired":"12\/23\/2022",
+        "Date Sold":"02\/25\/2023",
+        "Proceeds":0.25,
+        "Cost Basis":0.18,
+        "Return":0.07
+    },
+    {
+        "Currency":"ATOM",
+        "Quantity":0.013061,
+        "Date Acquired":"12\/30\/2022",
+        "Date Sold":"02\/25\/2023",
+        "Proceeds":0.16,
+        "Cost Basis":0.12,
+        "Return":0.04
+    },
+    {
+        "Currency":"ATOM",
+        "Quantity":0.04331,
+        "Date Acquired":"01\/20\/2023",
+        "Date Sold":"02\/25\/2023",
+        "Proceeds":0.54,
+        "Cost Basis":0.52,
+        "Return":0.02
+    },
+    {
+        "Currency":"ATOM",
+        "Quantity":0.014948,
+        "Date Acquired":"01\/20\/2023",
+        "Date Sold":"02\/25\/2023",
+        "Proceeds":0.19,
+        "Cost Basis":0.18,
+        "Return":0.01
+    },
+    {
+        "Currency":"ATOM",
+        "Quantity":0.015281,
+        "Date Acquired":"02\/06\/2023",
+        "Date Sold":"02\/25\/2023",
+        "Proceeds":0.19,
+        "Cost Basis":0.21,
+        "Return":-0.02
+    },
+    {
+        "Currency":"ATOM",
+        "Quantity":5.75399,
+        "Date Acquired":"02\/11\/2023",
+        "Date Sold":"02\/25\/2023",
+        "Proceeds":71.99,
+        "Cost Basis":80.53,
+        "Return":-8.54
+    },
+    {
+        "Currency":"ATOM",
+        "Quantity":0.002939,
+        "Date Acquired":"02\/16\/2023",
+        "Date Sold":"02\/25\/2023",
+        "Proceeds":0.04,
+        "Cost Basis":0.04,
+        "Return":0.0
+    },
+    {
+        "Currency":"ATOM",
+        "Quantity":0.00978,
+        "Date Acquired":"02\/16\/2023",
+        "Date Sold":"02\/25\/2023",
+        "Proceeds":0.12,
+        "Cost Basis":0.13,
+        "Return":-0.01
+    },
+    {
+        "Currency":"ATOM",
+        "Quantity":0.00824,
+        "Date Acquired":"02\/16\/2023",
+        "Date Sold":"02\/25\/2023",
+        "Proceeds":0.1,
+        "Cost Basis":0.11,
+        "Return":-0.01
+    },
+    {
+        "Currency":"ATOM",
+        "Quantity":1.53124,
+        "Date Acquired":"02\/25\/2023",
+        "Date Sold":"02\/25\/2023",
+        "Proceeds":19.16,
+        "Cost Basis":20.0,
+        "Return":-0.84
+    },
+    {
+        "Currency":"ATOM",
+        "Quantity":0.012748,
+        "Date Acquired":"02\/28\/2023",
+        "Date Sold":"03\/03\/2023",
+        "Proceeds":0.15,
+        "Cost Basis":0.15,
+        "Return":0.0
+    },
+    {
+        "Currency":"ATOM",
+        "Quantity":0.019869,
+        "Date Acquired":"03\/01\/2023",
+        "Date Sold":"03\/03\/2023",
+        "Proceeds":0.23,
+        "Cost Basis":0.24,
+        "Return":-0.01
+    },
+    {
+        "Currency":"ATOM",
+        "Quantity":15.381562,
+        "Date Acquired":"03\/02\/2023",
+        "Date Sold":"03\/03\/2023",
+        "Proceeds":179.37,
+        "Cost Basis":199.95,
+        "Return":-20.58
+    },
+    {
+        "Currency":"ATOM",
+        "Quantity":11.674171,
+        "Date Acquired":"06\/03\/2023",
+        "Date Sold":"06\/19\/2023",
+        "Proceeds":99.88,
+        "Cost Basis":126.43,
+        "Return":-26.55
+    },
+    {
+        "Currency":"ATOM",
+        "Quantity":0.005,
+        "Date Acquired":"06\/03\/2023",
+        "Date Sold":"06\/19\/2023",
+        "Proceeds":0.04,
+        "Cost Basis":0.05,
+        "Return":-0.01
+    },
+    {
+        "Currency":"ATOM",
+        "Quantity":0.005,
+        "Date Acquired":"06\/03\/2023",
+        "Date Sold":"07\/09\/2023",
+        "Proceeds":0.05,
+        "Cost Basis":0.05,
+        "Return":0.0
+    },
+    {
+        "Currency":"ATOM",
+        "Quantity":0.005,
+        "Date Acquired":"06\/03\/2023",
+        "Date Sold":"07\/09\/2023",
+        "Proceeds":0.05,
+        "Cost Basis":0.05,
+        "Return":0.0
+    },
+    {
+        "Currency":"ATOM",
+        "Quantity":0.002605,
+        "Date Acquired":"06\/03\/2023",
+        "Date Sold":"07\/17\/2023",
+        "Proceeds":0.02,
+        "Cost Basis":0.03,
+        "Return":-0.01
+    },
+    {
+        "Currency":"ATOM",
+        "Quantity":0.002065,
+        "Date Acquired":"07\/13\/2023",
+        "Date Sold":"07\/17\/2023",
+        "Proceeds":0.02,
+        "Cost Basis":0.02,
+        "Return":0.0
+    },
+    {
+        "Currency":"ATOM",
+        "Quantity":0.003922,
+        "Date Acquired":"04\/18\/2023",
+        "Date Sold":"07\/17\/2023",
+        "Proceeds":0.04,
+        "Cost Basis":0.04,
+        "Return":0.0
+    },
+    {
+        "Currency":"ATOM",
+        "Quantity":33.477586,
+        "Date Acquired":"06\/03\/2023",
+        "Date Sold":"07\/17\/2023",
+        "Proceeds":301.76,
+        "Cost Basis":362.6,
+        "Return":-60.84
+    },
+    {
+        "Currency":"ATOM",
+        "Quantity":0.16642,
+        "Date Acquired":"06\/03\/2023",
+        "Date Sold":"07\/17\/2023",
+        "Proceeds":1.5,
+        "Cost Basis":1.85,
+        "Return":-0.35
+    },
+    {
+        "Currency":"ATOM",
+        "Quantity":0.83358,
+        "Date Acquired":"06\/03\/2023",
+        "Date Sold":"07\/17\/2023",
+        "Proceeds":7.51,
+        "Cost Basis":9.05,
+        "Return":-1.54
+    },
+    {
+        "Currency":"ATOM",
+        "Quantity":41.124939,
+        "Date Acquired":"07\/13\/2023",
+        "Date Sold":"07\/17\/2023",
+        "Proceeds":370.69,
+        "Cost Basis":373.08,
+        "Return":-2.39
+    },
+    {
+        "Currency":"MATIC",
+        "Quantity":119.36914477,
+        "Date Acquired":"11\/08\/2022",
+        "Date Sold":"02\/11\/2023",
+        "Proceeds":142.43,
+        "Cost Basis":150.0,
+        "Return":-7.57
+    },
+    {
+        "Currency":"ALGO",
+        "Quantity":345.467266,
+        "Date Acquired":"02\/09\/2023",
+        "Date Sold":"03\/02\/2023",
+        "Proceeds":84.9,
+        "Cost Basis":100.0,
+        "Return":-15.1
+    },
+    {
+        "Currency":"ALGO",
+        "Quantity":838.198147,
+        "Date Acquired":"02\/25\/2023",
+        "Date Sold":"03\/02\/2023",
+        "Proceeds":205.99,
+        "Cost Basis":209.96,
+        "Return":-3.97
+    },
+    {
+        "Currency":"ALGO",
+        "Quantity":444.336215,
+        "Date Acquired":"02\/26\/2023",
+        "Date Sold":"03\/02\/2023",
+        "Proceeds":109.2,
+        "Cost Basis":111.26,
+        "Return":-2.06
+    },
+    {
+        "Currency":"ALGO",
+        "Quantity":49.862877,
+        "Date Acquired":"02\/26\/2023",
+        "Date Sold":"03\/27\/2023",
+        "Proceeds":10.0,
+        "Cost Basis":12.49,
+        "Return":-2.49
+    },
+    {
+        "Currency":"ALGO",
+        "Quantity":324.38194,
+        "Date Acquired":"12\/01\/2022",
+        "Date Sold":"03\/27\/2023",
+        "Proceeds":65.07,
+        "Cost Basis":77.93,
+        "Return":-12.86
+    },
+    {
+        "Currency":"ALGO",
+        "Quantity":0.872231,
+        "Date Acquired":"01\/13\/2023",
+        "Date Sold":"03\/27\/2023",
+        "Proceeds":0.17,
+        "Cost Basis":0.18,
+        "Return":-0.01
+    },
+    {
+        "Currency":"ALGO",
+        "Quantity":570.416545,
+        "Date Acquired":"02\/11\/2023",
+        "Date Sold":"03\/27\/2023",
+        "Proceeds":114.42,
+        "Cost Basis":142.43,
+        "Return":-28.01
+    },
+    {
+        "Currency":"ALGO",
+        "Quantity":353.710187,
+        "Date Acquired":"02\/11\/2023",
+        "Date Sold":"03\/27\/2023",
+        "Proceeds":70.95,
+        "Cost Basis":88.26,
+        "Return":-17.31
+    },
+    {
+        "Currency":"ALGO",
+        "Quantity":491.241399,
+        "Date Acquired":"02\/26\/2023",
+        "Date Sold":"03\/27\/2023",
+        "Proceeds":98.54,
+        "Cost Basis":123.0,
+        "Return":-24.46
+    },
+    {
+        "Currency":"ALGO",
+        "Quantity":1770.161025,
+        "Date Acquired":"03\/27\/2023",
+        "Date Sold":"03\/27\/2023",
+        "Proceeds":355.09,
+        "Cost Basis":363.23,
+        "Return":-8.14
+    },
+    {
+        "Currency":"ALGO",
+        "Quantity":1151.259779,
+        "Date Acquired":"03\/28\/2023",
+        "Date Sold":"03\/29\/2023",
+        "Proceeds":270.66,
+        "Cost Basis":229.5,
+        "Return":41.16
+    },
+    {
+        "Currency":"ALGO",
+        "Quantity":452.259307,
+        "Date Acquired":"04\/05\/2023",
+        "Date Sold":"04\/05\/2023",
+        "Proceeds":99.0,
+        "Cost Basis":100.0,
+        "Return":-1.0
+    },
+    {
+        "Currency":"ALGO",
+        "Quantity":10.06667,
+        "Date Acquired":"04\/14\/2023",
+        "Date Sold":"04\/18\/2023",
+        "Proceeds":2.25,
+        "Cost Basis":2.28,
+        "Return":-0.03
+    },
+    {
+        "Currency":"ALGO",
+        "Quantity":4205.522511,
+        "Date Acquired":"04\/18\/2023",
+        "Date Sold":"04\/18\/2023",
+        "Proceeds":939.09,
+        "Cost Basis":939.3,
+        "Return":-0.21
+    },
+    {
+        "Currency":"HBAR",
+        "Quantity":3950.23041475,
+        "Date Acquired":"01\/20\/2023",
+        "Date Sold":"01\/20\/2023",
+        "Proceeds":299.82,
+        "Cost Basis":300.55,
+        "Return":-0.73
+    },
+    {
+        "Currency":"HBAR",
+        "Quantity":2446.12929248,
+        "Date Acquired":"01\/20\/2023",
+        "Date Sold":"03\/02\/2023",
+        "Proceeds":168.62,
+        "Cost Basis":186.11,
+        "Return":-17.49
+    },
+    {
+        "Currency":"HBAR",
+        "Quantity":226.59986336,
+        "Date Acquired":"02\/13\/2023",
+        "Date Sold":"03\/02\/2023",
+        "Proceeds":15.62,
+        "Cost Basis":20.0,
+        "Return":-4.38
+    },
+    {
+        "Currency":"HBAR",
+        "Quantity":227.92349101,
+        "Date Acquired":"02\/20\/2023",
+        "Date Sold":"03\/02\/2023",
+        "Proceeds":15.71,
+        "Cost Basis":20.0,
+        "Return":-4.29
+    },
+    {
+        "Currency":"HBAR",
+        "Quantity":1.0,
+        "Date Acquired":"01\/20\/2023",
+        "Date Sold":"03\/27\/2023",
+        "Proceeds":0.06,
+        "Cost Basis":0.08,
+        "Return":-0.02
+    },
+    {
+        "Currency":"HBAR",
+        "Quantity":0.99999562,
+        "Date Acquired":"01\/11\/2023",
+        "Date Sold":"03\/27\/2023",
+        "Proceeds":0.06,
+        "Cost Basis":0.04,
+        "Return":0.02
+    },
+    {
+        "Currency":"HBAR",
+        "Quantity":84.666836,
+        "Date Acquired":"01\/20\/2023",
+        "Date Sold":"08\/08\/2023",
+        "Proceeds":4.99,
+        "Cost Basis":6.44,
+        "Return":-1.45
+    },
+    {
+        "Currency":"DOGE",
+        "Quantity":2.30857143,
+        "Date Acquired":"05\/16\/2023",
+        "Date Sold":"10\/31\/2023",
+        "Proceeds":0.16,
+        "Cost Basis":0.16,
+        "Return":0.0
+    },
+    {
+        "Currency":"SOL",
+        "Quantity":0.00099363,
+        "Date Acquired":"11\/12\/2022",
+        "Date Sold":"02\/11\/2023",
+        "Proceeds":0.02,
+        "Cost Basis":0.01,
+        "Return":0.01
+    },
+    {
+        "Currency":"SOL",
+        "Quantity":0.00043594,
+        "Date Acquired":"11\/14\/2022",
+        "Date Sold":"02\/11\/2023",
+        "Proceeds":0.01,
+        "Cost Basis":0.0,
+        "Return":0.01
+    },
+    {
+        "Currency":"SOL",
+        "Quantity":0.00041938,
+        "Date Acquired":"11\/17\/2022",
+        "Date Sold":"02\/11\/2023",
+        "Proceeds":0.01,
+        "Cost Basis":0.0,
+        "Return":0.01
+    },
+    {
+        "Currency":"SOL",
+        "Quantity":0.00041977,
+        "Date Acquired":"11\/19\/2022",
+        "Date Sold":"02\/11\/2023",
+        "Proceeds":0.01,
+        "Cost Basis":0.0,
+        "Return":0.01
+    },
+    {
+        "Currency":"SOL",
+        "Quantity":0.00041148,
+        "Date Acquired":"11\/21\/2022",
+        "Date Sold":"02\/11\/2023",
+        "Proceeds":0.01,
+        "Cost Basis":0.0,
+        "Return":0.01
+    },
+    {
+        "Currency":"SOL",
+        "Quantity":0.00041516,
+        "Date Acquired":"11\/23\/2022",
+        "Date Sold":"02\/11\/2023",
+        "Proceeds":0.01,
+        "Cost Basis":0.0,
+        "Return":0.01
+    },
+    {
+        "Currency":"SOL",
+        "Quantity":0.00035089,
+        "Date Acquired":"11\/26\/2022",
+        "Date Sold":"02\/11\/2023",
+        "Proceeds":0.01,
+        "Cost Basis":0.0,
+        "Return":0.01
+    },
+    {
+        "Currency":"SOL",
+        "Quantity":0.00036951,
+        "Date Acquired":"11\/28\/2022",
+        "Date Sold":"02\/11\/2023",
+        "Proceeds":0.01,
+        "Cost Basis":0.0,
+        "Return":0.01
+    },
+    {
+        "Currency":"SOL",
+        "Quantity":0.00036335,
+        "Date Acquired":"11\/30\/2022",
+        "Date Sold":"02\/11\/2023",
+        "Proceeds":0.01,
+        "Cost Basis":0.0,
+        "Return":0.01
+    },
+    {
+        "Currency":"SOL",
+        "Quantity":0.00035968,
+        "Date Acquired":"12\/02\/2022",
+        "Date Sold":"02\/11\/2023",
+        "Proceeds":0.01,
+        "Cost Basis":0.0,
+        "Return":0.01
+    },
+    {
+        "Currency":"SOL",
+        "Quantity":0.00035209,
+        "Date Acquired":"12\/04\/2022",
+        "Date Sold":"02\/11\/2023",
+        "Proceeds":0.01,
+        "Cost Basis":0.0,
+        "Return":0.01
+    },
+    {
+        "Currency":"SOL",
+        "Quantity":4.4574516,
+        "Date Acquired":"01\/20\/2023",
+        "Date Sold":"02\/11\/2023",
+        "Proceeds":88.15,
+        "Cost Basis":100.0,
+        "Return":-11.85
+    },
+    {
+        "Currency":"AVAX",
+        "Quantity":1.52340037,
+        "Date Acquired":"11\/21\/2022",
+        "Date Sold":"02\/11\/2023",
+        "Proceeds":27.0,
+        "Cost Basis":20.0,
+        "Return":7.0
+    },
+    {
+        "Currency":"AVAX",
+        "Quantity":1.61394972,
+        "Date Acquired":"11\/28\/2022",
+        "Date Sold":"02\/11\/2023",
+        "Proceeds":28.6,
+        "Cost Basis":20.0,
+        "Return":8.6
+    },
+    {
+        "Currency":"AVAX",
+        "Quantity":1.40636042,
+        "Date Acquired":"12\/05\/2022",
+        "Date Sold":"02\/11\/2023",
+        "Proceeds":24.93,
+        "Cost Basis":20.0,
+        "Return":4.93
+    },
+    {
+        "Currency":"XLM",
+        "Quantity":374.7470457,
+        "Date Acquired":"12\/01\/2022",
+        "Date Sold":"01\/11\/2023",
+        "Proceeds":29.24,
+        "Cost Basis":32.9,
+        "Return":-3.66
+    },
+    {
+        "Currency":"XLM",
+        "Quantity":1290.8326978,
+        "Date Acquired":"12\/01\/2022",
+        "Date Sold":"02\/11\/2023",
+        "Proceeds":108.61,
+        "Cost Basis":113.33,
+        "Return":-4.72
+    },
+    {
+        "Currency":"XLM",
+        "Quantity":1062.7997565,
+        "Date Acquired":"02\/09\/2023",
+        "Date Sold":"02\/11\/2023",
+        "Proceeds":89.42,
+        "Cost Basis":100.0,
+        "Return":-10.58
+    },
+    {
+        "Currency":"XLM",
+        "Quantity":2140.2126904,
+        "Date Acquired":"03\/21\/2023",
+        "Date Sold":"03\/27\/2023",
+        "Proceeds":192.92,
+        "Cost Basis":200.0,
+        "Return":-7.08
+    },
+    {
+        "Currency":"XRP",
+        "Quantity":1.949411,
+        "Date Acquired":"03\/21\/2023",
+        "Date Sold":"04\/05\/2023",
+        "Proceeds":0.97,
+        "Cost Basis":0.85,
+        "Return":0.12
+    },
+    {
+        "Currency":"XRP",
+        "Quantity":218.059086,
+        "Date Acquired":"03\/21\/2023",
+        "Date Sold":"04\/05\/2023",
+        "Proceeds":107.48,
+        "Cost Basis":95.33,
+        "Return":12.15
+    },
+    {
+        "Currency":"XRP",
+        "Quantity":2.031601,
+        "Date Acquired":"05\/12\/2023",
+        "Date Sold":"06\/20\/2023",
+        "Proceeds":1.0,
+        "Cost Basis":0.87,
+        "Return":0.13
+    },
+    {
+        "Currency":"CSPR",
+        "Quantity":10581.61742294,
+        "Date Acquired":"03\/21\/2023",
+        "Date Sold":"03\/27\/2023",
+        "Proceeds":361.53,
+        "Cost Basis":400.0,
+        "Return":-38.47
+    },
+    {
+        "Currency":"CSPR",
+        "Quantity":22.76346173,
+        "Date Acquired":"06\/03\/2023",
+        "Date Sold":"07\/09\/2023",
+        "Proceeds":0.0,
+        "Cost Basis":1.36,
+        "Return":-1.36
+    },
+    {
+        "Currency":"CSPR",
+        "Quantity":30.23338391,
+        "Date Acquired":"06\/03\/2023",
+        "Date Sold":"07\/09\/2023",
+        "Proceeds":1.15,
+        "Cost Basis":1.43,
+        "Return":-0.28
+    },
+    {
+        "Currency":"CSPR",
+        "Quantity":28.19330882,
+        "Date Acquired":"06\/03\/2023",
+        "Date Sold":"07\/13\/2023",
+        "Proceeds":1.0,
+        "Cost Basis":1.33,
+        "Return":-0.33
+    },
+    {
+        "Currency":"CSPR",
+        "Quantity":10480.33059977,
+        "Date Acquired":"06\/03\/2023",
+        "Date Sold":"07\/13\/2023",
+        "Proceeds":372.09,
+        "Cost Basis":496.16,
+        "Return":-124.07
+    }
+]

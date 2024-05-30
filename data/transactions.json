@@ -1,6 +1,6 @@
 [
     {
-        "Date":1714087800000,
+        "Date":"04\/25\/24",
         "Type":"TRANSFER",
         "Received Quantity":12262.459208,
         "Received Currency":"XRP",
@@ -16,7 +16,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1714087440000,
+        "Date":"04\/25\/24",
         "Type":"TRANSFER",
         "Received Quantity":81569.46061364,
         "Received Currency":"HBAR",
@@ -32,7 +32,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1708663200000,
+        "Date":"02\/23\/24",
         "Type":"TRANSFER",
         "Received Quantity":3616.65739,
         "Received Currency":"XRP",
@@ -48,7 +48,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1708662840000,
+        "Date":"02\/23\/24",
         "Type":"BUY",
         "Received Quantity":3616.65739,
         "Received Currency":"XRP",
@@ -64,7 +64,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1707175168000,
+        "Date":"02\/05\/24",
         "Type":"BUY",
         "Received Quantity":10.87677555,
         "Received Currency":"HBAR",
@@ -80,7 +80,7 @@
         "Fee Realized Return (USD)":0.0
     },
     {
-        "Date":1706527881000,
+        "Date":"01\/29\/24",
         "Type":"BUY",
         "Received Quantity":72.68400164,
         "Received Currency":"HBAR",
@@ -96,7 +96,7 @@
         "Fee Realized Return (USD)":0.0
     },
     {
-        "Date":1703188639000,
+        "Date":"12\/21\/23",
         "Type":"BUY",
         "Received Quantity":34.12963782,
         "Received Currency":"HBAR",
@@ -112,7 +112,7 @@
         "Fee Realized Return (USD)":0.0
     },
     {
-        "Date":1702036804000,
+        "Date":"12\/08\/23",
         "Type":"TRANSFER",
         "Received Quantity":0.000251,
         "Received Currency":"ATOM",
@@ -128,7 +128,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1701900205000,
+        "Date":"12\/06\/23",
         "Type":"BUY",
         "Received Quantity":48.30298109,
         "Received Currency":"HBAR",
@@ -144,7 +144,7 @@
         "Fee Realized Return (USD)":0.0
     },
     {
-        "Date":1700848819000,
+        "Date":"11\/24\/23",
         "Type":"TRANSFER",
         "Received Quantity":0.034547,
         "Received Currency":"ATOM",
@@ -160,7 +160,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1700510416000,
+        "Date":"11\/20\/23",
         "Type":"TRANSFER",
         "Received Quantity":0.00000265,
         "Received Currency":"SOL",
@@ -176,7 +176,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1700259826000,
+        "Date":"11\/17\/23",
         "Type":"BUY",
         "Received Quantity":10.96719865,
         "Received Currency":"HBAR",
@@ -192,7 +192,7 @@
         "Fee Realized Return (USD)":0.0
     },
     {
-        "Date":1700172007000,
+        "Date":"11\/16\/23",
         "Type":"TRANSFER",
         "Received Quantity":0.000145,
         "Received Currency":"ADA",
@@ -208,7 +208,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1699913264000,
+        "Date":"11\/13\/23",
         "Type":"BUY",
         "Received Quantity":55.78260692,
         "Received Currency":"HBAR",
@@ -224,7 +224,7 @@
         "Fee Realized Return (USD)":0.0
     },
     {
-        "Date":1699286422000,
+        "Date":"11\/06\/23",
         "Type":"TRANSFER",
         "Received Quantity":0.00118674,
         "Received Currency":"SOL",
@@ -240,7 +240,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1699065168000,
+        "Date":"11\/04\/23",
         "Type":"TRANSFER",
         "Received Quantity":0.194142,
         "Received Currency":"ADA",
@@ -256,7 +256,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1698751209000,
+        "Date":"10\/31\/23",
         "Type":"TRADE",
         "Received Quantity":0.159954,
         "Received Currency":"USDC",
@@ -272,7 +272,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1698251718000,
+        "Date":"10\/25\/23",
         "Type":"BUY",
         "Received Quantity":15.68345492,
         "Received Currency":"HBAR",
@@ -288,7 +288,7 @@
         "Fee Realized Return (USD)":0.0
     },
     {
-        "Date":1697825563000,
+        "Date":"10\/20\/23",
         "Type":"BUY",
         "Received Quantity":297.4689965,
         "Received Currency":"HBAR",
@@ -304,7 +304,7 @@
         "Fee Realized Return (USD)":0.0
     },
     {
-        "Date":1691456071000,
+        "Date":"08\/08\/23",
         "Type":"TRANSFER",
         "Received Quantity":43801.36298,
         "Received Currency":"HBAR",
@@ -320,7 +320,7 @@
         "Fee Realized Return (USD)":0.0
     },
     {
-        "Date":1691456071000,
+        "Date":"08\/08\/23",
         "Type":"TRANSFER",
         "Received Quantity":"",
         "Received Currency":"",
@@ -336,7 +336,7 @@
         "Fee Realized Return (USD)":0.0
     },
     {
-        "Date":1691455913000,
+        "Date":"08\/08\/23",
         "Type":"BUY",
         "Received Quantity":470.261323,
         "Received Currency":"HBAR",
@@ -352,7 +352,7 @@
         "Fee Realized Return (USD)":0.0
     },
     {
-        "Date":1691455908000,
+        "Date":"08\/08\/23",
         "Type":"SELL",
         "Received Quantity":"",
         "Received Currency":"USD",
@@ -368,7 +368,7 @@
         "Fee Realized Return (USD)":0.0
     },
     {
-        "Date":1691455639000,
+        "Date":"08\/08\/23",
         "Type":"TRADE",
         "Received Quantity":43834.38366132,
         "Received Currency":"HBAR",
@@ -384,7 +384,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1691455443000,
+        "Date":"08\/08\/23",
         "Type":"BUY",
         "Received Quantity":53.64615385,
         "Received Currency":"HBAR",
@@ -400,7 +400,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1691455138000,
+        "Date":"08\/08\/23",
         "Type":"TRANSFER",
         "Received Quantity":1.44312946,
         "Received Currency":"ETH",
@@ -416,7 +416,7 @@
         "Fee Realized Return (USD)":0.2
     },
     {
-        "Date":1691030244000,
+        "Date":"08\/03\/23",
         "Type":"SELL",
         "Received Quantity":3.17,
         "Received Currency":"USD",
@@ -432,7 +432,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1690999392000,
+        "Date":"08\/02\/23",
         "Type":"SELL",
         "Received Quantity":"",
         "Received Currency":"USD",
@@ -448,7 +448,7 @@
         "Fee Realized Return (USD)":0.0
     },
     {
-        "Date":1690999157000,
+        "Date":"08\/02\/23",
         "Type":"BUY",
         "Received Quantity":0.0033978,
         "Received Currency":"BTC",
@@ -464,7 +464,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1690197011000,
+        "Date":"07\/24\/23",
         "Type":"TRANSFER",
         "Received Quantity":1418.744626,
         "Received Currency":"XRP",
@@ -480,7 +480,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1690194954000,
+        "Date":"07\/24\/23",
         "Type":"BUY",
         "Received Quantity":1418.744626,
         "Received Currency":"XRP",
@@ -496,7 +496,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1689621920000,
+        "Date":"07\/17\/23",
         "Type":"TRANSFER",
         "Received Quantity":922.768313,
         "Received Currency":"XRP",
@@ -512,7 +512,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1689621727000,
+        "Date":"07\/17\/23",
         "Type":"TRADE",
         "Received Quantity":922.768313,
         "Received Currency":"XRP",
@@ -528,7 +528,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1689620009000,
+        "Date":"07\/17\/23",
         "Type":"BUY",
         "Received Quantity":32.43394,
         "Received Currency":"ADA",
@@ -544,7 +544,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1689620001000,
+        "Date":"07\/17\/23",
         "Type":"TRANSFER",
         "Received Quantity":2204.024315,
         "Received Currency":"ADA",
@@ -560,7 +560,7 @@
         "Fee Realized Return (USD)":0.0
     },
     {
-        "Date":1689619661000,
+        "Date":"07\/17\/23",
         "Type":"TRANSFER",
         "Received Quantity":919.043309,
         "Received Currency":"XRP",
@@ -576,7 +576,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1689619190000,
+        "Date":"07\/17\/23",
         "Type":"TRANSFER",
         "Received Quantity":22.0,
         "Received Currency":"XRP",
@@ -592,7 +592,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1689618994000,
+        "Date":"07\/17\/23",
         "Type":"TRADE",
         "Received Quantity":941.043309,
         "Received Currency":"XRP",
@@ -608,7 +608,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1689618854000,
+        "Date":"07\/17\/23",
         "Type":"TRANSFER",
         "Received Quantity":74.602785,
         "Received Currency":"ATOM",
@@ -624,7 +624,7 @@
         "Fee Realized Return (USD)":0.0
     },
     {
-        "Date":1689618854000,
+        "Date":"07\/17\/23",
         "Type":"TRANSFER",
         "Received Quantity":"",
         "Received Currency":"",
@@ -640,7 +640,7 @@
         "Fee Realized Return (USD)":0.0
     },
     {
-        "Date":1689618747000,
+        "Date":"07\/17\/23",
         "Type":"TRANSFER",
         "Received Quantity":1.0,
         "Received Currency":"ATOM",
@@ -656,7 +656,7 @@
         "Fee Realized Return (USD)":0.0
     },
     {
-        "Date":1689618747000,
+        "Date":"07\/17\/23",
         "Type":"TRANSFER",
         "Received Quantity":"",
         "Received Currency":"",
@@ -672,7 +672,7 @@
         "Fee Realized Return (USD)":0.0
     },
     {
-        "Date":1689617370000,
+        "Date":"07\/17\/23",
         "Type":"BUY",
         "Received Quantity":971.856015,
         "Received Currency":"XRP",
@@ -688,7 +688,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1689617255000,
+        "Date":"07\/17\/23",
         "Type":"SELL",
         "Received Quantity":941.2,
         "Received Currency":"USD",
@@ -704,7 +704,7 @@
         "Fee Realized Return (USD)":-1.01
     },
     {
-        "Date":1689263160000,
+        "Date":"07\/13\/23",
         "Type":"TRANSFER",
         "Received Quantity":41.127264,
         "Received Currency":"ATOM",
@@ -720,12 +720,12 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1689259590000,
+        "Date":"07\/13\/23",
         "Type":"TRADE",
-        "Received Quantity":41.127264,
+        "Received Quantity":41.127004,
         "Received Currency":"ATOM",
-        "Price (estimated)":9.0715978578,
-        "Received Cost Basis (USD)":373.09,
+        "Price (estimated)":9.0395595069,
+        "Received Cost Basis (USD)":371.77,
         "Sent Quantity":10480.33059977,
         "Sent Currency":"CSPR",
         "Sent Cost Basis (USD)":496.16,
@@ -736,7 +736,7 @@
         "Fee Realized Return (USD)":-0.33
     },
     {
-        "Date":1688914867000,
+        "Date":"07\/09\/23",
         "Type":"SELL",
         "Received Quantity":"",
         "Received Currency":"USD",
@@ -752,7 +752,7 @@
         "Fee Realized Return (USD)":-0.28
     },
     {
-        "Date":1688913558000,
+        "Date":"07\/09\/23",
         "Type":"TRANSFER",
         "Received Quantity":0.16642,
         "Received Currency":"ATOM",
@@ -768,7 +768,7 @@
         "Fee Realized Return (USD)":-0.01
     },
     {
-        "Date":1688913503000,
+        "Date":"07\/09\/23",
         "Type":"TRANSFER",
         "Received Quantity":34.313771,
         "Received Currency":"ATOM",
@@ -784,7 +784,7 @@
         "Fee Realized Return (USD)":-0.01
     },
     {
-        "Date":1687288621000,
+        "Date":"06\/20\/23",
         "Type":"TRANSFER",
         "Received Quantity":44.590986,
         "Received Currency":"XRP",
@@ -800,7 +800,7 @@
         "Fee Realized Return (USD)":0.13
     },
     {
-        "Date":1687205126000,
+        "Date":"06\/19\/23",
         "Type":"SELL",
         "Received Quantity":"",
         "Received Currency":"USD",
@@ -816,7 +816,7 @@
         "Fee Realized Return (USD)":-0.01
     },
     {
-        "Date":1686365381000,
+        "Date":"06\/10\/23",
         "Type":"BUY",
         "Received Quantity":130.2443386,
         "Received Currency":"HBAR",
@@ -832,7 +832,7 @@
         "Fee Realized Return (USD)":0.0
     },
     {
-        "Date":1685804078000,
+        "Date":"06\/03\/23",
         "Type":"BUY",
         "Received Quantity":46.169622,
         "Received Currency":"ATOM",
@@ -848,7 +848,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1685804038000,
+        "Date":"06\/03\/23",
         "Type":"BUY",
         "Received Quantity":10561.52075424,
         "Received Currency":"CSPR",
@@ -864,7 +864,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1684654443000,
+        "Date":"05\/21\/23",
         "Type":"BUY",
         "Received Quantity":58.46972882,
         "Received Currency":"HBAR",
@@ -880,7 +880,7 @@
         "Fee Realized Return (USD)":0.0
     },
     {
-        "Date":1684249751000,
+        "Date":"05\/16\/23",
         "Type":"BUY",
         "Received Quantity":2.36,
         "Received Currency":"DOGE",
@@ -896,7 +896,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1683878894000,
+        "Date":"05\/12\/23",
         "Type":"BUY",
         "Received Quantity":283.8796531,
         "Received Currency":"HBAR",
@@ -912,7 +912,7 @@
         "Fee Realized Return (USD)":0.0
     },
     {
-        "Date":1683866580000,
+        "Date":"05\/12\/23",
         "Type":"BUY",
         "Received Quantity":46.622587,
         "Received Currency":"XRP",
@@ -928,7 +928,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1683570952000,
+        "Date":"05\/08\/23",
         "Type":"BUY",
         "Received Quantity":113.287,
         "Received Currency":"XRP",
@@ -944,7 +944,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1681828322000,
+        "Date":"04\/18\/23",
         "Type":"TRANSFER",
         "Received Quantity":105.2927045,
         "Received Currency":"LINK",
@@ -960,7 +960,7 @@
         "Fee Realized Return (USD)":-0.14
     },
     {
-        "Date":1681827895000,
+        "Date":"04\/18\/23",
         "Type":"TRADE",
         "Received Quantity":105.89969946,
         "Received Currency":"LINK",
@@ -976,7 +976,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1681827612000,
+        "Date":"04\/18\/23",
         "Type":"BUY",
         "Received Quantity":4205.522511,
         "Received Currency":"ALGO",
@@ -992,7 +992,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1680723394000,
+        "Date":"04\/05\/23",
         "Type":"SELL",
         "Received Quantity":"",
         "Received Currency":"USD",
@@ -1008,7 +1008,7 @@
         "Fee Realized Return (USD)":0.0
     },
     {
-        "Date":1680723329000,
+        "Date":"04\/05\/23",
         "Type":"BUY",
         "Received Quantity":452.261307,
         "Received Currency":"ALGO",
@@ -1024,7 +1024,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1680720275000,
+        "Date":"04\/05\/23",
         "Type":"SELL",
         "Received Quantity":108.45,
         "Received Currency":"USD",
@@ -1040,7 +1040,7 @@
         "Fee Realized Return (USD)":0.12
     },
     {
-        "Date":1680231667000,
+        "Date":"03\/31\/23",
         "Type":"SELL",
         "Received Quantity":"",
         "Received Currency":"USD",
@@ -1056,7 +1056,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1680120402000,
+        "Date":"03\/29\/23",
         "Type":"SELL",
         "Received Quantity":"",
         "Received Currency":"USD",
@@ -1072,7 +1072,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1680118226000,
+        "Date":"03\/29\/23",
         "Type":"BUY",
         "Received Quantity":6.45060194,
         "Received Currency":"HBAR",
@@ -1088,7 +1088,7 @@
         "Fee Realized Return (USD)":0.0
     },
     {
-        "Date":1680115005000,
+        "Date":"03\/29\/23",
         "Type":"SELL",
         "Received Quantity":267.84,
         "Received Currency":"USD",
@@ -1104,7 +1104,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1680114904000,
+        "Date":"03\/29\/23",
         "Type":"TRADE",
         "Received Quantity":267.840588,
         "Received Currency":"USDC",
@@ -1120,7 +1120,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1680114451000,
+        "Date":"03\/29\/23",
         "Type":"TRANSFER",
         "Received Quantity":2178.499,
         "Received Currency":"XRP",
@@ -1136,7 +1136,7 @@
         "Fee Realized Return (USD)":0.0
     },
     {
-        "Date":1679975726000,
+        "Date":"03\/28\/23",
         "Type":"TRADE",
         "Received Quantity":1151.259779,
         "Received Currency":"ALGO",
@@ -1152,7 +1152,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1679975222000,
+        "Date":"03\/28\/23",
         "Type":"TRANSFER",
         "Received Quantity":2065.999,
         "Received Currency":"XRP",
@@ -1168,7 +1168,7 @@
         "Fee Realized Return (USD)":0.0
     },
     {
-        "Date":1679974856000,
+        "Date":"03\/28\/23",
         "Type":"TRADE",
         "Received Quantity":2066.699516,
         "Received Currency":"XRP",
@@ -1184,7 +1184,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1679962672000,
+        "Date":"03\/28\/23",
         "Type":"TRANSFER",
         "Received Quantity":1000.12,
         "Received Currency":"USDC",
@@ -1200,7 +1200,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1679962392000,
+        "Date":"03\/28\/23",
         "Type":"BUY",
         "Received Quantity":1232.0,
         "Received Currency":"USDC",
@@ -1216,7 +1216,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1679960331000,
+        "Date":"03\/27\/23",
         "Type":"SELL",
         "Received Quantity":"",
         "Received Currency":"USD",
@@ -1232,7 +1232,7 @@
         "Fee Realized Return (USD)":0.0
     },
     {
-        "Date":1679960202000,
+        "Date":"03\/27\/23",
         "Type":"SELL",
         "Received Quantity":"",
         "Received Currency":"USD",
@@ -1248,7 +1248,7 @@
         "Fee Realized Return (USD)":0.0
     },
     {
-        "Date":1679959850000,
+        "Date":"03\/27\/23",
         "Type":"TRANSFER",
         "Received Quantity":2236.789213,
         "Received Currency":"ADA",
@@ -1264,7 +1264,7 @@
         "Fee Realized Return (USD)":0.0
     },
     {
-        "Date":1679959591000,
+        "Date":"03\/27\/23",
         "Type":"TRADE",
         "Received Quantity":559.048477,
         "Received Currency":"ADA",
@@ -1280,7 +1280,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1679959519000,
+        "Date":"03\/27\/23",
         "Type":"TRADE",
         "Received Quantity":1770.163025,
         "Received Currency":"ALGO",
@@ -1296,7 +1296,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1679959458000,
+        "Date":"03\/27\/23",
         "Type":"TRADE",
         "Received Quantity":1645.320757,
         "Received Currency":"ADA",
@@ -1312,7 +1312,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1679957512000,
+        "Date":"03\/27\/23",
         "Type":"TRANSFER",
         "Received Quantity":36189.67016,
         "Received Currency":"HBAR",
@@ -1328,7 +1328,7 @@
         "Fee Realized Return (USD)":0.0
     },
     {
-        "Date":1679957512000,
+        "Date":"03\/27\/23",
         "Type":"TRANSFER",
         "Received Quantity":"",
         "Received Currency":"",
@@ -1344,7 +1344,7 @@
         "Fee Realized Return (USD)":0.01
     },
     {
-        "Date":1679957388000,
+        "Date":"03\/27\/23",
         "Type":"TRANSFER",
         "Received Quantity":33.93857119,
         "Received Currency":"HBAR",
@@ -1360,7 +1360,7 @@
         "Fee Realized Return (USD)":0.0
     },
     {
-        "Date":1679957388000,
+        "Date":"03\/27\/23",
         "Type":"TRANSFER",
         "Received Quantity":"",
         "Received Currency":"",
@@ -1376,7 +1376,7 @@
         "Fee Realized Return (USD)":-0.02
     },
     {
-        "Date":1679956589000,
+        "Date":"03\/27\/23",
         "Type":"TRANSFER",
         "Received Quantity":1.44405183,
         "Received Currency":"ETH",
@@ -1392,7 +1392,7 @@
         "Fee Realized Return (USD)":0.28
     },
     {
-        "Date":1679956092000,
+        "Date":"03\/27\/23",
         "Type":"TRANSFER",
         "Received Quantity":0.0010056,
         "Received Currency":"ETH",
@@ -1408,7 +1408,7 @@
         "Fee Realized Return (USD)":0.43
     },
     {
-        "Date":1679886131000,
+        "Date":"03\/27\/23",
         "Type":"TRADE",
         "Received Quantity":805.484107,
         "Received Currency":"XRP",
@@ -1424,7 +1424,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1679747878000,
+        "Date":"03\/25\/23",
         "Type":"TRADE",
         "Received Quantity":314.03690116,
         "Received Currency":"ARB",
@@ -1440,7 +1440,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1679746436000,
+        "Date":"03\/25\/23",
         "Type":"BUY",
         "Received Quantity":219.938426,
         "Received Currency":"XRP",
@@ -1456,7 +1456,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1679728257000,
+        "Date":"03\/25\/23",
         "Type":"BUY",
         "Received Quantity":0.0568391,
         "Received Currency":"ETH",
@@ -1472,7 +1472,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1679705541000,
+        "Date":"03\/25\/23",
         "Type":"TRANSFER",
         "Received Quantity":0.0003613,
         "Received Currency":"SOL",
@@ -1488,7 +1488,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1679705538000,
+        "Date":"03\/25\/23",
         "Type":"TRANSFER",
         "Received Quantity":0.191406,
         "Received Currency":"ADA",
@@ -1504,7 +1504,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1679687898000,
+        "Date":"03\/24\/23",
         "Type":"TRANSFER",
         "Received Quantity":0.004102,
         "Received Currency":"ATOM",
@@ -1520,7 +1520,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1679432933000,
+        "Date":"03\/21\/23",
         "Type":"TRADE",
         "Received Quantity":215.65512081,
         "Received Currency":"OP",
@@ -1536,7 +1536,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1679413755000,
+        "Date":"03\/21\/23",
         "Type":"BUY",
         "Received Quantity":10581.61742292,
         "Received Currency":"CSPR",
@@ -1552,7 +1552,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1679413648000,
+        "Date":"03\/21\/23",
         "Type":"TRADE",
         "Received Quantity":73.09505803,
         "Received Currency":"OP",
@@ -1568,7 +1568,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1679413530000,
+        "Date":"03\/21\/23",
         "Type":"BUY",
         "Received Quantity":1372.386448,
         "Received Currency":"XRP",
@@ -1584,7 +1584,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1679412497000,
+        "Date":"03\/21\/23",
         "Type":"BUY",
         "Received Quantity":33.36703741,
         "Received Currency":"FIL",
@@ -1600,7 +1600,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1679412383000,
+        "Date":"03\/21\/23",
         "Type":"BUY",
         "Received Quantity":2140.2126904,
         "Received Currency":"XLM",
@@ -1616,7 +1616,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1679332542000,
+        "Date":"03\/20\/23",
         "Type":"BUY",
         "Received Quantity":317.43499761,
         "Received Currency":"HBAR",
@@ -1632,7 +1632,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1679121364000,
+        "Date":"03\/18\/23",
         "Type":"BUY",
         "Received Quantity":0.05483242,
         "Received Currency":"ETH",
@@ -1648,7 +1648,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1678737870000,
+        "Date":"03\/13\/23",
         "Type":"BUY",
         "Received Quantity":309.67942733,
         "Received Currency":"HBAR",
@@ -1664,7 +1664,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1678516311000,
+        "Date":"03\/11\/23",
         "Type":"BUY",
         "Received Quantity":0.06802628,
         "Received Currency":"ETH",
@@ -1680,7 +1680,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1678472779000,
+        "Date":"03\/10\/23",
         "Type":"BUY",
         "Received Quantity":10127.87723785,
         "Received Currency":"HBAR",
@@ -1696,7 +1696,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1678121914000,
+        "Date":"03\/06\/23",
         "Type":"BUY",
         "Received Quantity":311.96112243,
         "Received Currency":"HBAR",
@@ -1712,7 +1712,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1677903837000,
+        "Date":"03\/04\/23",
         "Type":"BUY",
         "Received Quantity":0.06329074,
         "Received Currency":"ETH",
@@ -1728,7 +1728,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1677856137000,
+        "Date":"03\/03\/23",
         "Type":"TRADE",
         "Received Quantity":26.00852109,
         "Received Currency":"LINK",
@@ -1744,7 +1744,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1677856118000,
+        "Date":"03\/03\/23",
         "Type":"TRADE",
         "Received Quantity":53.4680293,
         "Received Currency":"LINK",
@@ -1760,7 +1760,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1677723675000,
+        "Date":"03\/02\/23",
         "Type":"TRADE",
         "Received Quantity":15.381562,
         "Received Currency":"ATOM",
@@ -1776,7 +1776,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1677723546000,
+        "Date":"03\/02\/23",
         "Type":"TRADE",
         "Received Quantity":3.07045689,
         "Received Currency":"QNT",
@@ -1792,7 +1792,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1677723435000,
+        "Date":"03\/02\/23",
         "Type":"TRADE",
         "Received Quantity":12639.46303323,
         "Received Currency":"HBAR",
@@ -1808,7 +1808,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1677516046000,
+        "Date":"02\/27\/23",
         "Type":"BUY",
         "Received Quantity":274.33140336,
         "Received Currency":"HBAR",
@@ -1824,7 +1824,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1677369845000,
+        "Date":"02\/26\/23",
         "Type":"TRADE",
         "Received Quantity":0.00009326,
         "Received Currency":"ETH",
@@ -1840,7 +1840,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1677369816000,
+        "Date":"02\/26\/23",
         "Type":"TRADE",
         "Received Quantity":985.442491,
         "Received Currency":"ALGO",
@@ -1856,7 +1856,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1677369334000,
+        "Date":"02\/25\/23",
         "Type":"TRADE",
         "Received Quantity":838.198147,
         "Received Currency":"ALGO",
@@ -1872,7 +1872,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1677340575000,
+        "Date":"02\/25\/23",
         "Type":"BUY",
         "Received Quantity":1.53124,
         "Received Currency":"ATOM",
@@ -1888,7 +1888,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1677340488000,
+        "Date":"02\/25\/23",
         "Type":"BUY",
         "Received Quantity":0.15222214,
         "Received Currency":"QNT",
@@ -1904,7 +1904,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1677304271000,
+        "Date":"02\/25\/23",
         "Type":"BUY",
         "Received Quantity":0.06234141,
         "Received Currency":"ETH",
@@ -1920,7 +1920,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1677214429000,
+        "Date":"02\/24\/23",
         "Type":"BUY",
         "Received Quantity":12.42352354,
         "Received Currency":"LINK",
@@ -1936,7 +1936,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1676916193000,
+        "Date":"02\/20\/23",
         "Type":"BUY",
         "Received Quantity":227.92349101,
         "Received Currency":"HBAR",
@@ -1952,7 +1952,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1676809084000,
+        "Date":"02\/19\/23",
         "Type":"BUY",
         "Received Quantity":0.118511,
         "Received Currency":"ETH",
@@ -1968,7 +1968,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1676763164000,
+        "Date":"02\/18\/23",
         "Type":"SELL",
         "Received Quantity":"",
         "Received Currency":"USD",
@@ -1984,7 +1984,7 @@
         "Fee Realized Return (USD)":-0.01
     },
     {
-        "Date":1676701731000,
+        "Date":"02\/18\/23",
         "Type":"BUY",
         "Received Quantity":0.05859031,
         "Received Currency":"ETH",
@@ -2000,7 +2000,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1676663451000,
+        "Date":"02\/17\/23",
         "Type":"BUY",
         "Received Quantity":0.12271883,
         "Received Currency":"ETH",
@@ -2016,7 +2016,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1676609021000,
+        "Date":"02\/17\/23",
         "Type":"BUY",
         "Received Quantity":13.84058979,
         "Received Currency":"LINK",
@@ -2032,7 +2032,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1676316725000,
+        "Date":"02\/13\/23",
         "Type":"BUY",
         "Received Quantity":226.59986336,
         "Received Currency":"HBAR",
@@ -2048,7 +2048,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1676081685000,
+        "Date":"02\/11\/23",
         "Type":"TRADE",
         "Received Quantity":5.75399,
         "Received Currency":"ATOM",
@@ -2064,7 +2064,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1676081532000,
+        "Date":"02\/11\/23",
         "Type":"TRADE",
         "Received Quantity":353.710187,
         "Received Currency":"ALGO",
@@ -2080,7 +2080,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1676081494000,
+        "Date":"02\/11\/23",
         "Type":"TRADE",
         "Received Quantity":570.416545,
         "Received Currency":"ALGO",
@@ -2096,7 +2096,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1676081418000,
+        "Date":"02\/11\/23",
         "Type":"TRADE",
         "Received Quantity":23.95634715,
         "Received Currency":"LINK",
@@ -2112,7 +2112,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1676081353000,
+        "Date":"02\/11\/23",
         "Type":"TRADE",
         "Received Quantity":28.72333621,
         "Received Currency":"LINK",
@@ -2128,7 +2128,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1676080257000,
+        "Date":"02\/11\/23",
         "Type":"BUY",
         "Received Quantity":0.06571604,
         "Received Currency":"ETH",
@@ -2144,7 +2144,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1675994805000,
+        "Date":"02\/10\/23",
         "Type":"BUY",
         "Received Quantity":13.7991351,
         "Received Currency":"LINK",
@@ -2160,7 +2160,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1675949176000,
+        "Date":"02\/09\/23",
         "Type":"BUY",
         "Received Quantity":345.467266,
         "Received Currency":"ALGO",
@@ -2176,7 +2176,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1675912954000,
+        "Date":"02\/09\/23",
         "Type":"BUY",
         "Received Quantity":2.63709192,
         "Received Currency":"LINK",
@@ -2192,7 +2192,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1675910934000,
+        "Date":"02\/09\/23",
         "Type":"BUY",
         "Received Quantity":13.39468619,
         "Received Currency":"LINK",
@@ -2208,7 +2208,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1675910896000,
+        "Date":"02\/09\/23",
         "Type":"BUY",
         "Received Quantity":1062.7997565,
         "Received Currency":"XLM",
@@ -2224,7 +2224,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1675703359000,
+        "Date":"02\/06\/23",
         "Type":"BUY",
         "Received Quantity":264.01674599,
         "Received Currency":"HBAR",
@@ -2240,7 +2240,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1675664966000,
+        "Date":"02\/06\/23",
         "Type":"BUY",
         "Received Quantity":0.01132712,
         "Received Currency":"ETH",
@@ -2256,7 +2256,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1675285726000,
+        "Date":"02\/01\/23",
         "Type":"BUY",
         "Received Quantity":2.56939872,
         "Received Currency":"LINK",
@@ -2272,7 +2272,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1675109643000,
+        "Date":"01\/30\/23",
         "Type":"BUY",
         "Received Quantity":288.44870791,
         "Received Currency":"HBAR",
@@ -2288,7 +2288,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1675060418000,
+        "Date":"01\/30\/23",
         "Type":"BUY",
         "Received Quantity":0.01127567,
         "Received Currency":"ETH",
@@ -2304,7 +2304,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1674499442000,
+        "Date":"01\/23\/23",
         "Type":"BUY",
         "Received Quantity":265.38112392,
         "Received Currency":"HBAR",
@@ -2320,7 +2320,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1674456642000,
+        "Date":"01\/23\/23",
         "Type":"BUY",
         "Received Quantity":0.01124654,
         "Received Currency":"ETH",
@@ -2336,7 +2336,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1674251918000,
+        "Date":"01\/20\/23",
         "Type":"TRADE",
         "Received Quantity":0.00356885,
         "Received Currency":"ETH",
@@ -2352,7 +2352,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1674251873000,
+        "Date":"01\/20\/23",
         "Type":"TRADE",
         "Received Quantity":0.07128435,
         "Received Currency":"ETH",
@@ -2368,7 +2368,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1674251825000,
+        "Date":"01\/20\/23",
         "Type":"TRADE",
         "Received Quantity":0.17811528,
         "Received Currency":"ETH",
@@ -2384,7 +2384,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1674251741000,
+        "Date":"01\/20\/23",
         "Type":"BUY",
         "Received Quantity":13143.4273417,
         "Received Currency":"HBAR",
@@ -2400,7 +2400,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1674236816000,
+        "Date":"01\/20\/23",
         "Type":"BUY",
         "Received Quantity":4.4574516,
         "Received Currency":"SOL",
@@ -2416,7 +2416,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1673897214000,
+        "Date":"01\/16\/23",
         "Type":"BUY",
         "Received Quantity":372.58940273,
         "Received Currency":"HBAR",
@@ -2432,7 +2432,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1673856370000,
+        "Date":"01\/16\/23",
         "Type":"BUY",
         "Received Quantity":0.0127051,
         "Received Currency":"ETH",
@@ -2448,7 +2448,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1673536951000,
+        "Date":"01\/12\/23",
         "Type":"BUY",
         "Received Quantity":0.00300987,
         "Received Currency":"ETH",
@@ -2464,7 +2464,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1673536852000,
+        "Date":"01\/12\/23",
         "Type":"SELL",
         "Received Quantity":"",
         "Received Currency":"USD",
@@ -2480,7 +2480,7 @@
         "Fee Realized Return (USD)":0.16
     },
     {
-        "Date":1673536524000,
+        "Date":"01\/12\/23",
         "Type":"SELL",
         "Received Quantity":"",
         "Received Currency":"USD",
@@ -2496,7 +2496,7 @@
         "Fee Realized Return (USD)":0.11
     },
     {
-        "Date":1673461317000,
+        "Date":"01\/11\/23",
         "Type":"TRADE",
         "Received Quantity":873.76772683,
         "Received Currency":"HBAR",
@@ -2512,7 +2512,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1673461297000,
+        "Date":"01\/11\/23",
         "Type":"TRADE",
         "Received Quantity":655.50684043,
         "Received Currency":"HBAR",
@@ -2528,7 +2528,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1673461250000,
+        "Date":"01\/11\/23",
         "Type":"TRADE",
         "Received Quantity":656.21331996,
         "Received Currency":"HBAR",
@@ -2544,7 +2544,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1673280176000,
+        "Date":"01\/09\/23",
         "Type":"BUY",
         "Received Quantity":443.1084391,
         "Received Currency":"HBAR",
@@ -2560,7 +2560,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1673246522000,
+        "Date":"01\/09\/23",
         "Type":"BUY",
         "Received Quantity":0.01518111,
         "Received Currency":"ETH",
@@ -2576,7 +2576,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1673239368000,
+        "Date":"01\/09\/23",
         "Type":"BUY",
         "Received Quantity":0.16864407,
         "Received Currency":"QNT",
@@ -2592,7 +2592,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1672638675000,
+        "Date":"01\/02\/23",
         "Type":"BUY",
         "Received Quantity":0.058256,
         "Received Currency":"ETH",
@@ -2608,7 +2608,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1672638113000,
+        "Date":"01\/02\/23",
         "Type":"BUY",
         "Received Quantity":0.18579031,
         "Received Currency":"QNT",
@@ -2624,7 +2624,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1672635480000,
+        "Date":"01\/02\/23",
         "Type":"BUY",
         "Received Quantity":0.01657242,
         "Received Currency":"ETH",
@@ -2640,7 +2640,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1672461532000,
+        "Date":"12\/31\/22",
         "Type":"BUY",
         "Received Quantity":0.083766,
         "Received Currency":"ETH",
@@ -2656,7 +2656,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1672425085000,
+        "Date":"12\/30\/22",
         "Type":"SELL",
         "Received Quantity":"",
         "Received Currency":"USD",
@@ -2672,7 +2672,7 @@
         "Fee Realized Return (USD)":0.0
     },
     {
-        "Date":1672377267000,
+        "Date":"12\/30\/22",
         "Type":"SELL",
         "Received Quantity":"",
         "Received Currency":"USD",
@@ -2688,7 +2688,7 @@
         "Fee Realized Return (USD)":0.0
     },
     {
-        "Date":1672106262000,
+        "Date":"12\/27\/22",
         "Type":"BUY",
         "Received Quantity":0.16192743,
         "Received Currency":"ETH",
@@ -2704,7 +2704,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1672101984000,
+        "Date":"12\/27\/22",
         "Type":"SELL",
         "Received Quantity":"",
         "Received Currency":"USD",
@@ -2720,7 +2720,7 @@
         "Fee Realized Return (USD)":0.0
     },
     {
-        "Date":1672100121000,
+        "Date":"12\/27\/22",
         "Type":"SELL",
         "Received Quantity":"",
         "Received Currency":"USD",
@@ -2736,7 +2736,7 @@
         "Fee Realized Return (USD)":0.0
     },
     {
-        "Date":1672033663000,
+        "Date":"12\/26\/22",
         "Type":"BUY",
         "Received Quantity":0.18544404,
         "Received Currency":"QNT",
@@ -2752,7 +2752,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1672029843000,
+        "Date":"12\/26\/22",
         "Type":"BUY",
         "Received Quantity":0.01631107,
         "Received Currency":"ETH",
@@ -2768,7 +2768,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1671716440000,
+        "Date":"12\/22\/22",
         "Type":"BUY",
         "Received Quantity":0.123548,
         "Received Currency":"ETH",
@@ -2784,7 +2784,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1671637979000,
+        "Date":"12\/21\/22",
         "Type":"SELL",
         "Received Quantity":"",
         "Received Currency":"USD",
@@ -2800,7 +2800,7 @@
         "Fee Realized Return (USD)":0.0
     },
     {
-        "Date":1671634446000,
+        "Date":"12\/21\/22",
         "Type":"SELL",
         "Received Quantity":"",
         "Received Currency":"USD",
@@ -2816,7 +2816,7 @@
         "Fee Realized Return (USD)":0.0
     },
     {
-        "Date":1671432606000,
+        "Date":"12\/19\/22",
         "Type":"BUY",
         "Received Quantity":0.18022097,
         "Received Currency":"QNT",
@@ -2832,7 +2832,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1671426852000,
+        "Date":"12\/19\/22",
         "Type":"BUY",
         "Received Quantity":0.01684499,
         "Received Currency":"ETH",
@@ -2848,7 +2848,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1670821074000,
+        "Date":"12\/12\/22",
         "Type":"BUY",
         "Received Quantity":0.17153694,
         "Received Currency":"QNT",
@@ -2864,7 +2864,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1670820775000,
+        "Date":"12\/12\/22",
         "Type":"BUY",
         "Received Quantity":0.01597226,
         "Received Currency":"ETH",
@@ -2880,7 +2880,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1670442179000,
+        "Date":"12\/07\/22",
         "Type":"BUY",
         "Received Quantity":0.54,
         "Received Currency":"ETH",
@@ -2896,7 +2896,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1670292352000,
+        "Date":"12\/06\/22",
         "Type":"SELL",
         "Received Quantity":"",
         "Received Currency":"USD",
@@ -2912,7 +2912,7 @@
         "Fee Realized Return (USD)":0.02
     },
     {
-        "Date":1670289825000,
+        "Date":"12\/06\/22",
         "Type":"SELL",
         "Received Quantity":"",
         "Received Currency":"USD",
@@ -2928,7 +2928,7 @@
         "Fee Realized Return (USD)":0.02
     },
     {
-        "Date":1670286795000,
+        "Date":"12\/06\/22",
         "Type":"SELL",
         "Received Quantity":"",
         "Received Currency":"USD",
@@ -2944,7 +2944,7 @@
         "Fee Realized Return (USD)":0.02
     },
     {
-        "Date":1670227518000,
+        "Date":"12\/05\/22",
         "Type":"BUY",
         "Received Quantity":0.15407247,
         "Received Currency":"QNT",
@@ -2960,7 +2960,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1670225981000,
+        "Date":"12\/05\/22",
         "Type":"BUY",
         "Received Quantity":2.64100863,
         "Received Currency":"LINK",
@@ -2976,7 +2976,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1670222134000,
+        "Date":"12\/05\/22",
         "Type":"BUY",
         "Received Quantity":0.01536193,
         "Received Currency":"ETH",
@@ -2992,7 +2992,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1670220682000,
+        "Date":"12\/05\/22",
         "Type":"BUY",
         "Received Quantity":61.061675,
         "Received Currency":"ADA",
@@ -3008,7 +3008,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1670215110000,
+        "Date":"12\/05\/22",
         "Type":"BUY",
         "Received Quantity":1.40636042,
         "Received Currency":"AVAX",
@@ -3024,7 +3024,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1669922206000,
+        "Date":"12\/01\/22",
         "Type":"TRADE",
         "Received Quantity":1665.5797435,
         "Received Currency":"XLM",
@@ -3040,7 +3040,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1669922090000,
+        "Date":"12\/01\/22",
         "Type":"TRADE",
         "Received Quantity":324.38194,
         "Received Currency":"ALGO",
@@ -3056,7 +3056,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1669735016000,
+        "Date":"11\/29\/22",
         "Type":"BUY",
         "Received Quantity":0.41966715,
         "Received Currency":"ETH",
@@ -3072,7 +3072,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1669657585000,
+        "Date":"11\/28\/22",
         "Type":"SELL",
         "Received Quantity":"",
         "Received Currency":"USD",
@@ -3088,7 +3088,7 @@
         "Fee Realized Return (USD)":-0.05
     },
     {
-        "Date":1669650257000,
+        "Date":"11\/28\/22",
         "Type":"SELL",
         "Received Quantity":"",
         "Received Currency":"USD",
@@ -3104,7 +3104,7 @@
         "Fee Realized Return (USD)":-0.13
     },
     {
-        "Date":1669648269000,
+        "Date":"11\/28\/22",
         "Type":"SELL",
         "Received Quantity":"",
         "Received Currency":"USD",
@@ -3120,7 +3120,7 @@
         "Fee Realized Return (USD)":-0.37
     },
     {
-        "Date":1669645790000,
+        "Date":"11\/28\/22",
         "Type":"SELL",
         "Received Quantity":"",
         "Received Currency":"USD",
@@ -3136,7 +3136,7 @@
         "Fee Realized Return (USD)":-0.52
     },
     {
-        "Date":1669621231000,
+        "Date":"11\/28\/22",
         "Type":"BUY",
         "Received Quantity":1.61394972,
         "Received Currency":"AVAX",
@@ -3152,7 +3152,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1669619299000,
+        "Date":"11\/28\/22",
         "Type":"BUY",
         "Received Quantity":0.01697156,
         "Received Currency":"ETH",
@@ -3168,7 +3168,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1669618513000,
+        "Date":"11\/28\/22",
         "Type":"BUY",
         "Received Quantity":0.1767161,
         "Received Currency":"QNT",
@@ -3184,7 +3184,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1669611516000,
+        "Date":"11\/28\/22",
         "Type":"BUY",
         "Received Quantity":64.990202,
         "Received Currency":"ADA",
@@ -3200,7 +3200,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1669610800000,
+        "Date":"11\/28\/22",
         "Type":"BUY",
         "Received Quantity":2.96042844,
         "Received Currency":"LINK",
@@ -3216,7 +3216,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1668992667000,
+        "Date":"11\/21\/22",
         "Type":"BUY",
         "Received Quantity":0.16911129,
         "Received Currency":"QNT",
@@ -3232,7 +3232,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1668992317000,
+        "Date":"11\/21\/22",
         "Type":"BUY",
         "Received Quantity":3.17769331,
         "Received Currency":"LINK",
@@ -3248,7 +3248,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1668992262000,
+        "Date":"11\/21\/22",
         "Type":"BUY",
         "Received Quantity":1.52340037,
         "Received Currency":"AVAX",
@@ -3264,7 +3264,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1668992106000,
+        "Date":"11\/21\/22",
         "Type":"BUY",
         "Received Quantity":58.91846,
         "Received Currency":"ADA",
@@ -3280,7 +3280,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1668991995000,
+        "Date":"11\/21\/22",
         "Type":"BUY",
         "Received Quantity":0.01619399,
         "Received Currency":"ETH",
@@ -3296,7 +3296,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1668975000000,
+        "Date":"11\/20\/22",
         "Type":"BUY",
         "Received Quantity":0.08169086,
         "Received Currency":"ETH",
@@ -3312,7 +3312,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1668370244000,
+        "Date":"11\/13\/22",
         "Type":"BUY",
         "Received Quantity":0.07856527,
         "Received Currency":"ETH",
@@ -3328,7 +3328,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1667925996000,
+        "Date":"11\/08\/22",
         "Type":"BUY",
         "Received Quantity":119.36914477,
         "Received Currency":"MATIC",
@@ -3344,7 +3344,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1667762708000,
+        "Date":"11\/06\/22",
         "Type":"BUY",
         "Received Quantity":0.05989031,
         "Received Currency":"ETH",
@@ -3360,7 +3360,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1667445098000,
+        "Date":"11\/03\/22",
         "Type":"BUY",
         "Received Quantity":1.21190077,
         "Received Currency":"QNT",
@@ -3376,7 +3376,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1667357286000,
+        "Date":"11\/02\/22",
         "Type":"TRADE",
         "Received Quantity":839.14913695,
         "Received Currency":"HBAR",
@@ -3392,7 +3392,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1667357263000,
+        "Date":"11\/02\/22",
         "Type":"TRADE",
         "Received Quantity":839.61242671,
         "Received Currency":"HBAR",
@@ -3408,7 +3408,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1667153650000,
+        "Date":"10\/30\/22",
         "Type":"BUY",
         "Received Quantity":0.06094104,
         "Received Currency":"ETH",
@@ -3424,7 +3424,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1666543665000,
+        "Date":"10\/23\/22",
         "Type":"BUY",
         "Received Quantity":0.0734303,
         "Received Currency":"ETH",
@@ -3440,7 +3440,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1666282540000,
+        "Date":"10\/20\/22",
         "Type":"BUY",
         "Received Quantity":93.468839,
         "Received Currency":"ADA",
@@ -3456,7 +3456,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1665947212000,
+        "Date":"10\/16\/22",
         "Type":"BUY",
         "Received Quantity":0.07512004,
         "Received Currency":"ETH",
@@ -3472,7 +3472,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1665330329000,
+        "Date":"10\/09\/22",
         "Type":"TRADE",
         "Received Quantity":460.091758,
         "Received Currency":"ADA",
@@ -3488,7 +3488,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1665330283000,
+        "Date":"10\/09\/22",
         "Type":"TRADE",
         "Received Quantity":0.07359816,
         "Received Currency":"ETH",
@@ -3504,7 +3504,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1665330046000,
+        "Date":"10\/09\/22",
         "Type":"TRADE",
         "Received Quantity":5.89212177,
         "Received Currency":"SOL",
@@ -3520,7 +3520,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1665329892000,
+        "Date":"10\/09\/22",
         "Type":"BUY",
         "Received Quantity":0.07285303,
         "Received Currency":"ETH",
@@ -3536,7 +3536,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1665329340000,
+        "Date":"10\/09\/22",
         "Type":"TRADE",
         "Received Quantity":42.219027,
         "Received Currency":"ATOM",
@@ -3552,7 +3552,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1665329282000,
+        "Date":"10\/09\/22",
         "Type":"TRADE",
         "Received Quantity":11.07401,
         "Received Currency":"ATOM",
@@ -3568,7 +3568,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1664820675000,
+        "Date":"10\/03\/22",
         "Type":"BUY",
         "Received Quantity":0.03598249,
         "Received Currency":"ETH",
@@ -3584,7 +3584,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1664210320000,
+        "Date":"09\/26\/22",
         "Type":"BUY",
         "Received Quantity":0.03636765,
         "Received Currency":"ETH",
@@ -3600,7 +3600,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1663615449000,
+        "Date":"09\/19\/22",
         "Type":"BUY",
         "Received Quantity":0.03524733,
         "Received Currency":"ETH",
@@ -3616,7 +3616,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1663000275000,
+        "Date":"09\/12\/22",
         "Type":"BUY",
         "Received Quantity":0.02786708,
         "Received Currency":"ETH",
@@ -3632,7 +3632,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1662583607000,
+        "Date":"09\/07\/22",
         "Type":"TRADE",
         "Received Quantity":0.08874289,
         "Received Currency":"ETH",
@@ -3648,7 +3648,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1662583531000,
+        "Date":"09\/07\/22",
         "Type":"TRADE",
         "Received Quantity":0.08333539,
         "Received Currency":"ETH",
@@ -3664,7 +3664,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1662583505000,
+        "Date":"09\/07\/22",
         "Type":"TRADE",
         "Received Quantity":0.07884327,
         "Received Currency":"ETH",
@@ -3680,7 +3680,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1662400913000,
+        "Date":"09\/05\/22",
         "Type":"BUY",
         "Received Quantity":0.0299414,
         "Received Currency":"ETH",
@@ -3696,7 +3696,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1661794687000,
+        "Date":"08\/29\/22",
         "Type":"BUY",
         "Received Quantity":0.03111971,
         "Received Currency":"ETH",
@@ -3712,7 +3712,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1661520610000,
+        "Date":"08\/26\/22",
         "Type":"TRADE",
         "Received Quantity":176.07568337,
         "Received Currency":"MATIC",
@@ -3728,7 +3728,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1661198779000,
+        "Date":"08\/22\/22",
         "Type":"BUY",
         "Received Quantity":0.03028424,
         "Received Currency":"ETH",
@@ -3744,7 +3744,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1660591482000,
+        "Date":"08\/15\/22",
         "Type":"BUY",
         "Received Quantity":0.025103,
         "Received Currency":"ETH",
@@ -3760,7 +3760,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1659982118000,
+        "Date":"08\/08\/22",
         "Type":"BUY",
         "Received Quantity":0.02703559,
         "Received Currency":"ETH",
@@ -3776,7 +3776,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1659612399000,
+        "Date":"08\/04\/22",
         "Type":"TRADE",
         "Received Quantity":292.780998,
         "Received Currency":"ADA",
@@ -3792,7 +3792,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1659612136000,
+        "Date":"08\/04\/22",
         "Type":"TRADE",
         "Received Quantity":4.04906428,
         "Received Currency":"SOL",
@@ -3808,7 +3808,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1659378332000,
+        "Date":"08\/01\/22",
         "Type":"BUY",
         "Received Quantity":0.02932996,
         "Received Currency":"ETH",
@@ -3824,7 +3824,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1658771171000,
+        "Date":"07\/25\/22",
         "Type":"BUY",
         "Received Quantity":0.03139809,
         "Received Currency":"ETH",
@@ -3840,7 +3840,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1658163748000,
+        "Date":"07\/18\/22",
         "Type":"BUY",
         "Received Quantity":0.03194783,
         "Received Currency":"ETH",
@@ -3856,7 +3856,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1657561190000,
+        "Date":"07\/11\/22",
         "Type":"BUY",
         "Received Quantity":0.04142566,
         "Received Currency":"ETH",
@@ -3872,7 +3872,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1656938533000,
+        "Date":"07\/04\/22",
         "Type":"BUY",
         "Received Quantity":0.04324668,
         "Received Currency":"ETH",
@@ -3888,7 +3888,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1656158263000,
+        "Date":"06\/25\/22",
         "Type":"BUY",
         "Received Quantity":0.03928645,
         "Received Currency":"ETH",
@@ -3904,7 +3904,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1656157916000,
+        "Date":"06\/25\/22",
         "Type":"BUY",
         "Received Quantity":0.03356058,
         "Received Currency":"ETH",
@@ -3920,7 +3920,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1648231471000,
+        "Date":"03\/25\/22",
         "Type":"TRADE",
         "Received Quantity":0.01494047,
         "Received Currency":"ETH",
@@ -3936,7 +3936,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1647444420000,
+        "Date":"03\/16\/22",
         "Type":"TRADE",
         "Received Quantity":0.013743,
         "Received Currency":"ETH",
@@ -3952,7 +3952,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1647379350000,
+        "Date":"03\/15\/22",
         "Type":"TRADE",
         "Received Quantity":0.0007084,
         "Received Currency":"ETH",
@@ -3968,7 +3968,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1645117573000,
+        "Date":"02\/17\/22",
         "Type":"TRADE",
         "Received Quantity":0.00046669,
         "Received Currency":"BTC",
@@ -3984,7 +3984,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1645117454000,
+        "Date":"02\/17\/22",
         "Type":"TRADE",
         "Received Quantity":0.00046718,
         "Received Currency":"BTC",
@@ -4000,7 +4000,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1645041737000,
+        "Date":"02\/16\/22",
         "Type":"TRADE",
         "Received Quantity":10.0691642,
         "Received Currency":"MATIC",
@@ -4016,7 +4016,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1644526713000,
+        "Date":"02\/10\/22",
         "Type":"TRADE",
         "Received Quantity":56.11680288,
         "Received Currency":"GALA",
@@ -4032,7 +4032,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1644502686000,
+        "Date":"02\/10\/22",
         "Type":"TRADE",
         "Received Quantity":4.9322088,
         "Received Currency":"MATIC",
@@ -4048,7 +4048,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1644502551000,
+        "Date":"02\/10\/22",
         "Type":"TRADE",
         "Received Quantity":6.29638235,
         "Received Currency":"MATIC",
@@ -4064,7 +4064,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1644453486000,
+        "Date":"02\/10\/22",
         "Type":"TRADE",
         "Received Quantity":3.853386,
         "Received Currency":"FIDA",
@@ -4080,7 +4080,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1644105086000,
+        "Date":"02\/05\/22",
         "Type":"BUY",
         "Received Quantity":0.26990553,
         "Received Currency":"RNDR",
@@ -4096,7 +4096,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1644105019000,
+        "Date":"02\/05\/22",
         "Type":"BUY",
         "Received Quantity":0.26954177,
         "Received Currency":"RNDR",
@@ -4112,7 +4112,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1644104955000,
+        "Date":"02\/05\/22",
         "Type":"BUY",
         "Received Quantity":0.269179,
         "Received Currency":"RNDR",
@@ -4128,7 +4128,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1644103548000,
+        "Date":"02\/05\/22",
         "Type":"TRADE",
         "Received Quantity":36.42306705,
         "Received Currency":"NKN",
@@ -4144,7 +4144,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1643583929000,
+        "Date":"01\/30\/22",
         "Type":"TRADE",
         "Received Quantity":20.12041597,
         "Received Currency":"MATIC",
@@ -4160,7 +4160,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1643583686000,
+        "Date":"01\/30\/22",
         "Type":"TRADE",
         "Received Quantity":1.84770681,
         "Received Currency":"LINK",
@@ -4176,7 +4176,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1643047659000,
+        "Date":"01\/24\/22",
         "Type":"TRADE",
         "Received Quantity":0.01062756,
         "Received Currency":"ETH",
@@ -4192,7 +4192,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1642987427000,
+        "Date":"01\/24\/22",
         "Type":"TRADE",
         "Received Quantity":0.00027236,
         "Received Currency":"ETH",
@@ -4208,7 +4208,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1642987138000,
+        "Date":"01\/24\/22",
         "Type":"TRADE",
         "Received Quantity":0.00862213,
         "Received Currency":"ETH",
@@ -4224,7 +4224,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1642987057000,
+        "Date":"01\/24\/22",
         "Type":"TRADE",
         "Received Quantity":0.01994519,
         "Received Currency":"ETH",
@@ -4240,7 +4240,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1642888607000,
+        "Date":"01\/22\/22",
         "Type":"TRADE",
         "Received Quantity":602.30154056,
         "Received Currency":"SHPING",
@@ -4256,7 +4256,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1642802497000,
+        "Date":"01\/21\/22",
         "Type":"TRADE",
         "Received Quantity":37.85224736,
         "Received Currency":"TRAC",
@@ -4272,7 +4272,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1642802297000,
+        "Date":"01\/21\/22",
         "Type":"TRADE",
         "Received Quantity":840.67473926,
         "Received Currency":"SHPING",
@@ -4288,7 +4288,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1642802076000,
+        "Date":"01\/21\/22",
         "Type":"TRADE",
         "Received Quantity":52.52618174,
         "Received Currency":"SUKU",
@@ -4304,7 +4304,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1642298279000,
+        "Date":"01\/16\/22",
         "Type":"TRADE",
         "Received Quantity":0.19831138,
         "Received Currency":"FARM",
@@ -4320,7 +4320,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1642297866000,
+        "Date":"01\/16\/22",
         "Type":"TRADE",
         "Received Quantity":0.199815449,
         "Received Currency":"FARM",
@@ -4336,7 +4336,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1642014220000,
+        "Date":"01\/12\/22",
         "Type":"BUY",
         "Received Quantity":1.69419737,
         "Received Currency":"GRT",
@@ -4352,7 +4352,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1641824170000,
+        "Date":"01\/10\/22",
         "Type":"TRADE",
         "Received Quantity":0.002235,
         "Received Currency":"BTC",
@@ -4368,7 +4368,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1641824104000,
+        "Date":"01\/10\/22",
         "Type":"TRADE",
         "Received Quantity":0.01368777,
         "Received Currency":"ETH",
@@ -4384,7 +4384,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1641824069000,
+        "Date":"01\/10\/22",
         "Type":"TRADE",
         "Received Quantity":0.01734776,
         "Received Currency":"ETH",
@@ -4400,7 +4400,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1641823970000,
+        "Date":"01\/10\/22",
         "Type":"TRADE",
         "Received Quantity":0.01501382,
         "Received Currency":"ETH",
@@ -4416,7 +4416,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1641763939000,
+        "Date":"01\/09\/22",
         "Type":"TRADE",
         "Received Quantity":78.84722,
         "Received Currency":"POWR",
@@ -4432,7 +4432,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1641763857000,
+        "Date":"01\/09\/22",
         "Type":"TRADE",
         "Received Quantity":13.19662459,
         "Received Currency":"GODS",
@@ -4448,7 +4448,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1641763756000,
+        "Date":"01\/09\/22",
         "Type":"TRADE",
         "Received Quantity":3.84085612,
         "Received Currency":"LINK",
@@ -4464,7 +4464,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1641756544000,
+        "Date":"01\/09\/22",
         "Type":"TRADE",
         "Received Quantity":0.6301692,
         "Received Currency":"SOL",
@@ -4480,7 +4480,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1641756472000,
+        "Date":"01\/09\/22",
         "Type":"TRADE",
         "Received Quantity":0.13994595,
         "Received Currency":"SOL",
@@ -4496,7 +4496,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1641694959000,
+        "Date":"01\/09\/22",
         "Type":"TRADE",
         "Received Quantity":242.62441733,
         "Received Currency":"ASM",
@@ -4512,7 +4512,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1641694879000,
+        "Date":"01\/09\/22",
         "Type":"TRADE",
         "Received Quantity":279.24018814,
         "Received Currency":"AMP",
@@ -4528,7 +4528,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1641694766000,
+        "Date":"01\/09\/22",
         "Type":"TRADE",
         "Received Quantity":0.00647159,
         "Received Currency":"ETH",
@@ -4544,7 +4544,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1641694718000,
+        "Date":"01\/09\/22",
         "Type":"TRADE",
         "Received Quantity":0.02025841,
         "Received Currency":"ETH",
@@ -4560,7 +4560,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1641424370000,
+        "Date":"01\/05\/22",
         "Type":"TRADE",
         "Received Quantity":0.00067742,
         "Received Currency":"BTC",
@@ -4576,7 +4576,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1641417851000,
+        "Date":"01\/05\/22",
         "Type":"BUY",
         "Received Quantity":0.02655897,
         "Received Currency":"ETH",
@@ -4592,7 +4592,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1640842344000,
+        "Date":"12\/30\/21",
         "Type":"TRADE",
         "Received Quantity":6.04933056,
         "Received Currency":"MATIC",
@@ -4608,7 +4608,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1640711973000,
+        "Date":"12\/28\/21",
         "Type":"TRADE",
         "Received Quantity":0.00019387,
         "Received Currency":"BTC",
@@ -4624,7 +4624,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1640711908000,
+        "Date":"12\/28\/21",
         "Type":"TRADE",
         "Received Quantity":0.00237521,
         "Received Currency":"ETH",
@@ -4640,7 +4640,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1640711844000,
+        "Date":"12\/28\/21",
         "Type":"TRADE",
         "Received Quantity":0.00388375,
         "Received Currency":"ETH",
@@ -4656,7 +4656,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1640493034000,
+        "Date":"12\/26\/21",
         "Type":"TRADE",
         "Received Quantity":186.24469737,
         "Received Currency":"ACH",
@@ -4672,7 +4672,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1640492997000,
+        "Date":"12\/26\/21",
         "Type":"TRADE",
         "Received Quantity":279.60738656,
         "Received Currency":"ACH",
@@ -4688,7 +4688,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1640491841000,
+        "Date":"12\/26\/21",
         "Type":"TRADE",
         "Received Quantity":66.00740216,
         "Received Currency":"MDT",
@@ -4704,7 +4704,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1640491767000,
+        "Date":"12\/26\/21",
         "Type":"TRADE",
         "Received Quantity":66.26274696,
         "Received Currency":"MDT",
@@ -4720,7 +4720,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1640294060000,
+        "Date":"12\/23\/21",
         "Type":"TRADE",
         "Received Quantity":289.4535285,
         "Received Currency":"AMP",
@@ -4736,7 +4736,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1640293887000,
+        "Date":"12\/23\/21",
         "Type":"TRADE",
         "Received Quantity":0.10335493,
         "Received Currency":"SOL",
@@ -4752,7 +4752,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1640293830000,
+        "Date":"12\/23\/21",
         "Type":"TRADE",
         "Received Quantity":68.1148773,
         "Received Currency":"XLM",
@@ -4768,7 +4768,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1640281630000,
+        "Date":"12\/23\/21",
         "Type":"TRADE",
         "Received Quantity":41.200425,
         "Received Currency":"ADA",
@@ -4784,7 +4784,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1640281577000,
+        "Date":"12\/23\/21",
         "Type":"TRADE",
         "Received Quantity":0.00059005,
         "Received Currency":"BTC",
@@ -4800,7 +4800,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1639240169000,
+        "Date":"12\/11\/21",
         "Type":"TRADE",
         "Received Quantity":29.660748,
         "Received Currency":"ADA",
@@ -4816,7 +4816,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1639178718000,
+        "Date":"12\/10\/21",
         "Type":"TRADE",
         "Received Quantity":0.0115742,
         "Received Currency":"ETH",
@@ -4832,7 +4832,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1639146327000,
+        "Date":"12\/10\/21",
         "Type":"TRADE",
         "Received Quantity":97.59880058,
         "Received Currency":"COVAL",
@@ -4848,7 +4848,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1639099914000,
+        "Date":"12\/10\/21",
         "Type":"TRADE",
         "Received Quantity":139.17749338,
         "Received Currency":"COVAL",
@@ -4864,7 +4864,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1639099775000,
+        "Date":"12\/10\/21",
         "Type":"TRADE",
         "Received Quantity":19.84954365,
         "Received Currency":"COVAL",
@@ -4880,7 +4880,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1639099213000,
+        "Date":"12\/10\/21",
         "Type":"BUY",
         "Received Quantity":0.00613271,
         "Received Currency":"QNT",
@@ -4896,7 +4896,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1639099201000,
+        "Date":"12\/10\/21",
         "Type":"BUY",
         "Received Quantity":0.00613271,
         "Received Currency":"QNT",
@@ -4912,7 +4912,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1639099188000,
+        "Date":"12\/10\/21",
         "Type":"BUY",
         "Received Quantity":0.00613271,
         "Received Currency":"QNT",
@@ -4928,7 +4928,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1639076531000,
+        "Date":"12\/09\/21",
         "Type":"BUY",
         "Received Quantity":0.000209,
         "Received Currency":"BTC",
@@ -4944,7 +4944,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1639076203000,
+        "Date":"12\/09\/21",
         "Type":"BUY",
         "Received Quantity":0.00325548,
         "Received Currency":"ETH",
@@ -4960,7 +4960,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1639027050000,
+        "Date":"12\/09\/21",
         "Type":"TRADE",
         "Received Quantity":536.74854684,
         "Received Currency":"SPELL",
@@ -4976,7 +4976,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1639013478000,
+        "Date":"12\/09\/21",
         "Type":"TRADE",
         "Received Quantity":27.31084639,
         "Received Currency":"IDEX",
@@ -4992,7 +4992,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1639011670000,
+        "Date":"12\/09\/21",
         "Type":"TRADE",
         "Received Quantity":705.97175244,
         "Received Currency":"SPELL",
@@ -5008,7 +5008,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1639010722000,
+        "Date":"12\/09\/21",
         "Type":"TRADE",
         "Received Quantity":0.01499268,
         "Received Currency":"SOL",
@@ -5024,7 +5024,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1639010422000,
+        "Date":"12\/09\/21",
         "Type":"BUY",
         "Received Quantity":0.0001871,
         "Received Currency":"BTC",
@@ -5040,7 +5040,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1639010134000,
+        "Date":"12\/09\/21",
         "Type":"TRADE",
         "Received Quantity":1073.79167472,
         "Received Currency":"SPELL",
@@ -5056,7 +5056,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1639008263000,
+        "Date":"12\/09\/21",
         "Type":"BUY",
         "Received Quantity":5.60051524,
         "Received Currency":"IOTX",
@@ -5072,7 +5072,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1639008241000,
+        "Date":"12\/09\/21",
         "Type":"BUY",
         "Received Quantity":5.6002016,
         "Received Currency":"IOTX",
@@ -5088,7 +5088,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1639008183000,
+        "Date":"12\/09\/21",
         "Type":"BUY",
         "Received Quantity":5.60082892,
         "Received Currency":"IOTX",
@@ -5104,7 +5104,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1639006354000,
+        "Date":"12\/08\/21",
         "Type":"SELL",
         "Received Quantity":"",
         "Received Currency":"USD",
@@ -5120,7 +5120,7 @@
         "Fee Realized Return (USD)":0.0
     },
     {
-        "Date":1639005684000,
+        "Date":"12\/08\/21",
         "Type":"TRADE",
         "Received Quantity":537.13095874,
         "Received Currency":"SPELL",
@@ -5136,7 +5136,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1638732939000,
+        "Date":"12\/05\/21",
         "Type":"TRADE",
         "Received Quantity":0.05226052,
         "Received Currency":"SOL",
@@ -5152,7 +5152,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1638674670000,
+        "Date":"12\/05\/21",
         "Type":"TRADE",
         "Received Quantity":0.007081,
         "Received Currency":"ETH",
@@ -5168,7 +5168,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1638661262000,
+        "Date":"12\/04\/21",
         "Type":"TRADE",
         "Received Quantity":0.0000595,
         "Received Currency":"BTC",
@@ -5184,7 +5184,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1638661164000,
+        "Date":"12\/04\/21",
         "Type":"TRADE",
         "Received Quantity":0.00005948,
         "Received Currency":"BTC",
@@ -5200,7 +5200,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1638661094000,
+        "Date":"12\/04\/21",
         "Type":"TRADE",
         "Received Quantity":0.00007914,
         "Received Currency":"BTC",
@@ -5216,7 +5216,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1638660960000,
+        "Date":"12\/04\/21",
         "Type":"TRADE",
         "Received Quantity":0.00019903,
         "Received Currency":"BTC",
@@ -5232,7 +5232,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1638660840000,
+        "Date":"12\/04\/21",
         "Type":"BUY",
         "Received Quantity":18.9107413,
         "Received Currency":"AMP",
@@ -5248,7 +5248,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1638660831000,
+        "Date":"12\/04\/21",
         "Type":"BUY",
         "Received Quantity":18.87148519,
         "Received Currency":"AMP",
@@ -5264,7 +5264,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1638660812000,
+        "Date":"12\/04\/21",
         "Type":"BUY",
         "Received Quantity":18.87148519,
         "Received Currency":"AMP",
@@ -5280,7 +5280,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1638660719000,
+        "Date":"12\/04\/21",
         "Type":"BUY",
         "Received Quantity":1.35869565,
         "Received Currency":"GRT",
@@ -5296,7 +5296,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1638660704000,
+        "Date":"12\/04\/21",
         "Type":"BUY",
         "Received Quantity":1.35869565,
         "Received Currency":"GRT",
@@ -5312,7 +5312,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1638660598000,
+        "Date":"12\/04\/21",
         "Type":"BUY",
         "Received Quantity":1.35630001,
         "Received Currency":"GRT",
@@ -5328,7 +5328,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1638660559000,
+        "Date":"12\/04\/21",
         "Type":"BUY",
         "Received Quantity":1.35851107,
         "Received Currency":"GRT",
@@ -5344,7 +5344,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1638660512000,
+        "Date":"12\/04\/21",
         "Type":"BUY",
         "Received Quantity":1.48389969,
         "Received Currency":"FET",
@@ -5360,7 +5360,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1638660452000,
+        "Date":"12\/04\/21",
         "Type":"BUY",
         "Received Quantity":1.48345943,
         "Received Currency":"FET",
@@ -5376,7 +5376,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1638660411000,
+        "Date":"12\/04\/21",
         "Type":"BUY",
         "Received Quantity":1.48345943,
         "Received Currency":"FET",
@@ -5392,7 +5392,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1638660311000,
+        "Date":"12\/04\/21",
         "Type":"BUY",
         "Received Quantity":6.8210032,
         "Received Currency":"XLM",
@@ -5408,7 +5408,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1638660111000,
+        "Date":"12\/04\/21",
         "Type":"BUY",
         "Received Quantity":6.8223993,
         "Received Currency":"XLM",
@@ -5424,7 +5424,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1638659923000,
+        "Date":"12\/04\/21",
         "Type":"BUY",
         "Received Quantity":6.8175156,
         "Received Currency":"XLM",
@@ -5440,7 +5440,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1638659795000,
+        "Date":"12\/04\/21",
         "Type":"BUY",
         "Received Quantity":0.00068333,
         "Received Currency":"BTC",
@@ -5456,7 +5456,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1638659790000,
+        "Date":"12\/04\/21",
         "Type":"BUY",
         "Received Quantity":6.8249602,
         "Received Currency":"XLM",
@@ -5472,7 +5472,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1638659605000,
+        "Date":"12\/04\/21",
         "Type":"BUY",
         "Received Quantity":6.833355,
         "Received Currency":"XLM",
@@ -5488,7 +5488,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1638653564000,
+        "Date":"12\/04\/21",
         "Type":"BUY",
         "Received Quantity":0.00219871,
         "Received Currency":"ETH",
@@ -5504,7 +5504,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1638653491000,
+        "Date":"12\/04\/21",
         "Type":"BUY",
         "Received Quantity":0.00146599,
         "Received Currency":"BTC",
@@ -5520,7 +5520,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1638301243000,
+        "Date":"11\/30\/21",
         "Type":"TRADE",
         "Received Quantity":0.00006529,
         "Received Currency":"BTC",
@@ -5536,7 +5536,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1638301195000,
+        "Date":"11\/30\/21",
         "Type":"TRADE",
         "Received Quantity":0.00008235,
         "Received Currency":"BTC",
@@ -5552,7 +5552,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1638233518000,
+        "Date":"11\/30\/21",
         "Type":"BUY",
         "Received Quantity":6.40368852,
         "Received Currency":"ANKR",
@@ -5568,7 +5568,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1638233501000,
+        "Date":"11\/30\/21",
         "Type":"BUY",
         "Received Quantity":6.40409862,
         "Received Currency":"ANKR",
@@ -5584,7 +5584,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1638233481000,
+        "Date":"11\/30\/21",
         "Type":"BUY",
         "Received Quantity":6.40409862,
         "Received Currency":"ANKR",
@@ -5600,7 +5600,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1638233446000,
+        "Date":"11\/30\/21",
         "Type":"BUY",
         "Received Quantity":6.40389356,
         "Received Currency":"ANKR",
@@ -5616,7 +5616,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1638233367000,
+        "Date":"11\/30\/21",
         "Type":"BUY",
         "Received Quantity":0.87336244,
         "Received Currency":"CLV",
@@ -5632,7 +5632,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1638233305000,
+        "Date":"11\/30\/21",
         "Type":"BUY",
         "Received Quantity":0.87336244,
         "Received Currency":"CLV",
@@ -5648,7 +5648,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1638233232000,
+        "Date":"11\/30\/21",
         "Type":"BUY",
         "Received Quantity":0.87336244,
         "Received Currency":"CLV",
@@ -5664,7 +5664,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1638233202000,
+        "Date":"11\/30\/21",
         "Type":"BUY",
         "Received Quantity":0.87336244,
         "Received Currency":"CLV",
@@ -5680,7 +5680,7 @@
         "Fee Realized Return (USD)":""
     },
     {
-        "Date":1638233178000,
+        "Date":"11\/30\/21",
         "Type":"BUY",
         "Received Quantity":0.87336244,
         "Received Currency":"CLV",

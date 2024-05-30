@@ -1,0 +1,1252 @@
+[
+    {
+        "Currency": "ACH",
+        "Quantity": 279.60738656,
+        "Date Acquired": "12/26/21",
+        "Date Sold": "01/05/22",
+        "Proceeds": 17.99418686328867,
+        "Cost Basis": 17.64,
+        "Return": 0.3541868632886711,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ACH",
+        "Quantity": 186.24469737,
+        "Date Acquired": "12/26/21",
+        "Date Sold": "01/05/22",
+        "Proceeds": 11.985813136067776,
+        "Cost Basis": 11.74,
+        "Return": 0.24581313606777577,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "BTC",
+        "Quantity": 0.00019387,
+        "Date Acquired": "12/28/21",
+        "Date Sold": "01/09/22",
+        "Proceeds": 7.95562802951158,
+        "Cost Basis": 9.57,
+        "Return": -1.6143719704884205,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "BTC",
+        "Quantity": 0.00044286999999999983,
+        "Date Acquired": "12/04/21",
+        "Date Sold": "01/09/22",
+        "Proceeds": 18.17356468473612,
+        "Cost Basis": 23.5,
+        "Return": -5.326435315263879,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "BTC",
+        "Quantity": 0.000209,
+        "Date Acquired": "12/09/21",
+        "Date Sold": "01/09/22",
+        "Proceeds": 8.576501047959562,
+        "Cost Basis": 10.01,
+        "Return": -1.4334989520404378,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "BTC",
+        "Quantity": 0.00067742,
+        "Date Acquired": "01/05/22",
+        "Date Sold": "01/09/22",
+        "Proceeds": 27.7985327268362,
+        "Cost Basis": 29.98,
+        "Return": -2.1814672731638005,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ADA",
+        "Quantity": 8.761510999999995,
+        "Date Acquired": "12/23/21",
+        "Date Sold": "01/09/22",
+        "Proceeds": 10.43547100716966,
+        "Cost Basis": 12.49,
+        "Return": -2.05452899283034,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ADA",
+        "Quantity": 8.609594000000001,
+        "Date Acquired": "12/11/21",
+        "Date Sold": "01/09/22",
+        "Proceeds": 10.254528992830338,
+        "Cost Basis": 11.329999999999998,
+        "Return": -1.0754710071696607,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "MATIC",
+        "Quantity": 6.04933056,
+        "Date Acquired": "12/30/21",
+        "Date Sold": "01/09/22",
+        "Proceeds": 12.249999999999998,
+        "Cost Basis": 14.68,
+        "Return": -2.4300000000000015,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "AMP",
+        "Quantity": 289.4535285,
+        "Date Acquired": "12/23/21",
+        "Date Sold": "01/09/22",
+        "Proceeds": 12.098446265761083,
+        "Cost Basis": 15.0,
+        "Return": -2.9015537342389166,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "AMP",
+        "Quantity": 279.24018814,
+        "Date Acquired": "01/09/22",
+        "Date Sold": "01/09/22",
+        "Proceeds": 11.671553734238914,
+        "Cost Basis": 12.25,
+        "Return": -0.5784462657610856,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ASM",
+        "Quantity": 242.62441733,
+        "Date Acquired": "01/09/22",
+        "Date Sold": "01/09/22",
+        "Proceeds": 20.72,
+        "Cost Basis": 23.77,
+        "Return": -3.0500000000000007,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.0008870100000000006,
+        "Date Acquired": "12/10/21",
+        "Date Sold": "01/09/22",
+        "Proceeds": 2.7781995152008125,
+        "Cost Basis": 3.6100000000000065,
+        "Return": -0.831800484799194,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.00388375,
+        "Date Acquired": "12/28/21",
+        "Date Sold": "01/09/22",
+        "Proceeds": 12.164273646476532,
+        "Cost Basis": 15.21,
+        "Return": -3.0457263535234684,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.00237521,
+        "Date Acquired": "12/28/21",
+        "Date Sold": "01/09/22",
+        "Proceeds": 7.439383175499845,
+        "Cost Basis": 9.29,
+        "Return": -1.850616824500154,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.022016619999999997,
+        "Date Acquired": "01/05/22",
+        "Date Sold": "01/09/22",
+        "Proceeds": 68.95814366282282,
+        "Cost Basis": 82.89711536253098,
+        "Return": -13.938971699708162,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "SOL",
+        "Quantity": 0.13994595,
+        "Date Acquired": "01/09/22",
+        "Date Sold": "01/09/22",
+        "Proceeds": 19.64765413847527,
+        "Cost Basis": 20.72,
+        "Return": -1.0723458615247274,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "SOL",
+        "Quantity": 0.6301692,
+        "Date Acquired": "01/09/22",
+        "Date Sold": "01/09/22",
+        "Proceeds": 88.47234586152474,
+        "Cost Basis": 91.34,
+        "Return": -2.8676541384752596,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "LINK",
+        "Quantity": 1.78126113,
+        "Date Acquired": "01/09/22",
+        "Date Sold": "01/09/22",
+        "Proceeds": 49.03,
+        "Cost Basis": 50.1424545357872,
+        "Return": -1.1124545357872009,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.004542350000000004,
+        "Date Acquired": "01/05/22",
+        "Date Sold": "01/09/22",
+        "Proceeds": 14.270896146303757,
+        "Cost Basis": 17.102884637469018,
+        "Return": -2.8319884911652604,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.00647159,
+        "Date Acquired": "01/09/22",
+        "Date Sold": "01/09/22",
+        "Proceeds": 20.332072339528626,
+        "Cost Basis": 20.69,
+        "Return": -0.3579276604713755,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.004595229999999996,
+        "Date Acquired": "01/09/22",
+        "Date Sold": "01/09/22",
+        "Proceeds": 14.437031514167622,
+        "Cost Basis": 14.344775587027794,
+        "Return": 0.09225592713982778,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "POWR",
+        "Quantity": 78.84722,
+        "Date Acquired": "01/09/22",
+        "Date Sold": "01/10/22",
+        "Proceeds": 45.95,
+        "Cost Basis": 49.04,
+        "Return": -3.0899999999999963,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "LINK",
+        "Quantity": 2.05959499,
+        "Date Acquired": "01/09/22",
+        "Date Sold": "01/10/22",
+        "Proceeds": 53.4,
+        "Cost Basis": 57.9775454642128,
+        "Return": -4.577545464212804,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "GODS",
+        "Quantity": 13.19662459,
+        "Date Acquired": "01/09/22",
+        "Date Sold": "01/10/22",
+        "Proceeds": 41.5,
+        "Cost Basis": 49.03,
+        "Return": -7.530000000000001,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.015663180000000006,
+        "Date Acquired": "01/09/22",
+        "Date Sold": "01/10/22",
+        "Proceeds": 47.22280634880718,
+        "Cost Basis": 48.89522441297221,
+        "Return": -1.6724180641650293,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.015193639999999994,
+        "Date Acquired": "01/10/22",
+        "Date Sold": "01/10/22",
+        "Proceeds": 45.80719365119281,
+        "Cost Basis": 46.769172273538466,
+        "Return": -0.9619786223456543,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.002154120000000006,
+        "Date Acquired": "01/10/22",
+        "Date Sold": "01/16/22",
+        "Proceeds": 7.017992922827783,
+        "Cost Basis": 6.630827726461533,
+        "Return": 0.3871651963662499,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.006860779999999993,
+        "Date Acquired": "01/10/22",
+        "Date Sold": "01/16/22",
+        "Proceeds": 22.352007077172217,
+        "Cost Basis": 20.997510360454548,
+        "Return": 1.3544967167176694,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "BTC",
+        "Quantity": 0.000697,
+        "Date Acquired": "01/10/22",
+        "Date Sold": "01/16/22",
+        "Proceeds": 29.540000000000003,
+        "Cost Basis": 29.012040268456378,
+        "Return": 0.5279597315436249,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "FARM",
+        "Quantity": 0.19831138,
+        "Date Acquired": "01/16/22",
+        "Date Sold": "01/21/22",
+        "Proceeds": 19.94436711336435,
+        "Cost Basis": 29.54,
+        "Return": -9.595632886635649,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "FARM",
+        "Quantity": 0.199815449,
+        "Date Acquired": "01/16/22",
+        "Date Sold": "01/21/22",
+        "Proceeds": 20.09563278606468,
+        "Cost Basis": 29.37,
+        "Return": -9.27436721393532,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "BTC",
+        "Quantity": 0.000818,
+        "Date Acquired": "01/10/22",
+        "Date Sold": "01/21/22",
+        "Proceeds": 28.869999999999994,
+        "Cost Basis": 34.04856375838927,
+        "Return": -5.178563758389277,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.008153040000000007,
+        "Date Acquired": "01/10/22",
+        "Date Sold": "01/21/22",
+        "Proceeds": 20.941621379713915,
+        "Cost Basis": 24.952489639545455,
+        "Return": -4.01086825983154,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.0013658899999999929,
+        "Date Acquired": "01/10/22",
+        "Date Sold": "01/21/22",
+        "Proceeds": 3.508378620286085,
+        "Cost Basis": 4.141246894125172,
+        "Return": -0.6328682738390867,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "SUKU",
+        "Quantity": 52.52618174,
+        "Date Acquired": "01/21/22",
+        "Date Sold": "01/22/22",
+        "Proceeds": 23.52,
+        "Cost Basis": 40.04,
+        "Return": -16.52,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "SHPING",
+        "Quantity": 602.30154056,
+        "Date Acquired": "01/22/22",
+        "Date Sold": "01/24/22",
+        "Proceeds": 21.35847294336656,
+        "Cost Basis": 23.52,
+        "Return": -2.161527056633439,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "SHPING",
+        "Quantity": 840.6747392599999,
+        "Date Acquired": "01/21/22",
+        "Date Sold": "01/24/22",
+        "Proceeds": 29.81152705663344,
+        "Cost Basis": 28.869999999999997,
+        "Return": 0.9415270566334435,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "TRAC",
+        "Quantity": 37.85224736,
+        "Date Acquired": "01/21/22",
+        "Date Sold": "01/24/22",
+        "Proceeds": 21.98,
+        "Cost Basis": 24.45,
+        "Return": -2.469999999999999,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "GRT",
+        "Quantity": 1.69419737,
+        "Date Acquired": "01/12/22",
+        "Date Sold": "01/24/22",
+        "Proceeds": 0.69,
+        "Cost Basis": 1.0,
+        "Return": -0.31000000000000005,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "BTC",
+        "Quantity": 0.0007199999999999998,
+        "Date Acquired": "01/10/22",
+        "Date Sold": "01/24/22",
+        "Proceeds": 24.929999999999993,
+        "Cost Basis": 29.969395973154356,
+        "Return": -5.039395973154363,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.012321880000000007,
+        "Date Acquired": "01/10/22",
+        "Date Sold": "01/30/22",
+        "Proceeds": 31.157580285053644,
+        "Cost Basis": 37.358753105874825,
+        "Return": -6.201172820821181,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.00048342999999999303,
+        "Date Acquired": "01/24/22",
+        "Date Sold": "01/30/22",
+        "Proceeds": 1.2224197149463603,
+        "Cost Basis": 1.2402545726563468,
+        "Return": -0.017834857709986496,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.01271324,
+        "Date Acquired": "01/24/22",
+        "Date Sold": "01/30/22",
+        "Proceeds": 32.37,
+        "Cost Basis": 32.61620926148109,
+        "Return": -0.24620926148109135,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.00331215,
+        "Date Acquired": "01/24/22",
+        "Date Sold": "02/05/22",
+        "Proceeds": 9.870000000000001,
+        "Cost Basis": 8.497422962629084,
+        "Return": 1.3725770373709167,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "LINK",
+        "Quantity": 0.75839653,
+        "Date Acquired": "01/30/22",
+        "Date Sold": "02/10/22",
+        "Proceeds": 13.739999999999998,
+        "Cost Basis": 13.290463350838655,
+        "Return": 0.4495366491613435,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "FIDA",
+        "Quantity": 3.853386,
+        "Date Acquired": "02/10/22",
+        "Date Sold": "02/10/22",
+        "Proceeds": 12.14,
+        "Cost Basis": 13.74,
+        "Return": -1.5999999999999996,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "NKN",
+        "Quantity": 36.42306705,
+        "Date Acquired": "02/05/22",
+        "Date Sold": "02/10/22",
+        "Proceeds": 9.319999999999999,
+        "Cost Basis": 9.87,
+        "Return": -0.5500000000000007,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "LINK",
+        "Quantity": 1.08931028,
+        "Date Acquired": "01/30/22",
+        "Date Sold": "02/10/22",
+        "Proceeds": 19.37,
+        "Cost Basis": 19.089536649161346,
+        "Return": 0.28046335083865515,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "GALA",
+        "Quantity": 56.11680288,
+        "Date Acquired": "02/10/22",
+        "Date Sold": "02/16/22",
+        "Proceeds": 18.880000000000003,
+        "Cost Basis": 19.37,
+        "Return": -0.48999999999999844,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "MATIC",
+        "Quantity": 6.29638235,
+        "Date Acquired": "02/10/22",
+        "Date Sold": "02/17/22",
+        "Proceeds": 10.982779733155521,
+        "Cost Basis": 12.14,
+        "Return": -1.1572202668444795,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "MATIC",
+        "Quantity": 4.9322088,
+        "Date Acquired": "02/10/22",
+        "Date Sold": "02/17/22",
+        "Proceeds": 8.603251809879575,
+        "Cost Basis": 9.32,
+        "Return": -0.7167481901204251,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "MATIC",
+        "Quantity": 0.23732640999999965,
+        "Date Acquired": "02/16/22",
+        "Date Sold": "02/17/22",
+        "Proceeds": 0.41396845696490364,
+        "Cost Basis": 0.44499449326687845,
+        "Return": -0.031026036301974813,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.003436370000000008,
+        "Date Acquired": "01/24/22",
+        "Date Sold": "02/17/22",
+        "Proceeds": 10.239435759375354,
+        "Cost Basis": 8.816113203233481,
+        "Return": 1.4233225561418728,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.003275659999999992,
+        "Date Acquired": "01/24/22",
+        "Date Sold": "02/17/22",
+        "Proceeds": 9.760564240624646,
+        "Cost Basis": 8.35048958899945,
+        "Return": 1.4100746516251963,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "RNDR",
+        "Quantity": 0.26954177,
+        "Date Acquired": "02/05/22",
+        "Date Sold": "03/15/22",
+        "Proceeds": 0.6333325501120536,
+        "Cost Basis": 1.0,
+        "Return": -0.3666674498879464,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "RNDR",
+        "Quantity": 0.269179,
+        "Date Acquired": "02/05/22",
+        "Date Sold": "03/15/22",
+        "Proceeds": 0.6324801625611217,
+        "Cost Basis": 0.99,
+        "Return": -0.3575198374388783,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "RNDR",
+        "Quantity": 0.26990553,
+        "Date Acquired": "02/05/22",
+        "Date Sold": "03/15/22",
+        "Proceeds": 0.6341872638301862,
+        "Cost Basis": 0.99,
+        "Return": -0.3558127361698138,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "BTC",
+        "Quantity": 0.00046669,
+        "Date Acquired": "02/17/22",
+        "Date Sold": "03/16/22",
+        "Proceeds": 18.655206506258903,
+        "Cost Basis": 20.0,
+        "Return": -1.344793493741097,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "BTC",
+        "Quantity": 0.00046717999999999993,
+        "Date Acquired": "02/17/22",
+        "Date Sold": "03/16/22",
+        "Proceeds": 18.6747934937411,
+        "Cost Basis": 19.999999999999996,
+        "Return": -1.3252065062588976,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "MATIC",
+        "Quantity": 9.83183779,
+        "Date Acquired": "02/16/22",
+        "Date Sold": "03/25/22",
+        "Proceeds": 15.549219095301227,
+        "Cost Basis": 18.43500550673312,
+        "Return": -2.8857864114318925,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "MATIC",
+        "Quantity": 20.12041597,
+        "Date Acquired": "01/30/22",
+        "Date Sold": "03/25/22",
+        "Proceeds": 31.820780904698772,
+        "Cost Basis": 32.37,
+        "Return": -0.5492190953012255,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.01494047,
+        "Date Acquired": "03/25/22",
+        "Date Sold": "08/04/22",
+        "Proceeds": 23.545468134244395,
+        "Cost Basis": 47.37,
+        "Return": -23.824531865755603,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.013743,
+        "Date Acquired": "03/16/22",
+        "Date Sold": "08/04/22",
+        "Proceeds": 21.658312527579167,
+        "Cost Basis": 37.33,
+        "Return": -15.671687472420832,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.0007084,
+        "Date Acquired": "03/15/22",
+        "Date Sold": "08/04/22",
+        "Proceeds": 1.1164046128601528,
+        "Cost Basis": 1.9,
+        "Return": -0.7835953871398471,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.0053464700000000085,
+        "Date Acquired": "01/24/22",
+        "Date Sold": "08/04/22",
+        "Proceeds": 8.425781720099423,
+        "Cost Basis": 13.62951041100055,
+        "Return": -5.203728690901128,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.00027236,
+        "Date Acquired": "01/24/22",
+        "Date Sold": "08/04/22",
+        "Proceeds": 0.4292263697890898,
+        "Cost Basis": 0.69,
+        "Return": -0.26077363021091016,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.01062756,
+        "Date Acquired": "01/24/22",
+        "Date Sold": "08/04/22",
+        "Proceeds": 16.74852767849809,
+        "Cost Basis": 24.93,
+        "Return": -8.18147232150191,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.02932996,
+        "Date Acquired": "08/01/22",
+        "Date Sold": "08/04/22",
+        "Proceeds": 46.22261806748132,
+        "Cost Basis": 50.0,
+        "Return": -3.7773819325186793,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.02449545,
+        "Date Acquired": "07/25/22",
+        "Date Sold": "08/04/22",
+        "Proceeds": 38.60366088944838,
+        "Cost Basis": 39.007866402064586,
+        "Return": -0.4042055126162083,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.006902639999999998,
+        "Date Acquired": "07/25/22",
+        "Date Sold": "08/04/22",
+        "Proceeds": 10.940363954699707,
+        "Cost Basis": 10.992133597935414,
+        "Return": -0.05176964323570665,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.03194783,
+        "Date Acquired": "07/18/22",
+        "Date Sold": "08/04/22",
+        "Proceeds": 50.63582741717286,
+        "Cost Basis": 50.0,
+        "Return": 0.6358274171728624,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.03928645,
+        "Date Acquired": "06/25/22",
+        "Date Sold": "08/04/22",
+        "Proceeds": 62.26719943211763,
+        "Cost Basis": 50.0,
+        "Return": 12.267199432117629,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.014572419999999996,
+        "Date Acquired": "06/25/22",
+        "Date Sold": "08/04/22",
+        "Proceeds": 23.0966091960098,
+        "Cost Basis": 18.67113321641044,
+        "Return": 4.425475979599362,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.025103,
+        "Date Acquired": "08/15/22",
+        "Date Sold": "08/26/22",
+        "Proceeds": 41.325620921125605,
+        "Cost Basis": 50.0,
+        "Return": -8.674379078874395,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.02703559,
+        "Date Acquired": "08/08/22",
+        "Date Sold": "08/26/22",
+        "Proceeds": 44.50713236342167,
+        "Cost Basis": 50.0,
+        "Return": -5.492867636578332,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.03028424,
+        "Date Acquired": "08/22/22",
+        "Date Sold": "08/26/22",
+        "Proceeds": 49.85519747139341,
+        "Cost Basis": 50.0,
+        "Return": -0.14480252860658993,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.006397630000000005,
+        "Date Acquired": "06/25/22",
+        "Date Sold": "08/26/22",
+        "Proceeds": 10.532049244059316,
+        "Cost Basis": 8.197060062728362,
+        "Return": 2.334989181330954,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "SOL",
+        "Quantity": 4.04906428,
+        "Date Acquired": "08/04/22",
+        "Date Sold": "09/07/22",
+        "Proceeds": 132.11505177582637,
+        "Cost Basis": 156.75,
+        "Return": -24.634948224173627,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ADA",
+        "Quantity": 292.780998,
+        "Date Acquired": "08/04/22",
+        "Date Sold": "09/07/22",
+        "Proceeds": 140.3222027405754,
+        "Cost Basis": 146.94,
+        "Return": -6.617797259424606,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "MATIC",
+        "Quantity": 176.07568337,
+        "Date Acquired": "08/26/22",
+        "Date Sold": "09/07/22",
+        "Proceeds": 149.45,
+        "Cost Basis": 146.22,
+        "Return": 3.2299999999999898,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.02786708,
+        "Date Acquired": "09/12/22",
+        "Date Sold": "10/09/22",
+        "Proceeds": 35.99859495229478,
+        "Cost Basis": 50.0,
+        "Return": -14.00140504770522,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.08333539,
+        "Date Acquired": "09/07/22",
+        "Date Sold": "10/09/22",
+        "Proceeds": 107.6523607712583,
+        "Cost Basis": 140.43,
+        "Return": -32.777639228741705,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.002004220000000001,
+        "Date Acquired": "09/07/22",
+        "Date Sold": "10/09/22",
+        "Proceeds": 2.5890442764469146,
+        "Cost Basis": 3.3752639676260277,
+        "Return": -0.7862196911791131,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.08673867,
+        "Date Acquired": "09/07/22",
+        "Date Sold": "10/09/22",
+        "Proceeds": 112.02367009051771,
+        "Cost Basis": 146.07473603237395,
+        "Return": -34.05106594185624,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.07884327,
+        "Date Acquired": "09/07/22",
+        "Date Sold": "10/09/22",
+        "Proceeds": 101.82669929499278,
+        "Cost Basis": 132.53,
+        "Return": -30.703300705007223,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.0299414,
+        "Date Acquired": "09/05/22",
+        "Date Sold": "10/09/22",
+        "Proceeds": 38.66955206539629,
+        "Cost Basis": 50.0,
+        "Return": -11.330447934603711,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.03111971,
+        "Date Acquired": "08/29/22",
+        "Date Sold": "10/09/22",
+        "Proceeds": 40.19134863784036,
+        "Cost Basis": 50.0,
+        "Return": -9.808651362159637,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.03524733,
+        "Date Acquired": "09/19/22",
+        "Date Sold": "10/09/22",
+        "Proceeds": 45.522202121517516,
+        "Cost Basis": 50.0,
+        "Return": -4.477797878482484,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.03598249,
+        "Date Acquired": "10/03/22",
+        "Date Sold": "10/09/22",
+        "Proceeds": 46.471667006138695,
+        "Cost Basis": 50.0,
+        "Return": -3.528332993861305,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.03636765,
+        "Date Acquired": "09/26/22",
+        "Date Sold": "10/09/22",
+        "Proceeds": 46.96910415582135,
+        "Cost Basis": 50.0,
+        "Return": -3.0308958441786515,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.012590529999999999,
+        "Date Acquired": "06/25/22",
+        "Date Sold": "10/09/22",
+        "Proceeds": 16.260767878787693,
+        "Cost Basis": 16.1318067208612,
+        "Return": 0.12896115792649354,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.04142566,
+        "Date Acquired": "07/11/22",
+        "Date Sold": "10/09/22",
+        "Proceeds": 53.5015635946684,
+        "Cost Basis": 50.0,
+        "Return": 3.501563594668397,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.043246679999999996,
+        "Date Acquired": "07/04/22",
+        "Date Sold": "10/09/22",
+        "Proceeds": 55.853425154319176,
+        "Cost Basis": 49.99999999999999,
+        "Return": 5.853425154319183,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ATOM",
+        "Quantity": 11.07401,
+        "Date Acquired": "10/09/22",
+        "Date Sold": "10/09/22",
+        "Proceeds": 146.19198547559984,
+        "Cost Basis": 149.49,
+        "Return": -3.2980145244001733,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ATOM",
+        "Quantity": 4.072915,
+        "Date Acquired": "10/09/22",
+        "Date Sold": "10/09/22",
+        "Proceeds": 53.768014524400165,
+        "Cost Basis": 53.762366440846684,
+        "Return": 0.005648083553481342,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ATOM",
+        "Quantity": 7.580926,
+        "Date Acquired": "10/09/22",
+        "Date Sold": "10/09/22",
+        "Proceeds": 99.99,
+        "Cost Basis": 100.06801555469292,
+        "Return": -0.0780155546929251,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ATOM",
+        "Quantity": 15.158405,
+        "Date Acquired": "10/09/22",
+        "Date Sold": "10/09/22",
+        "Proceeds": 199.96,
+        "Cost Basis": 200.09053080380085,
+        "Return": -0.1305308038008377,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ATOM",
+        "Quantity": 3.589891,
+        "Date Acquired": "10/09/22",
+        "Date Sold": "11/02/22",
+        "Proceeds": 48.74,
+        "Cost Basis": 47.3864628711126,
+        "Return": 1.3535371288874032,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ADA",
+        "Quantity": 125.313283,
+        "Date Acquired": "10/09/22",
+        "Date Sold": "11/02/22",
+        "Proceeds": 48.730000000000004,
+        "Cost Basis": 51.80670843364683,
+        "Return": -3.0767084336468287,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.042763,
+        "Date Acquired": "11/06/22",
+        "Date Sold": "11/28/22",
+        "Proceeds": 50.03,
+        "Cost Basis": 71.40220179190925,
+        "Return": -21.372201791909248,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.01712731,
+        "Date Acquired": "11/06/22",
+        "Date Sold": "11/28/22",
+        "Proceeds": 19.921595882311866,
+        "Cost Basis": 28.59779820809075,
+        "Return": -8.676202325778885,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.02583369,
+        "Date Acquired": "10/30/22",
+        "Date Sold": "11/28/22",
+        "Proceeds": 30.048404117688136,
+        "Cost Basis": 42.391285084731074,
+        "Return": -12.342880967042937,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.03510735,
+        "Date Acquired": "10/30/22",
+        "Date Sold": "11/28/22",
+        "Proceeds": 40.74858396397233,
+        "Cost Basis": 57.608714915268926,
+        "Return": -16.860130951296597,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.051048649999999994,
+        "Date Acquired": "10/09/22",
+        "Date Sold": "11/28/22",
+        "Proceeds": 59.25141603602766,
+        "Cost Basis": 69.35437670588503,
+        "Return": -10.102960669857367,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.022549510000000002,
+        "Date Acquired": "10/09/22",
+        "Date Sold": "11/28/22",
+        "Proceeds": 26.51833265469312,
+        "Cost Basis": 30.635623294114964,
+        "Return": -4.117290639421846,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.07285303,
+        "Date Acquired": "10/09/22",
+        "Date Sold": "11/28/22",
+        "Proceeds": 85.67551509732749,
+        "Cost Basis": 100.0,
+        "Return": -14.32448490267251,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.0734303,
+        "Date Acquired": "10/23/22",
+        "Date Sold": "11/28/22",
+        "Proceeds": 86.35438740504392,
+        "Cost Basis": 100.0,
+        "Return": -13.645612594956077,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.07512004,
+        "Date Acquired": "10/16/22",
+        "Date Sold": "11/28/22",
+        "Proceeds": 88.34152980503139,
+        "Cost Basis": 100.0,
+        "Return": -11.658470194968615,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.011165120000000028,
+        "Date Acquired": "11/13/22",
+        "Date Sold": "11/28/22",
+        "Proceeds": 13.13023503790406,
+        "Cost Basis": 14.211266632190059,
+        "Return": -1.0810315942859994,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "SOL",
+        "Quantity": 5.89212177,
+        "Date Acquired": "10/09/22",
+        "Date Sold": "12/01/22",
+        "Proceeds": 77.5905465307833,
+        "Cost Basis": 199.96,
+        "Return": -122.36945346921671,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.06740014999999998,
+        "Date Acquired": "11/13/22",
+        "Date Sold": "12/01/22",
+        "Proceeds": 83.77995296266761,
+        "Cost Basis": 85.78873336780994,
+        "Return": -2.008780405142332,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.05024045000000002,
+        "Date Acquired": "11/29/22",
+        "Date Sold": "12/01/22",
+        "Proceeds": 62.45004703733237,
+        "Cost Basis": 60.67155854347907,
+        "Return": 1.7784884938532954,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.01536193,
+        "Date Acquired": "12/05/22",
+        "Date Sold": "12/06/22",
+        "Proceeds": 19.40221535761188,
+        "Cost Basis": 20.0,
+        "Return": -0.5977846423881203,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.02423407,
+        "Date Acquired": "11/29/22",
+        "Date Sold": "12/06/22",
+        "Proceeds": 30.607784642388122,
+        "Cost Basis": 29.265637484373034,
+        "Return": 1.3421471580150879,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.078915,
+        "Date Acquired": "11/29/22",
+        "Date Sold": "12/06/22",
+        "Proceeds": 100.08999999999999,
+        "Cost Basis": 95.29962495277508,
+        "Return": 4.790375047224913,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.26627763,
+        "Date Acquired": "11/29/22",
+        "Date Sold": "12/06/22",
+        "Proceeds": 336.8745374842306,
+        "Cost Basis": 321.5631790193728,
+        "Return": 15.31135846485779,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.04999936999999999,
+        "Date Acquired": "11/20/22",
+        "Date Sold": "12/06/22",
+        "Proceeds": 63.255462515769395,
+        "Cost Basis": 61.20558652461241,
+        "Return": 2.0498759911569877,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.01597226,
+        "Date Acquired": "12/12/22",
+        "Date Sold": "12/21/22",
+        "Proceeds": 19.426404580747228,
+        "Cost Basis": 20.0,
+        "Return": -0.5735954192527721,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.025112740000000005,
+        "Date Acquired": "12/07/22",
+        "Date Sold": "12/21/22",
+        "Proceeds": 30.543595419252775,
+        "Cost Basis": 30.95517245592593,
+        "Return": -0.4115770366731546,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.082325,
+        "Date Acquired": "12/07/22",
+        "Date Sold": "12/21/22",
+        "Proceeds": 99.99999999999999,
+        "Cost Basis": 101.47775879629629,
+        "Return": -1.4777587962962997,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.040684,
+        "Date Acquired": "12/07/22",
+        "Date Sold": "12/27/22",
+        "Proceeds": 49.99,
+        "Cost Basis": 50.14905725925925,
+        "Return": -0.1590572592592494,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.081725,
+        "Date Acquired": "12/07/22",
+        "Date Sold": "12/27/22",
+        "Proceeds": 99.92999999999999,
+        "Cost Basis": 100.7381699074074,
+        "Return": -0.8081699074074038,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.041825,
+        "Date Acquired": "12/27/22",
+        "Date Sold": "12/30/22",
+        "Proceeds": 49.98,
+        "Cost Basis": 51.658943762647255,
+        "Return": -1.6789437626472576,
+        "Term": "SHORT"
+    },
+    {
+        "Currency": "ETH",
+        "Quantity": 0.083696,
+        "Date Acquired": "12/27/22",
+        "Date Sold": "12/30/22",
+        "Proceeds": 100.0,
+        "Cost Basis": 103.3747031000245,
+        "Return": -3.3747031000245045,
+        "Term": "SHORT"
+    }
+]

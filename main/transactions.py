@@ -2,8 +2,9 @@ import pandas as pd
 from datetime import datetime
 import json
 import load
+import taxes
 
-def LIFO(transactions, sub_quantity, sub_cost_basis):
+def LIFO(transactions, sub):
     """
     Description:
     Implements the Last-In First-Out (LIFO) method for updating transactions after sales.
@@ -16,39 +17,40 @@ def LIFO(transactions, sub_quantity, sub_cost_basis):
     Returns:
     dict: Updated transactions after applying the LIFO method.
     """
-    updated_transactions = {}
-    for index, row in transactions.iterrows():
-        if row[1] == 'BUY' or row[1] == 'TRADE':
-            seconds = row[0].second
-            seconds_rounded = round(seconds, 2)
-            seconds_str = str(seconds_rounded).zfill(2)
-            transaction_date = row[0].strftime('%m/%d/%y %H:%M:') + seconds_str
-            sub_date = row[0].strftime('%m/%d/%y')
-            received_quantity = row[2] if pd.notna(row[2]) else 0
-            received_currency = row[3] if pd.notna(row[3]) else 0
-            price = row[4] if pd.notna(row[4]) else 0
-            received_cost_basis = row[5] if pd.notna(row[5]) else 0
+    updated_transactions = transactions
+    for key, value in transactions.items():
+        if value['Currency'] == sub['Currency'] and sub['Quantity']:
+            transaction_date = value['Date']
+            date_acquired = datetime.strptime(transaction_date, '%m/%d/%y %H:%M:%S').strftime('%m/%d/%y')
+            if sub['Date Acquired'] != date_acquired:
+                continue
 
-            if received_quantity >= sub_quantity.get(f"{received_currency} {sub_date}", 0) and received_cost_basis >= sub_cost_basis.get(f"{received_currency} {sub_date}", 0):
+            received_quantity = value['Quantity']
+            received_currency = value['Currency']
+            price = value['Price']
+            received_cost_basis = value['Cost Basis']
+
+            if sub['Quantity'] >= received_quantity and received_quantity:
+                sub['Quantity'] -= received_quantity
+                sub['Cost Basis'] -= received_cost_basis
+                del updated_transactions[f'{received_currency} {transaction_date}']
+            elif received_quantity:
                 updated_transactions[f'{received_currency} {transaction_date}'] = {}
                 updated_transactions[f'{received_currency} {transaction_date}']['Date'] = transaction_date
                 updated_transactions[f'{received_currency} {transaction_date}']['Currency'] = received_currency
                 updated_transactions[f'{received_currency} {transaction_date}']['Price'] = price
-                updated_transactions[f'{received_currency} {transaction_date}']['Quantity'] = received_quantity - sub_quantity.get(f'{received_currency} {sub_date}', 0)
-                updated_transactions[f'{received_currency} {transaction_date}']['Cost Basis'] = received_cost_basis - sub_cost_basis.get(f'{received_currency} {sub_date}', 0)
+                updated_transactions[f'{received_currency} {transaction_date}']['Quantity'] = received_quantity - sub['Quantity']
+                updated_transactions[f'{received_currency} {transaction_date}']['Cost Basis'] = received_cost_basis - sub['Cost Basis']
 
-                sub_quantity[f'{received_currency} {sub_date}'] = 0
-                sub_cost_basis[f'{received_currency} {sub_date}'] = 0
+                sub['Quantity'] = 0
+                sub['Cost Basis'] = 0
 
-                if updated_transactions[f'{received_currency} {transaction_date}']['Quantity'] == 0 or updated_transactions[f'{received_currency} {transaction_date}']['Cost Basis'] == 0:
+                if updated_transactions[f'{received_currency} {transaction_date}']['Quantity'] == 0 or updated_transactions[f'{received_currency} {transaction_date}']['Cost Basis'] <= 0.01:
                     del updated_transactions[f'{received_currency} {transaction_date}']
-            else:
-                sub_quantity[f"{received_currency} {sub_date}"] -= received_quantity
-                sub_cost_basis[f"{received_currency} {sub_date}"] -= received_cost_basis
-
+    
     return updated_transactions
 
-def FIFO(transactions, sub_quantity, sub_cost_basis):
+def FIFO(transactions, sub):
     """
     Description:
     Implements the First-In First-Out (FIFO) method for updating transactions after sales.
@@ -61,41 +63,41 @@ def FIFO(transactions, sub_quantity, sub_cost_basis):
     Returns:
     dict: Updated transactions after applying the FIFO method.
     """
-    updated_transactions = {}
-    for index, row in transactions[::-1].iterrows():
-        if row[1] == 'BUY' or row[1] == 'TRADE':
-            seconds = row[0].second
-            seconds_rounded = round(seconds, 2)
-            seconds_str = str(seconds_rounded).zfill(2)
-            transaction_date = row[0].strftime('%m/%d/%y %H:%M:') + seconds_str
-            sub_date = row[0].strftime('%m/%d/%y')
-            received_quantity = row[2] if pd.notna(row[2]) else 0
-            received_currency = row[3] if pd.notna(row[3]) else 0
-            price = row[4] if pd.notna(row[4]) else 0
-            received_cost_basis = row[5] if pd.notna(row[5]) else 0
+    updated_transactions = transactions
+    
+    for key, value in reversed(transactions.items()):
+        if value['Currency'] == sub['Currency'] and sub['Quantity']:
+            transaction_date = value['Date']
+            date_acquired = datetime.strptime(transaction_date, '%m/%d/%y %H:%M:%S').strftime('%m/%d/%y')
+            if sub['Date Acquired'] != date_acquired:
+                continue
 
-            if received_quantity >= sub_quantity.get(f"{received_currency} {sub_date}", 0) and received_cost_basis >= sub_cost_basis.get(f"{received_currency} {sub_date}", 0):
+            received_quantity = value['Quantity']
+            received_currency = value['Currency']
+            price = value['Price']
+            received_cost_basis = value['Cost Basis']
+
+            if sub['Quantity'] >= received_quantity and received_quantity:
+                sub['Quantity'] -= received_quantity
+                sub['Cost Basis'] -= received_cost_basis
+                del updated_transactions[f'{received_currency} {transaction_date}']
+            elif received_quantity:
                 updated_transactions[f'{received_currency} {transaction_date}'] = {}
                 updated_transactions[f'{received_currency} {transaction_date}']['Date'] = transaction_date
                 updated_transactions[f'{received_currency} {transaction_date}']['Currency'] = received_currency
                 updated_transactions[f'{received_currency} {transaction_date}']['Price'] = price
-                updated_transactions[f'{received_currency} {transaction_date}']['Quantity'] = received_quantity - sub_quantity.get(f'{received_currency} {sub_date}', 0)
-                updated_transactions[f'{received_currency} {transaction_date}']['Cost Basis'] = received_cost_basis - sub_cost_basis.get(f'{received_currency} {sub_date}', 0)
+                updated_transactions[f'{received_currency} {transaction_date}']['Quantity'] = received_quantity - sub['Quantity']
+                updated_transactions[f'{received_currency} {transaction_date}']['Cost Basis'] = received_cost_basis - sub['Cost Basis']
 
-                sub_quantity[f'{received_currency} {sub_date}'] = 0
-                sub_cost_basis[f'{received_currency} {sub_date}'] = 0
+                sub['Quantity'] = 0
+                sub['Cost Basis'] = 0
 
-                if updated_transactions[f'{received_currency} {transaction_date}']['Quantity'] == 0 or updated_transactions[f'{received_currency} {transaction_date}']['Cost Basis'] == 0:
+                if updated_transactions[f'{received_currency} {transaction_date}']['Quantity'] == 0 or updated_transactions[f'{received_currency} {transaction_date}']['Cost Basis'] <= 0.01:
                     del updated_transactions[f'{received_currency} {transaction_date}']
-            else:
-                sub_quantity[f"{received_currency} {sub_date}"] -= received_quantity
-                sub_cost_basis[f"{received_currency} {sub_date}"] -= received_cost_basis
-    
-    updated_transactions = dict(sorted(updated_transactions.items(), key=lambda x: datetime.strptime(x[1]['Date'], '%m/%d/%y %H:%M:%S'), reverse=True))
     
     return updated_transactions
 
-def HIFO(transactions, sub_quantity, sub_cost_basis):
+def HIFO(transactions, sub):
     """
     Description:
     Implements the Highest-In First-Out (HIFO) method for updating transactions after sales.
@@ -108,78 +110,75 @@ def HIFO(transactions, sub_quantity, sub_cost_basis):
     Returns:
     dict: Updated transactions after applying the HIFO method.
     """
-    updated_transactions = {}
+    updated_transactions = transactions.copy()
+    transactions = dict(sorted(transactions.items(), key=lambda item: item[1]['Price'], reverse=True))
 
-    transactions = transactions.sort_values(by=transactions.columns[4], ascending=False)
+    for key, value in transactions.items():
+        if value['Currency'] == sub['Currency'] and sub['Quantity']:
+            transaction_date = value['Date']
+            date_acquired = datetime.strptime(transaction_date, '%m/%d/%y %H:%M:%S').strftime('%m/%d/%y')
+            if sub['Date Acquired'] != date_acquired:
+                continue
 
-    for index, row in transactions.iterrows():
-        if row[1] == 'BUY' or row[1] == 'TRADE':
-            seconds = row[0].second
-            seconds_rounded = round(seconds, 2)
-            seconds_str = str(seconds_rounded).zfill(2)
-            transaction_date = row[0].strftime('%m/%d/%y %H:%M:') + seconds_str
-            sub_date = row[0].strftime('%m/%d/%y')
-            received_quantity = row[2] if pd.notna(row[2]) else 0
-            received_currency = row[3] if pd.notna(row[3]) else 0
-            price = row[4] if pd.notna(row[4]) else 0
-            received_cost_basis = row[5] if pd.notna(row[5]) else 0
-            fee_cost_basis = row[11] if pd.notna(row[11]) else 0
+            received_quantity = value['Quantity']
+            received_currency = value['Currency']
+            price = value['Price']
+            received_cost_basis = value['Cost Basis']
 
-            if received_quantity >= sub_quantity.get(f"{received_currency} {sub_date}", 0) and received_cost_basis >= sub_cost_basis.get(f"{received_currency} {sub_date}", 0):
+            if sub['Quantity'] >= received_quantity and received_quantity:
+                sub['Quantity'] -= received_quantity
+                sub['Cost Basis'] -= received_cost_basis
+                del updated_transactions[f'{received_currency} {transaction_date}']
+            elif received_quantity:
                 updated_transactions[f'{received_currency} {transaction_date}'] = {}
                 updated_transactions[f'{received_currency} {transaction_date}']['Date'] = transaction_date
                 updated_transactions[f'{received_currency} {transaction_date}']['Currency'] = received_currency
                 updated_transactions[f'{received_currency} {transaction_date}']['Price'] = price
-                updated_transactions[f'{received_currency} {transaction_date}']['Quantity'] = received_quantity - sub_quantity.get(f'{received_currency} {sub_date}', 0)
-                updated_transactions[f'{received_currency} {transaction_date}']['Cost Basis'] = received_cost_basis + fee_cost_basis - sub_cost_basis.get(f'{received_currency} {sub_date}', 0)
+                updated_transactions[f'{received_currency} {transaction_date}']['Quantity'] = received_quantity - sub['Quantity']
+                updated_transactions[f'{received_currency} {transaction_date}']['Cost Basis'] = received_cost_basis - sub['Cost Basis']
 
-                sub_quantity[f'{received_currency} {sub_date}'] = 0
-                sub_cost_basis[f'{received_currency} {sub_date}'] = 0
+                sub['Quantity'] = 0
+                sub['Cost Basis'] = 0
 
-                if updated_transactions[f'{received_currency} {transaction_date}']['Quantity'] == 0 or updated_transactions[f'{received_currency} {transaction_date}']['Cost Basis'] == 0:
+                if updated_transactions[f'{received_currency} {transaction_date}']['Quantity'] == 0 or updated_transactions[f'{received_currency} {transaction_date}']['Cost Basis'] <= 0.01:
                     del updated_transactions[f'{received_currency} {transaction_date}']
-            else:
-                sub_quantity[f"{received_currency} {sub_date}"] -= received_quantity
-                sub_cost_basis[f"{received_currency} {sub_date}"] -= received_cost_basis
-    
-    updated_transactions = dict(sorted(updated_transactions.items(), key=lambda x: datetime.strptime(x[1]['Date'], '%m/%d/%y %H:%M:%S'), reverse=True))
     
     return updated_transactions
 
-def get_sub(data, year):
+def get_sub(data):
     """
     Description:
     Retrieves sub-quantity and sub-cost basis data for a specific year.
 
     Parameters:
     - data (DataFrame): DataFrame containing transaction data from 8949.
-    - year (int): The year for which data is to be retrieved.
 
     Returns:
     tuple: A tuple containing sub-quantity and sub-cost basis data (both dictionaries).
     """
-    sub_cost_basis = {}
-    sub_quantity = {}
-    
-    filtered_data = data[pd.to_datetime(data.iloc[:, 3]).dt.year == year]
+    sub = {}
 
     for index, row in data.iterrows():
         currency = row[0]
         quantity = row[1]
         date_acquired = row[2].strftime('%m/%d/%y')
+        date_sold = row[3].strftime('%m/%d/%y')
+        proceeds = row[4]
         cost_basis = row[5]
+        gains = row[6]
 
-        if f'{currency} {date_acquired}' not in sub_cost_basis:
-            sub_cost_basis[f'{currency} {date_acquired}'] = 0
-        if f'{currency} {date_acquired}' not in sub_quantity:
-            sub_quantity[f'{currency} {date_acquired}'] = 0
-
-        sub_cost_basis[f'{currency} {date_acquired}'] += cost_basis
-        sub_quantity[f'{currency} {date_acquired}'] += quantity
+        sub[index] = {}
+        sub[index]['Currency'] = currency
+        sub[index]['Quantity'] = quantity
+        sub[index]['Date Acquired'] = date_acquired
+        sub[index]['Date Sold'] = date_sold
+        sub[index]['Proceeds'] = proceeds
+        sub[index]['Cost Basis'] = cost_basis
+        sub[index]['Return'] = gains
     
-    return sub_quantity, sub_cost_basis
+    return sub
 
-def update_transactions(transactions, data, methods):
+def update_transactions(transactions, data, method):
     """
     Description:
     Updates transactions after sales using specified methods for different years.
@@ -192,18 +191,9 @@ def update_transactions(transactions, data, methods):
     Returns:
     dict: Updated transactions after sales.
     """
-    updated_transactions = {}
+    updated_transactions = load.load_transactions_after_sales()
     
-    for method in methods:
-        sub_quantity, sub_cost_basis = get_sub(data, method)
-        if methods[method] == 'HIFO':
-            updated_transactions.update(HIFO(transactions, sub_quantity, sub_cost_basis))
-        elif methods[method] == 'LIFO':
-            updated_transactions.update(LIFO(transactions, sub_quantity, sub_cost_basis))
-        elif methods[method] == 'FIFO':
-            updated_transactions.update(FIFO(transactions, sub_quantity, sub_cost_basis))
-
-    if methods == {}:
+    if method == None or updated_transactions == {}:
         for index, row in transactions.iterrows():
             if row[1] == 'BUY' or row[1] == 'TRADE':
                 seconds = row[0].second
@@ -223,6 +213,15 @@ def update_transactions(transactions, data, methods):
                 updated_transactions[f'{received_currency} {transaction_date}']['Price'] = price
                 updated_transactions[f'{received_currency} {transaction_date}']['Quantity'] = received_quantity
                 updated_transactions[f'{received_currency} {transaction_date}']['Cost Basis'] = received_cost_basis + fee_cost_basis 
+    else:
+        sub = get_sub(data)
+        for key, value in sub.items():
+            if method == 'HIFO':
+                updated_transactions = HIFO(updated_transactions, value)
+            elif method == 'LIFO':
+                updated_transactions = LIFO(updated_transactions, value)
+            elif method == 'FIFO':
+                updated_transactions = FIFO(updated_transactions, value)
 
     with open('../crypto-excel/data/transactions-after-sales.json', 'w') as f:
         json.dump({}, f, indent=4)
@@ -252,18 +251,18 @@ def main():
     Description:
     Main function to update transactions after sales and write them to an Excel file.
     """
-    transactions = load.load_transactions()
-    data = load.load_f8949()
+    # transactions = load.load_transactions()
+    # data = load.load_f8949()
 
-    methods = {}
-    methods[2021] = 'HIFO'
-    methods[2022] = 'HIFO'
-    methods[2023] = 'HIFO'
-    methods[2024] = 'HIFO'
+    # methods = {}
+    # # methods[2021] = 'HIFO'
+    # # methods[2022] = 'HIFO'
+    # # methods[2023] = 'HIFO'
+    # # methods[2024] = 'HIFO'
 
-    updated_transactions = update_transactions(transactions, data, methods)
+    # updated_transactions = update_transactions(transactions, data, methods)
 
-    write_to_after_sales(updated_transactions)
+    # write_to_after_sales(updated_transactions)
 
 if __name__ == "__main__":
     main()

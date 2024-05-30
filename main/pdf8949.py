@@ -4,43 +4,42 @@ from pdfrw import PdfReader, PdfDict, PdfWriter, PdfName
 import load
 
 def read_f8949(paths):
-    dfs = []
-    for path in paths:
-        tables = camelot.read_pdf(path, pages='all')
+    for year, pdf_path in paths.items():
+        dfs = []
+        tables = camelot.read_pdf(pdf_path, pages='all')
         for table in tables:
             df = table.df
             df = df.iloc[2:16]
             df = df[df[0] != '']
-            fixed_df = {}
-            fixed_df['Currency'] = df[0].str.split().str[-1]
-            fixed_df['Quantity'] = df[0].str.split().str[0].replace(',', '').astype(float)
-            fixed_df['Date Acquired'] = df[1]
-            fixed_df['Date Sold'] = df[2]
-            fixed_df['Proceeds'] = df[3].str.replace(',', '').astype(float)
-            fixed_df['Cost Basis'] = df[4].str.replace(',', '').astype(float)
-            fixed_df['Return'] = df[7].replace({'\(': '-', '\)': '', ',': ''}, regex=True).astype(float)
-            fixed_df = pd.DataFrame(fixed_df)
-            dfs.append(fixed_df)
+            fixed_df = {
+                'Currency': df[0].str.split().str[-1],
+                'Quantity': df[0].str.split().str[0].replace(',', '').astype(float),
+                'Date Acquired': df[1],
+                'Date Sold': df[2],
+                'Proceeds': df[3].str.replace(',', '').astype(float),
+                'Cost Basis': df[4].str.replace(',', '').astype(float),
+                'Return': df[7].replace({'\(': '-', '\)': '', ',': ''}, regex=True).astype(float)
+            }
+            dfs.append(pd.DataFrame(fixed_df))
 
-    df = pd.concat(dfs, ignore_index=True)
+        df = pd.concat(dfs, ignore_index=True)
 
-    workbook_path = '../crypto-excel/workbooks/8949Form.xlsx'
-    sheet_name = '8949'
-    with pd.ExcelWriter(workbook_path, engine='openpyxl', mode='w') as writer:
-        df.to_excel(writer, sheet_name=sheet_name, index=False)
+        df.to_json(f'../crypto-excel/data/f8949/f8949-{str(year)}.json', orient='records', indent=4)
 
-    df.to_json('../crypto-excel/data/f8949.json', orient='records', indent=4)
+        workbook_path = '../crypto-excel/workbooks/8949Form.xlsx'
+        with pd.ExcelWriter(workbook_path, engine='openpyxl', mode='w') as writer:
+            df.to_excel(writer, sheet_name=str(year), index=False)
 
-def write_to_f8949():
-    sell = load.load_sold()
+def write_to_f8949(year):
+    sold = load.load_sold(year)
     shorts = []
     longs = []
 
-    f8949_template = PdfReader("../crypto-excel/forms/f8949-blank.pdf")
+    f8949_template = PdfReader(f"../crypto-excel/forms/f8949/{year}/f8949-blank.pdf")
     short_template = f8949_template.pages[0]
     long_template = f8949_template.pages[1]
 
-    for value in sell:
+    for value in sold:
         if value['Term'] == "SHORT":
             new_transaction = {
                 'Asset': "{:.8f} {}".format(value['Quantity'], value['Currency']),
@@ -70,7 +69,7 @@ def write_to_f8949():
     num_short_pages = (len(shorts) // 14) + 1
 
     pdf = PdfWriter()
-    pdf_path = '../crypto-excel/forms/f8949-filled.pdf'
+    pdf_path = f'../crypto-excel/forms/f8949/{year}/f8949-filled.pdf'
 
     for _ in range(num_short_pages):
         new_page = copy_page(short_template)
@@ -138,7 +137,7 @@ def fill_table(annotations, data, index_offset):
             elif col == 4:
                 sums['Cost Basis'] += float(value.replace('$', '').replace(',', ''))
             elif col == 7:
-                sums['Gain/Loss'] += float(value.replace('$', '').replace(',', '').replace('(', '').replace(')', ''))
+                sums['Gain/Loss'] += float(value.replace('$', '').replace(',', '').replace('(', '-').replace(')', ''))
 
             sums['Proceeds'] = round(sums['Proceeds'], 2)
             sums['Cost Basis'] = round(sums['Cost Basis'], 2)
@@ -146,9 +145,12 @@ def fill_table(annotations, data, index_offset):
     return sums
 
 def fill_sum_fields(annotations, sums):
-    annotations[-5].update(PdfDict(V='{}'.format(f"${sums['Proceeds']}"), AS='{}'.format(sums['Proceeds'])))
-    annotations[-4].update(PdfDict(V='{}'.format(f"${sums['Cost Basis']}"), AS='{}'.format(sums['Cost Basis'])))
-    annotations[-1].update(PdfDict(V='{}'.format(f"${sums['Gain/Loss']}"), AS='{}'.format(sums['Gain/Loss'])))
+    annotations[-5].update(PdfDict(V='{}'.format(f"{sums['Proceeds']}"), AS='{}'.format(sums['Proceeds'])))
+    annotations[-4].update(PdfDict(V='{}'.format(f"{sums['Cost Basis']}"), AS='{}'.format(sums['Cost Basis'])))
+    if sums['Gain/Loss'] < 0:
+        annotations[-1].update(PdfDict(V=f"({-1 * sums['Gain/Loss']:.2f})", AS=f"{sums['Gain/Loss']:.2f}"))
+    else:
+        annotations[-1].update(PdfDict(V=f"{sums['Gain/Loss']:.2f}", AS=f"{sums['Gain/Loss']:.2f}"))
 
 def fill_initial_fields(annotations):
     """Fill in the initial fields of the PDF page."""
@@ -169,15 +171,16 @@ def main():
 
     This function currently extracts text from a PDF, parses it, and prints the parsed data.
     """
-    pdf_paths = [
-                '/Users/jimmytheriault/Library/CloudStorage/OneDrive-Personal/Documents/Finance/Taxes/2023/Form8949.pdf',
-                '/Users/jimmytheriault/Library/CloudStorage/OneDrive-Personal/Documents/Finance/Taxes/2023/Capital Loss Carryover/2022/Form8949.pdf', 
-                '/Users/jimmytheriault/Library/CloudStorage/OneDrive-Personal/Documents/Finance/Taxes/2023/Capital Loss Carryover/2021/Form8949.pdf'
-                ]
-    
-    read_f8949(pdf_paths)
+    # pdf_paths = {}
+    # pdf_paths[2021] = '/Users/jimmytheriault/Library/CloudStorage/OneDrive-Personal/Documents/Finance/Taxes/2023/Capital Loss Carryover/2021/Form8949.pdf'
+    # pdf_paths[2022] = '/Users/jimmytheriault/Library/CloudStorage/OneDrive-Personal/Documents/Finance/Taxes/2023/Capital Loss Carryover/2022/Form8949.pdf'                
+    # pdf_paths[2023] = '/Users/jimmytheriault/Library/CloudStorage/OneDrive-Personal/Documents/Finance/Taxes/2023/Form8949.pdf'
 
-    write_to_f8949()
+    # read_f8949(pdf_paths)
+
+    years = {2021, 2022, 2023}
+    for value in years:
+        write_to_f8949(value)
 
 if __name__ == "__main__":
     main()
