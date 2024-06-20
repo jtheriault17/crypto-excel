@@ -3,6 +3,55 @@ import camelot
 from pdfrw import PdfReader, PdfDict, PdfWriter, PdfName
 import load
 
+def write_to_f1040d(year):
+    sold = load.load_sold(year)
+    proceeds = {}
+    cost_basis = {}
+    gains = {}
+
+    proceeds['SHORT'], proceeds['LONG'], cost_basis['SHORT'], cost_basis['LONG'], gains['SHORT'], gains['LONG'] = 0, 0, 0, 0, 0, 0
+
+    for value in sold:
+        if value['Term'] == 'SHORT':
+            proceeds['SHORT'] += value['Proceeds']
+            cost_basis['SHORT'] += value['Cost Basis']
+            gains['SHORT'] += value['Return']
+        else:
+            proceeds['LONG'] += value['Proceeds']
+            cost_basis['LONG'] += value['Cost Basis']
+            gains['LONG'] += value['Return']
+
+    f1040d_template = PdfReader(f"../crypto-excel/forms/f1040D/{year}/f1040sd-blank.pdf")
+
+    pdf = PdfWriter()
+    for page in f1040d_template.pages:
+        pdf.addPage(page)
+
+    pdf_path = f'../crypto-excel/forms/f1040D/{year}/f1040sd-filled.pdf'
+    pdf.write(pdf_path)
+    pdf = PdfReader(pdf_path)
+
+    annotations = pdf.pages[0]['/Annots']
+
+    annotations[16].update(PdfDict(V=f"{proceeds['SHORT']:.2f}", AS=f"{proceeds['SHORT']:.2f}"))
+    annotations[17].update(PdfDict(V=f"{cost_basis['SHORT']:.2f}", AS=f"{cost_basis['SHORT']:.2f}"))
+    if gains['SHORT'] < 0:
+        annotations[19].update(PdfDict(V=f"({-1 * gains['SHORT']:.2f})", AS=f"({-1 * gains['SHORT']:.2f})"))
+    else:
+        annotations[19].update(PdfDict(V=f"{gains['SHORT']:.2f}", AS=f"{gains['SHORT']:.2f}"))
+    
+    annotations[36].update(PdfDict(V=f"{proceeds['LONG']:.2f}", AS=f"{proceeds['LONG']:.2f}"))
+    annotations[37].update(PdfDict(V=f"{cost_basis['LONG']:.2f}", AS=f"{cost_basis['LONG']:.2f}"))
+    if gains['LONG'] < 0:
+        annotations[39].update(PdfDict(V=f"({-1 * gains['LONG']:.2f})", AS=f"({-1 * gains['LONG']:.2f})"))
+    else:
+        annotations[39].update(PdfDict(V=f"{gains['LONG']:.2f}", AS=f"{gains['LONG']:.2f}"))
+ 
+    final_pdf = PdfWriter()
+    for page in pdf.pages:
+        final_pdf.addPage(page)
+    final_pdf.write(pdf_path)
+
 def read_f8949(paths):
     for year, pdf_path in paths.items():
         dfs = []
@@ -40,8 +89,7 @@ def write_to_f8949(year):
     long_template = f8949_template.pages[1]
 
     for value in sold:
-        if value['Term'] == "SHORT":
-            new_transaction = {
+        new_transaction = {
                 'Asset': "{:.8f} {}".format(value['Quantity'], value['Currency']),
                 'Date Acquired': value['Date Acquired'],
                 'Date Sold': value['Date Sold'],
@@ -51,18 +99,9 @@ def write_to_f8949(year):
                 'Empty2': "",
                 'Gain or Loss': "({:.2f})".format(abs(round(value['Return'], 2))) if value['Return'] < 0 else "{:.2f}".format(round(value['Return'],2))
             }
+        if value['Term'] == "SHORT":
             shorts.append(new_transaction)
         else:
-            new_transaction = {
-                'Asset': "{:.8f} {}".format(value['Quantity'], value['Currency']),
-                'Date Acquired': value['Date Acquired'],
-                'Date Sold': value['Date Sold'],
-                'Proceeds': "{:.2f}".format(round(value['Proceeds'], 2)),
-                'Cost Basis': "{:.2f}".format(round(value['Cost Basis'], 2)),
-                'Empty1': "",
-                'Empty2': "",
-                'Gain or Loss': "({:.2f})".format(abs(round(value['Return'], 2))) if value['Return'] < 0 else "{:.2f}".format(round(value['Return'],2))
-            }
             longs.append(new_transaction)
     
     num_long_pages = (len(longs) // 14) + 1
@@ -181,6 +220,7 @@ def main():
     years = {2021, 2022, 2023}
     for value in years:
         write_to_f8949(value)
+        write_to_f1040d(value)
 
 if __name__ == "__main__":
     main()

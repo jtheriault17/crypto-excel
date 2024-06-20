@@ -2,7 +2,6 @@ import pandas as pd
 from datetime import datetime
 import json
 import load
-import taxes
 
 def LIFO(transactions, sub):
     """

@@ -11,7 +11,7 @@ def main():
     portfolio_main()
 
     # Run transactions.py
-    transactions_main()
+    # transactions_main()
 
     # Run taxes.py
     taxes_main()
