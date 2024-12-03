@@ -2,19 +2,21 @@ from fetch_write_data import main as fetch_write_data_main
 from portfolio import main as portfolio_main
 from transactions import main as transactions_main
 from taxes import main as taxes_main
+from load import load_transactions as load
 
 def main():
-    # Run fetch_write_data.py
+    # # Run fetch_write_data.py
     fetch_write_data_main()
 
-    # Run portfolio.py
+    # # Run portfolio.py
     portfolio_main()
 
-    # Run transactions.py
+    # # Run transactions.py
     # transactions_main()
 
-    # Run taxes.py
+    # # Run taxes.py
     taxes_main()
+    
 
 if __name__ == "__main__":
     main()

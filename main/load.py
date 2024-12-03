@@ -293,7 +293,7 @@ def load_transactions():
     transactions_json.fillna("", inplace=True)
 
     # Convert the "Date" column from milliseconds to a formatted date string
-    transactions_json["Date"] = pd.to_datetime(transactions_json["Date"], unit='ms').dt.strftime("%m/%d/%y")
+    transactions_json["Date"] = pd.to_datetime(transactions_json["Date"], unit='ms').dt.strftime('%m/%d/%y %H:%M:%S')
 
     # Convert the DataFrame to a JSON string
     transactions_json_str = transactions_json.to_json(orient='records', indent=4)
